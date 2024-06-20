@@ -24,10 +24,41 @@
 
 <!-- БЛОК ФОРМЫ ВХОДА/РЕГИСТРАЦИИ -->
 
-<sectoin class="reg">
+<div class="wrapper">
+
+    <main>
+        <div class="container" >
+            <div class="tab">
+                <button class="tablinks" onclick="openPage(event, 'Login')">Вход</button>
+                <button class="tablinks" onclick="openPage(event, 'Register')">Регистрация</button>
+            </div>
+
+            <div id="Login" class="tabcontent" style="display: block;">
+                <form>
+                    <input type="text" id="login" name="login" placeholder="Логин">
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    <input type="password" id="password" name="password" placeholder="Пароль">
+                    <button type="submit"  class="enter">Войти</button>
+                </form>
+            </div>
+
+            <div id="Register" class="tabcontent">
+                <form>
+                    <input type="text" id="name" name="name" placeholder="Имя">
+                    <input type="text" id="reg-login" name="reg-login" placeholder="Логин">
+                    <input type="email" id="reg-email" name="reg-email" placeholder="Email">
+                    <input type="password" id="reg-password" name="reg-password" placeholder="Пароль">
+                    <button type="submit" class="enter">Войти</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
     
-</sectoin>
-    
+<script src="/src/js/reg.js"></script>
 <!-- FOOTER -->
 
     <footer>
