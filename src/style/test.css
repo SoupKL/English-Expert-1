@@ -1,0 +1,171 @@
+@font-face {
+    font-family: "bold";
+    src: url(/src/font/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "medium";
+    src: url(/src/font/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: "regular";
+    src: url(/src/font/Montserrat-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header a{
+    font-family: medium;
+    font-size: 14px;
+}
+
+
+#logo img {
+    max-width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a img {
+    margin-right: 5pt;
+     vertical-align: middle;
+}
+
+::placeholder {
+    color: black;
+}
+
+input#login  {
+    caret-color: transparent;
+    border: none;
+    outline: none;
+    font-family: medium;
+    cursor: pointer;
+    background-color:white;
+    max-width: 50px;
+}
+
+header a:active {
+    transform: scale(0.95);
+}
+
+/* Блок теста */
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center; /* Центрирование содержимого */
+}
+
+.question {
+    font-size: 1.5rem; /* Установленный размер шрифта для вопросов */
+    margin-bottom: 20px;
+    font-family: regular;
+}
+
+#progress {
+    font-size: 1.13rem; /* Установленный размер шрифта для индикатора прогресса */
+    font-family: regular;
+    display: inline-block; /* Установка в одну строку */
+    margin: 0 20px; /* Отступ для размещения на равно расстоянии */
+}
+
+.answers {
+    margin-bottom: 20px;
+}
+
+.answer {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-label {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e9ecef;
+    transition: background 0.3s ease;
+    font-size: 0.88rem; /* Установленный размер шрифта для ответов */
+    font-family: regular;
+}
+
+.radio-label:hover {
+    background-color: #d3d9df;
+}
+
+.radio-input:checked + .radio-label {
+    background: linear-gradient(to right, #F7941D, #27AAE1);
+    color: white;
+}
+
+.button {
+    background-color: #F7941D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.88rem; /* Установленный размер шрифта для текста кнопки */
+    font-family: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 20px; /* Отступ для размещения на равно расстоянии */
+}
+
+.button:hover {
+    background-color: #27AAE1;
+}
+
+.hide {
+    display: none;
+}
+
+h2{
+    font-family: medium;
+    font-size: 1.13rem;
+}
+
+p#result-text{
+    font-family: regular;
+    font-size: 0.88rem;
+}
+
+.progress-button-container {
+    display: flex;
+    justify-content: center; /* Центрирование содержимого */
+    align-items: center;
+    margin-bottom: 20px;
+}
