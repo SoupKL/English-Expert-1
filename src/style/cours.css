@@ -73,9 +73,9 @@ header a:active {
     transform: scale(0.95);
 }
 
-/* Блок Уровень А1 */
+/* Блок Уровня */
 
-.cardA1 img{
+.card_level img{
     width: 100%
 }
 
