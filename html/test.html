@@ -7,51 +7,91 @@
     <link rel="stylesheet" href="/src/style/test.css">
     <link rel="icon" href="/src/img/main/logo.svg" type="image/png">
 </head>
-
 <body>
+    <!-- HEADER -->
+    <div class="wrapper">
+        <header>
+            <a href="/html/main.html"><img src="/src/img/main/logo.svg" alt="English Expert Logo"></a>
+            <a href="/html/all_courses.html"><img src="/src/img/main/all_curs.svg">Все курсы</a>
+            <a href="/html/all_events.html">Мероприятия</a>
+            <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
+            <a href="tel:8005553535">8 800 555-35-35</a>
+            <form action="login.php" method="post">
+                <a href="/html/login_registration.html"><img src="/src/img/main/person.svg"><input type="text" id="login" name="loginname" placeholder="Войти"></a>
+            </form>
+        </header>
+    </div>
 
-<!-- HEADER -->
-<div class="wrapper">
-    <header>
-        <a href="/html/main.html"><img src="/src/img/main/logo.svg" alt="English Expert Logo"></a>
-        <a href="/html/all_courses.html"><img src="/src/img/main/all_curs.svg">Все курсы</a>
-        <a href="/html/all_events.html">Мероприятия</a>
-        <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
-        <a href="tel:8005553535">8 800 555-35-35</a>
-        <form action="login.php" method="post">
-            <a href="/html/login_registration.html"><img src="/src/img/main/person.svg"><input
-                    type="text" id="login" name="loginname"
-                    placeholder="Войти"></a>
-        </form>
-    </header>
-</div>
+    <!-- Блок Теста -->
+    <main class="wrapper">
+        <div class="container">
+            <div id="quiz-container">
+                <div id="questionContainer">
+                    <div class="question" id="questionText"></div>
+                    <form id="answerForm">
+                        <div class="answers" id="answersContainer"></div>
+                        <div class="progress-button-container">
+                            <div id="progress">Вопрос 1/20</div>
+                            <button type="submit" class="button" id="nextButton"><i class="fa fa-arrow-right"></i> Вперед</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-<!-- Блок Теста -->
-
-<main class="wrapper">
-    <div class="container">
-        <div id="quiz-container">
-            <div id="questionContainer">
-                <div class="question" id="questionText"></div>
-                <form id="answerForm">
-                    <div class="answers" id="answersContainer"></div>
-                    <div class="progress-button-container">
-                        <div id="progress">Вопрос 1/20</div>
-                        <button type="submit" class="button" id="nextButton"><i class="fa fa-arrow-right"></i> Вперед</button>
+            <div id="result-container" class="hide">
+                <h2>Для вашего уровня английского подойдет курс</h2>
+                <div class="card hide" id="A1">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/A1.svg">
+                        <h3>Уровень А1</h3>
                     </div>
-                </form>
+                    <p>Идеальный выбор для абсолютных новичков. Здесь вы освоите английский язык с нуля, начиная с базовых фраз и повседневного общения. Разработанный курс включает в себя интерактивные упражнения, игры и диалоги, чтобы улучшить вашу языковую подготовку в увлекательной форме.</p>
+                    <button id="buttonA1" class="button">Перейти на страницу курса</button>
+                </div>
+                <div class="card hide" id="A2">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/A2.svg">
+                        <h3>Уровень А2</h3>
+                    </div>
+                    <p>Продолжайте развивать свои навыки, углубляясь в основы английского языка. Этот курс поможет вам укрепить свои знания и научиться уверенно общаться на повседневные темы.</p>
+                    <button id="buttonA2" class="button">Перейти на страницу курса</button>
+                </div>
+                <div class="card hide" id="B1">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/B1.svg">
+                        <h3>Уровень B1</h3>
+                    </div>
+                    <p>Станьте уверенным пользователем английского языка. В этом курсе вы научитесь говорить на более сложные темы, понимать тексты средней сложности и выражать свои мысли.</p>
+                    <button id="buttonB1" class="button">Перейти на страницу курса</button>
+                </div>
+                <div class="card hide" id="B2">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/B2.svg">
+                        <h3>Уровень B2</h3>
+                    </div>
+                    <p>Этот курс поможет вам достичь продвинутого уровня владения языком. Вы научитесь понимать сложные тексты и свободно общаться с носителями языка.</p>
+                    <button id="buttonB2" class="button">Перейти на страницу курса</button>
+                </div>
+                <div class="card hide" id="C1">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/C1.svg">
+                        <h3>Уровень C1</h3>
+                    </div>
+                    <p>Достигните высокого уровня владения английским языком. Этот курс фокусируется на улучшении ваших навыков общения и восприятия сложных текстов.</p>
+                    <button id="buttonC1" class="button">Перейти на страницу курса</button>
+                </div>
+                <div class="card hide" id="C2">
+                    <div class="cardtxt">
+                        <img src="/src/img/all_courses/C2.svg">
+                        <h3>Уровень C2</h3>
+                    </div>
+                    <p>Достигните мастерского уровня владения английским языком. Этот курс поможет вам свободно и точно выражаться, понимая даже самые сложные тексты.</p>
+                    <button id="buttonC2" class="button">Перейти на страницу курсов</button>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div id="result-container" class="hide">
-            <h2>Для вашего уровня английского подойдет курс</h2>
-            <p id="result-text"></p>
-        </div>
-    </div>
-</main>
-
-
-<script src="/src/js/test.js"></script>
-
+    <script src="/src/js/test.js"></script>
 </body>
 </html>

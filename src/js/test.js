@@ -203,10 +203,27 @@ const questions = [
 
 const questionContainer = document.getElementById('questionText');
 const answersContainer = document.getElementById('answersContainer');
-const nextButton = document.getElementById('nextButton');
 const progressText = document.getElementById('progress');
 const resultContainer = document.getElementById('result-container');
 const resultText = document.getElementById('result-text');
+
+const courseCards = {
+    A1: document.getElementById('A1'),
+    A2: document.getElementById('A2'),
+    B1: document.getElementById('B1'),
+    B2: document.getElementById('B2'),
+    C1: document.getElementById('C1'),
+    C2: document.getElementById('C2')
+};
+
+const courseButtons = {
+    A1: document.getElementById('buttonA1'),
+    A2: document.getElementById('buttonA2'),
+    B1: document.getElementById('buttonB1'),
+    B2: document.getElementById('buttonB2'),
+    C1: document.getElementById('buttonC1'),
+    C2: document.getElementById('buttonC2')
+};
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -245,7 +262,6 @@ function loadNextQuestion() {
 }
 
 function showResult() {
-    // Скрыть контейнер с вопросами и показать контейнер с результатом
     document.getElementById('quiz-container').style.display = 'none';
     resultContainer.classList.remove('hide');
 
@@ -264,7 +280,20 @@ function showResult() {
         level = "A1";
     }
 
-    resultText.textContent = `${level}`;
+    console.log(`Score: ${score}, Level: ${level}`); // Лог результата
+
+    // Скрыть все карточки и кнопки
+    for (let key in courseCards) {
+        courseCards[key].classList.add('.hide');
+        courseButtons[key].classList.add('.hide');
+    }
+
+    // Показать соответствующую карточку курса и кнопку перехода
+    courseCards[level].classList.remove('.hide');
+    courseButtons[level].classList.remove('.hide');
+    courseButtons[level].addEventListener('click', function() {
+        window.location.href = '/html/all_courses.html'; // Укажите нужную страницу
+    });
 }
 
 // Начать тест с первого вопроса

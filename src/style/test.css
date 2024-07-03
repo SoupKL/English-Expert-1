@@ -151,6 +151,7 @@ header a:active {
 
 .hide {
     display: none;
+    align-items: center;
 }
 
 h2{
@@ -168,4 +169,59 @@ p#result-text{
     justify-content: center; /* Центрирование содержимого */
     align-items: center;
     margin-bottom: 20px;
+}
+
+/* Карточки курсов (в конце теста) */
+
+.card{
+    width: 26rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 0 1% 1% 1%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.card p{
+    font-family: regular;
+    color: rgb(79, 79, 79);
+    font-size: 0.75rem;
+}
+
+#A1{
+    background-color: rgb(199, 238, 255);
+}
+
+#A2{
+    background-color: rgb(255, 206, 148);
+}
+
+#B1{
+    background-color: rgb(255, 227, 142);
+}
+
+#B2{
+    background-color: rgb(221, 221, 255);
+}
+
+#C1{
+    background-color: rgb(184, 239, 207);
+}
+
+#C2{
+    background-color: rgb(199, 238, 255);
+}
+
+.cardtxt{
+    display: flex;
+    justify-content: space-between;
+    width: 12rem;
+}
+
+.cardtxt h3{
+    color: rgb(0, 9, 60);
+    font-size: 1.13rem;
+    font-family: medium;
 }
