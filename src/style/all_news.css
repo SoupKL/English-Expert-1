@@ -60,6 +60,20 @@ header a img {
      vertical-align: middle;
 }
 
+::placeholder {
+    color: white;
+}
+
+input#login  {
+    caret-color: transparent;
+    border: none;
+    outline: none;
+    font-family: medium;
+    cursor: pointer;
+    background-color:#00093C;
+    max-width: 50px;
+}
+
 header a:active {
     transform: scale(0.95);
 }
