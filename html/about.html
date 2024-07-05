@@ -11,21 +11,29 @@
 
 <!-- HEADER -->
 
-    <div class="wrapper">
-        <header>
-            <a href="/html/main.html"><img src="/src/img/main/logo.svg" alt="English Expert Logo"></a></li>
-            <a href="/html/all_courses.html"><img src="/src/img/main/all_curs.svg">Все курсы</a></li>
-            <a href="/html/all_events.html">Мероприятия</a></li>
-            <a href="/html/about.html">О нас</a>
-            <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a></li>
-            <a href="tel:8005553535">8 800 555-35-35</a></li>
-            <from action="login.php" method="post">
+<div class="wrapper">
+    <header>
+        <div id="logo">
+            <a href="/html/main.html"><img src="/src/img/main/logo.svg" alt="English Expert Logo"></a>
+        </div>
+        <div class="menu-toggle">
+            <img src="/src/img/main/header_swip.svg" alt="Menu Icon">
+        </div>
+        <nav class="menu">
+            <a href="/html/all_courses.html">Все курсы</a>
+            <a href="/html/all_events.html">Мероприятия</a>
+            <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
+            <a href="tel:8005553535">8 800 555-35-35</a>
+            <form action="login.php" method="post">
                 <a href="/html/login_registration.html"><img src="/src/img/main/person.svg"><input
-                      type="text" id="login" name="loginname"
-                      placeholder="Войти"></a>
-             </from>
-        </header>
-    </div>
+                    type="text" id="login" name="loginname"
+                    placeholder="Войти"></a>
+            </form>
+        </nav>
+    </header>
+</div>
+
+<script src="/src/js/menu.js"></script>
     
 <!-- БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА -->
 
