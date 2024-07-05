@@ -73,76 +73,74 @@ header a:active {
     transform: scale(0.95);
 }
 
-/* Блок теста */
+/* Блок теста*/
 
-.container {
-    background-color: #fff;
+#questionContainer {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 100%;
-    text-align: center; /* Центрирование содержимого */
+    border-radius: 5px;
+    background-color: #F6F7F9;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    -moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    text-align: center;
 }
 
 .question {
-    font-size: 1.5rem; /* Установленный размер шрифта для вопросов */
-    margin-bottom: 20px;
     font-family: regular;
-}
-
-#progress {
-    font-size: 1.13rem; /* Установленный размер шрифта для индикатора прогресса */
-    font-family: regular;
-    display: inline-block; /* Установка в одну строку */
-    margin: 0 20px; /* Отступ для размещения на равно расстоянии */
-}
-
-.answers {
+    font-size: 1.5rem;
     margin-bottom: 20px;
+    color: rgb(0, 0, 0);
 }
 
-.answer {
-    display: block;
+.answers .answer {
     margin-bottom: 10px;
 }
 
-.radio-input {
-    display: none;
+.answers{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.radio-label {
-    display: inline-block;
-    padding: 10px 20px;
+.answer-text {
+    font-family: regular;
+    font-size: 0.88rem;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #e9ecef;
-    transition: background 0.3s ease;
-    font-size: 0.88rem; /* Установленный размер шрифта для ответов */
-    font-family: regular;
+    width: 11rem;
 }
 
-.radio-label:hover {
-    background-color: #d3d9df;
-}
-
-.radio-input:checked + .radio-label {
+.answer-text.selected {
     background: linear-gradient(to right, #F7941D, #27AAE1);
     color: white;
 }
 
+.progress-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#progress{
+    font-family: regular;
+    font-size: 1.13rem;
+}
+
 .button {
+    font-family: medium;
+    font-size: 16px;
     background-color: #F7941D;
     color: white;
     border: none;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.88rem; /* Установленный размер шрифта для текста кнопки */
-    font-family: bold;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 0 20px; /* Отступ для размещения на равно расстоянии */
+    text-align: center;
 }
 
 .button:hover {
@@ -151,37 +149,34 @@ header a:active {
 
 .hide {
     display: none;
+}
+
+#result-container{
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h2{
-    font-family: medium;
-    font-size: 1.13rem;
-}
-
-p#result-text{
+#result-container h2{
     font-family: regular;
-    font-size: 0.88rem;
+    font-size: 1.5rem;
 }
 
-.progress-button-container {
-    display: flex;
-    justify-content: center; /* Центрирование содержимого */
-    align-items: center;
+.cardtxt h3{
+    font-family: regular;
+    font-size:1.13rem; 
+}
+
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #F6F7F9;
     margin-bottom: 20px;
-}
-
-/* Карточки курсов (в конце теста) */
-
-.card{
-    width: 26rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    margin: 0 1% 1% 1%;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor: pointer;
+    -webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    -moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    text-align: center;
+    width: 26.89rem;
 }
 
 .card p{
@@ -214,14 +209,6 @@ p#result-text{
     background-color: rgb(199, 238, 255);
 }
 
-.cardtxt{
-    display: flex;
-    justify-content: space-between;
-    width: 12rem;
-}
-
-.cardtxt h3{
-    color: rgb(0, 9, 60);
-    font-size: 1.13rem;
-    font-family: medium;
+.cardtxt .button {
+    margin-top: 20px;
 }

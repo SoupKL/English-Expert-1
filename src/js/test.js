@@ -205,7 +205,6 @@ const questionContainer = document.getElementById('questionText');
 const answersContainer = document.getElementById('answersContainer');
 const progressText = document.getElementById('progress');
 const resultContainer = document.getElementById('result-container');
-const resultText = document.getElementById('result-text');
 
 const courseCards = {
     A1: document.getElementById('A1'),
@@ -235,8 +234,7 @@ function loadQuestion(question) {
         const answerElement = document.createElement('div');
         answerElement.classList.add('answer');
         answerElement.innerHTML = `
-            <input type="radio" class="radio-input" id="answer${index}" name="answer" value="${answer}">
-            <label class="radio-label" for="answer${index}">${answer}</label>
+            <div class="answer-text" data-value="${answer}">${answer}</div>
         `;
         answersContainer.appendChild(answerElement);
     });
@@ -244,10 +242,10 @@ function loadQuestion(question) {
 }
 
 function loadNextQuestion() {
-    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    const selectedAnswer = document.querySelector('.answer-text.selected');
     if (selectedAnswer) {
         const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-        if (selectedAnswer.value === correctAnswer) {
+        if (selectedAnswer.getAttribute('data-value') === correctAnswer) {
             score++;
         }
         currentQuestionIndex++;
@@ -280,20 +278,22 @@ function showResult() {
         level = "A1";
     }
 
-    console.log(`Score: ${score}, Level: ${level}`); // Лог результата
-
-    // Скрыть все карточки и кнопки
-    for (let key in courseCards) {
-        courseCards[key].classList.add('.hide');
-        courseButtons[key].classList.add('.hide');
-    }
+    console.log(`Score: ${score}, Level: ${level}`);
 
     // Показать соответствующую карточку курса и кнопку перехода
-    courseCards[level].classList.remove('.hide');
-    courseButtons[level].classList.remove('.hide');
+    courseCards[level].classList.remove('hide');
+    courseButtons[level].classList.remove('hide');
     courseButtons[level].addEventListener('click', function() {
-        window.location.href = '/html/all_courses.html'; // Укажите нужную страницу
+        window.location.href = `/html/course_${level}.html`;
     });
+}
+
+function selectAnswer(event) {
+    const selected = document.querySelector('.answer-text.selected');
+    if (selected) {
+        selected.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
 }
 
 // Начать тест с первого вопроса
@@ -304,4 +304,11 @@ const answerForm = document.getElementById('answerForm');
 answerForm.addEventListener('submit', function(event) {
     event.preventDefault();
     loadNextQuestion();
+});
+
+// Обработчик выбора ответа
+answersContainer.addEventListener('click', function(event) {
+    if (event.target.classList.contains('answer-text')) {
+        selectAnswer(event);
+    }
 });
