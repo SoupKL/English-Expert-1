@@ -104,6 +104,12 @@ header a:active {
 /* Адаптив header */
 
 @media (max-width: 1000px) {
+
+  .wrapper{
+      width: 100%;
+      max-width: 600px;
+  }
+
   header {
       flex-direction: row;
       justify-content: space-between;
@@ -148,6 +154,7 @@ header a:active {
   }
 }
 
+/* Скрытие иконки меню при разрешении больше 900px */
 @media (min-width: 901px) {
   .menu-toggle {
       display: none;

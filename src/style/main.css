@@ -52,7 +52,7 @@ header a{
 
 header a img {
     margin-right: 5pt;
-     vertical-align: middle;
+    vertical-align: middle;
 }
 
 ::placeholder {
@@ -76,6 +76,12 @@ header a:active {
 /* Адаптив header */
 
 @media (max-width: 1000px) {
+
+    .wrapper{
+        width: 100%;
+        max-width: 600px;
+    }
+
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -139,6 +145,19 @@ header a:active {
     background-repeat: no-repeat;  
 }
 
+/* Адаптив образовательной платформы */
+
+@media (max-width: 1000px) {
+    section.hero{
+        width: 100%;
+        height: 900px;
+        background-image: url('/src/img/main/background_ms.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;  
+    }
+}
+
 /* БЛОК АКТУАЛЬНЫЕ ЗНАНИЯ */
 
 .stat h1{
@@ -158,6 +177,19 @@ header a:active {
 .stat-item {
     text-align: center;
     font-family: medium;
+}
+
+/* Адаптив АКТУАЛЬНЫЕ ЗНАНИЯ */
+
+@media (max-width: 1000px) {
+    
+    .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        margin-top: 5%;
+    }
 }
 
 /* БЛОК КАРТОЧЕК НОВОСТЕЙ */
@@ -248,6 +280,95 @@ header a:active {
 
 #i3{
     background-color:#B8EFCF;
+}
+
+/* Адаптив КАРТОЧЕК НОВОСТЕЙ */
+
+@media (max-width: 1000px) {
+
+    .event{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-info {
+        background-color: #f3a563;
+        border-radius: 15px;
+        height: 18rem;
+        width: 18.75rem;
+        padding: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cardtxt {
+        display: flex;
+        justify-content: space-around;
+        width: 18.75rem;
+        align-items: center;
+    }
+    
+    .date-image {
+        margin-right: 20px; 
+        width: 4.5rem;
+        height: auto;
+    }
+    
+    .info {
+        text-align: left;
+        line-height: 1.5rem;
+    }
+    
+    .title {
+        font-size:1.44rem;
+        font-weight: medium;
+    }
+    
+    .description {
+        font-size:1rem;
+        line-height: 1.5;
+        font-family: regular;
+    }
+    
+    .event-actions {
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 3%;
+    }
+    
+    .event-actions h3{
+        font-family: medium;
+        font-size: 1rem;
+    }
+    
+    .event-actions p{
+        font-family: regular;
+        font-size: 0.8rem;
+    }
+    
+    .action-item1 {
+        width: 20rem;
+    }
+    
+    .action-item {
+        width: 20rem;
+       
+    }
+    
+    .action-item, .action-item1{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-radius: 1.25rem;
+        margin-top: 3%;
+        padding: 3%;
+    }
+
 }
 
 /* БЛОК ОТЗЫВЫ */
@@ -357,6 +478,16 @@ header a:active {
     width: 20px;
 }
 
+/* Адаптив Отзывов*/
+
+@media (max-width: 1000px) {
+
+    .testimonials{
+        margin-top: 50%;
+    }
+
+}
+
 /* БЛОК НАВЫКИ */
 
 .txt_skills h2{
@@ -379,6 +510,28 @@ header a:active {
 
 .skill{
     width: 17.5rem;
+}
+
+/* Адаптив Блока навыков */
+
+@media (max-width: 1000px) {
+
+    .txt_skills h2{
+        font-size: 2rem;
+    }
+
+    .skills{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin-top: 6%;
+    }
+    
+    .skill p{
+        font-size: 1rem;
+    }
 }
 
 /* БЛОК ФОРМЫ */
@@ -464,6 +617,16 @@ form {
     width: 13.22rem;
 }
 
+/* Адаптив Блока формы */
+
+@media (max-width: 1000px) {
+
+    .rabbit_helper{
+        display: none;
+    }
+
+}
+
 /* FOOTER */
 
 footer {
@@ -485,4 +648,17 @@ footer {
 .info_f p{
     font-family: medium;
     font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+    }
+
 }
