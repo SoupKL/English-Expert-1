@@ -135,17 +135,18 @@ header a:active {
     }
 }
 
-@media (min-width: 901px) {
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
-}
+  }
 
 /* Блок с контактами */
 .maps{
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Центрируем по вертикали */
+    align-items: center; 
     height: 75vh; 
 }
 
@@ -162,6 +163,22 @@ header a:active {
 .txt{
     font-family: bold;
     font-size: 2.25rem;
+}
+
+/* Адаптив блока с контактами */
+
+@media (max-width: 1000px) {
+
+    .maps{
+        flex-direction: column;
+    }
+
+    #map{
+        margin-top: 5%;
+        width: 18.75rem;
+        height: 25.63rem; 
+    }
+
 }
 
 /* FOOTER */
@@ -185,4 +202,24 @@ footer {
 .info_f p{
     font-family: medium;
     font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    footer{
+        margin-top: 10%;
+    }
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+        height: auto;
+    }
+
+
+
 }

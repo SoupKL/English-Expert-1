@@ -132,12 +132,12 @@ header a:active {
     }
 }
 
-@media (min-width: 901px) {
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
-}
-
+  }
 /* Блок мероприятий */
 
 .events2, .events3, .events4{
@@ -280,6 +280,47 @@ header a:active {
     color: rgb(255, 255, 255);
 }
 
+/* адпатив блока мероприятий */
+
+@media (max-width: 1000px) {
+
+    .events{
+        margin-bottom: 50%;
+    }
+
+  .info h1{
+    font-size: 1.5rem;
+  }
+
+  .info p{
+    font-size: 0.88rem;
+  }
+
+  .events2{
+    flex-direction: column;
+    align-items: center;
+   
+  }
+
+  .event2{
+    margin-bottom: 5%;
+  }
+
+  .events3{
+    display: none;
+  }
+
+  .events4{
+    flex-direction: column;
+    margin-top: 95%;
+    align-items: center;
+  }
+
+  .event4{
+    margin-bottom: 5%;
+  }
+}
+
 /* БЛОК ФОРМЫ */
 
 .rabbit_helper{
@@ -363,6 +404,46 @@ form {
     width: 13.22rem;
 }
 
+/* Адаптив формы */
+
+@media (max-width: 1000px) {
+    
+    .rabbit_helper {
+        margin-top: 40%;
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 0%; 
+    }
+
+    .rh_l img{
+        width: 90%;
+    }
+
+    .rh_l, .rh_r {
+        width: 100%; /* Делаем элементы шириной 90% */
+        padding: 0;
+    }
+
+    .rh_r {
+        margin-top: 20px; /* Добавляем отступ сверху для формы */
+    }
+    
+    .form-group.horizontal{
+        flex-direction: column;
+        width: 105%;
+    }
+
+    .form-group.full-width{
+        margin-bottom: 0%;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="phone"] {
+        width: 565px;
+        margin-top: 5%;
+    }
+}
+
 /* FOOTER */
 
 footer {
@@ -385,3 +466,19 @@ footer {
     font-family: medium;
     font-size: 0.88rem;
 }
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+        height: auto;
+    }
+
+
+
+  }

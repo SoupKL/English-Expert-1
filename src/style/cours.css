@@ -155,7 +155,7 @@ header a:active {
 }
 
 /* Скрытие иконки меню при разрешении больше 900px */
-@media (min-width: 901px) {
+@media (min-width: 1000px) {
   .menu-toggle {
       display: none;
   }
@@ -163,9 +163,90 @@ header a:active {
 
 /* Блок Уровня */
 
-.card_level img{
-    width: 100%
+#levelA1 img {
+  content: url('/src/img/cours/levelA1.svg');
+  width: 100%;
 }
+
+#levelA2 img {
+  content: url('/src/img/cours/levelA2.svg');
+  width: 100%;
+}
+
+#levelB1 img {
+  content: url('/src/img/cours/levelB1.svg');
+  width: 100%;
+}
+
+#levelB2 img {
+  content: url('/src/img/cours/levelB2.svg');
+  width: 100%;
+}
+
+#levelC1 img {
+  content: url('/src/img/cours/levelC1.svg');
+  width: 100%;
+}
+
+#levelC2 img {
+  content: url('/src/img/cours/levelC2.svg');
+  width: 100%;
+}
+
+#levelpurpose img {
+  content: url('/src/img/cours/levelpurposes.svg');
+  width: 100%;
+}
+
+#levelwork img {
+  content: url('/src/img/cours/levelwork.svg');
+  width: 100%;
+}
+
+/* Адаптив блока уровня */
+
+@media (max-width: 1000px) {
+  #levelA1 img {
+    content: url('/src/img/cours/levelA1_small.svg');
+    width: 100%;
+  }
+
+  #levelA2 img {
+    content: url('/src/img/cours/levelA2_small.svg');
+    width: 100%;
+  }
+
+  #levelB1 img {
+    content: url('/src/img/cours/levelB1_small.svg');
+    width: 100%;
+  }
+  
+  #levelB2 img {
+    content: url('/src/img/cours/levelB2_small.svg');
+    width: 100%;
+  }
+  
+  #levelC1 img {
+    content: url('/src/img/cours/levelC1_small.svg');
+    width: 100%;
+  }
+  
+  #levelC2 img {
+    content: url('/src/img/cours/levelC2_small.svg');
+    width: 100%;
+  }
+  
+  #levelpurpose img {
+    content: url('/src/img/cours/levelpurposes_small.svg');
+    width: 100%;
+  }
+  
+  #levelwork img {
+    content: url('/src/img/cours/levelwork_small.svg');
+    width: 100%;
+  }
+  
+} 
 
 /* Блок целей */
 
@@ -200,46 +281,87 @@ header a:active {
     font-size: 0.88rem;
 }
 
+/* Адаптив блока целей */
+
+@media (max-width: 1000px) {
+
+  .purposes{
+    flex-direction: column;
+  }
+
+  .purposes_right{
+    margin-top: 5%;
+    width: 100%;
+  }
+
+}
+
+/* Адаптив блока фото */
+
+@media (max-width: 1000px) {
+
+  .photo img{
+    width: 100%;
+  }
+
+}  
+
 /* Блок приоритетов */
 
 .priorities{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
 }
 
 .priority p{
-    font-family: regular;
-    font-size: 0.88rem;
-    width: 11.25rem;
+  font-family: regular;
+  font-size: 0.88rem;
+  width: 11.25rem;
+}
+
+/* Адаптив блока приоритетов */
+
+@media (max-width: 1000px) {
+
+  .priorities{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .priority{
+    margin-top: 5%;
+  }
+
 }
 
 /* Блок преимуществ */
 
 .benefits {
-    width: 100%;
-    height: 19.38rem;
-    background-image: url('/src/img/cours/subtract.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    margin-top: 5%;
+  width: 100%;
+  height: 19.38rem;
+  background-image: url('/src/img/cours/subtract.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
 }
 
 .txt {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-    margin-bottom: 1rem; 
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-bottom: 1rem; 
 }
 
 .txt p {
-    font-family: regular;
-    font-size: 1.13rem;
-    color: white;
-    width: 28.63rem; 
+  font-family: regular;
+  font-size: 1.13rem;
+  color: white;
+  width: 28.63rem; 
 }
 
 button[type="button"], button[type="submit"] {
@@ -321,6 +443,20 @@ button[type="button"]:hover,button[type="submit"]:hover {
     margin-bottom: auto;
 }
 
+/* Адаптив блока содержание курса */
+
+@media (max-width: 1000px) {
+
+  .content{
+    flex-direction: column;
+  }
+
+  .content_right{
+    margin-top: 5%;
+  }
+}
+
+
 /* Блок преподавателей */
 
 .teachers{
@@ -368,6 +504,25 @@ button[type="button"]:hover,button[type="submit"]:hover {
     font-family: bold;
     font-size: 1.13rem;
     color: black;
+}
+
+/* адаптив блока преподавателей */
+
+@media (max-width: 1000px) {
+
+  .teachers{
+    height: 100%;
+  }
+
+  .cards{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    margin-bottom: 5%;
+  }
+
 }
 
 /*  Блок найди ответ */
@@ -457,6 +612,19 @@ footer {
 .info_f p{
     font-family: medium;
     font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+  .info_f{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items:center;
+  }
+
 }
 
 /* Модальное окно */

@@ -127,11 +127,11 @@ header a:active {
 }
 
 /* Скрытие иконки меню при разрешении больше 900px */
-@media (min-width: 901px) {
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
-}
+  }
 
 
 .account {

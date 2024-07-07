@@ -132,11 +132,12 @@ header a:active {
     }
 }
 
-@media (min-width: 901px) {
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
-}
+  }
 
 /* Блок новости  */
 
@@ -172,6 +173,24 @@ header a:active {
     line-height: 26px; 
 }
 
+/* Адаптив новости */
+
+@media (max-width: 1000px) {
+
+    .news-title{
+        font-size: 1.5rem;
+    }
+
+    .container img{
+        width: 100%;
+    }
+
+    .txt{
+        font-size: 0.9rem;
+    }
+    
+}
+
 /* FOOTER */
 
 footer {
@@ -194,4 +213,21 @@ footer {
 .info_f p{
     font-family: medium;
     font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    footer{
+        height: 16rem;
+    }
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+    }
+
 }

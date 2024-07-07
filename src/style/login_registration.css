@@ -118,11 +118,12 @@ header a:active {
     }
 }
 
-@media (min-width: 901px) {
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
-}
+  }
 
 /*  БЛОК ФОРМЫ ВХОДА/РЕГИСТРАЦИИ */
 

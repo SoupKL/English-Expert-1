@@ -127,7 +127,7 @@ header a:active {
 }
 
 /* Скрытие иконки меню при разрешении больше 900px */
-@media (min-width: 901px) {
+@media (min-width: 1000px) {
     .menu-toggle {
         display: none;
     }
@@ -135,14 +135,23 @@ header a:active {
 
 /* БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА */
 
-.hero {
+#education {
     display: flex;
     height: 480px;
     width: 100%;
-    background-image: url('/src/img/main/education.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;  
+    content: url('/src/img/main/education.svg');
+}
+
+/* Адаптив блока образовательной платформы */
+
+@media (max-width: 1000px) {
+
+    #education{
+        content: url('/src/img/about/education_small.svg');
+        width: 100%;
+        height: auto;
+    }
+
 }
 
 /* БЛОК ПРИВЕТСВИЯ */
@@ -165,6 +174,20 @@ header a:active {
 .right_1{
     font-size: 0.88rem;
     font-family: regular;
+}
+
+/* Адаптив блока приветствия */
+
+@media (max-width: 1000px) {
+
+    .hi{
+        flex-direction: column;
+    }
+
+    .hi_right{
+        margin-top: 5%;
+    }
+
 }
 
 /* Блок с основателем */
@@ -195,6 +218,29 @@ header a:active {
     font-size: 1.13rem;
 }
 
+/* Адаптив блок с основателем */
+
+@media (max-width: 1000px) {
+
+   .inter{
+    flex-direction: column;
+   } 
+
+   .inter_left{
+    margin-right: auto;
+    margin-left: auto;
+   }
+
+   .inter_right{
+    width: 100%;
+   }
+
+   .inter_right p{
+    font-size: 1rem;
+    text-align: center;
+   }
+}
+
 /* Блок наши ценности */
 
 .values{
@@ -219,6 +265,22 @@ header a:active {
 .card p{
     font-family: medium;
     font-size: 1rem;
+}
+
+/* адаптив блока наши ценности */
+
+@media (max-width: 1000px) {
+
+    .values{
+        margin-top: -15%;
+    }
+
+    .cards{
+        flex-direction: column;
+        height: 50rem;
+        align-items: center;
+    }
+
 }
 
 /* Блок преподавателей */
@@ -270,6 +332,16 @@ header a:active {
     color: black;
 }
 
+/* адаптив блока преподавателей */
+
+@media (max-width: 1000px) {
+
+    .teachers{
+     display: none;
+    }
+
+  }
+
 /* Блок наши программы */
 
 .programs{
@@ -306,6 +378,24 @@ header a:active {
     font-family: 1.25rem;
 }
 
+/* адаптив блока наши программы */
+
+@media (max-width: 1000px) {
+
+    .programs h1{
+        text-align: center;
+    }
+
+    .program{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .numbers{
+       display: none; 
+    }
+}
+
 /* Блок наши партнеры */
 
 .partners{
@@ -321,6 +411,23 @@ header a:active {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+/* адаптив блока наши партнеры */
+
+@media (max-width: 1000px) {
+
+    .partners h1{
+        text-align: center;
+    }
+
+    .partner_up, .partner_down{
+        flex-direction: column;
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
 }
 
 /* FOOTER */
@@ -344,3 +451,16 @@ footer {
     font-family: medium;
     font-size: 0.88rem;
 }
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+    }
+  
+  }
