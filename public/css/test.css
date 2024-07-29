@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'bold';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'medium';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+
+header, .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header a{
+    font-family: medium;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu{
+    margin-left: 5%;
+}
+
+#logo img {
+    max-width: 100%;
+}
+
+header a img {
+    margin-right: 5pt;
+     vertical-align: middle;
+}
+
+::placeholder {
+    color: black;
+}
+
+input#login  {
+    caret-color: transparent;
+    border: none;
+    outline: none;
+    font-family: medium;
+    cursor: pointer;
+    background-color:white;
+    max-width: 50px;
+}
+
+header a:active {
+    transform: scale(0.95);
+}
+
+/* Адаптив header */
+
+@media (max-width: 1000px) {
+
+    .wrapper{
+        width: 100%;
+        max-width: 600px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative; /* Добавляем позиционирование для родительского header */
+    }
+
+    .menu-toggle {
+        display: block; /* Показываем кнопку меню */
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none; /* Скрываем основное меню */
+        position: absolute;
+        top: calc(100% + 10px); /* Меню будет располагаться под кнопкой с отступом 10px */
+        right: 0;
+        left: 0;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        text-align: center; /* Центрируем элементы внутри меню */
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
+
+    .menu a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .menu input {
+        max-width: initial; /* Вернуть изначальную ширину для поля ввода */
+    }
+
+    .menu.active {
+        display: block; /* Показываем меню при активации */
+    }
+}
+
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
+    .menu-toggle {
+        display: none;
+    }
+  }
+
+/* Блок теста*/
+
+#questionContainer {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #F6F7F9;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    -moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    text-align: center;
+}
+
+.question {
+    font-family: regular;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.answers .answer {
+    margin-bottom: 10px;
+}
+
+.answers{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-text {
+    font-family: regular;
+    font-size: 0.88rem;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 11rem;
+}
+
+.answer-text.selected {
+    background: linear-gradient(to right, #F7941D, #27AAE1);
+    color: white;
+}
+
+.progress-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#progress{
+    font-family: regular;
+    font-size: 1.13rem;
+}
+
+.button {
+    font-family: medium;
+    font-size: 16px;
+    background-color: #F7941D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #27AAE1;
+}
+
+.hide {
+    display: none;
+}
+
+#result-container{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#result-container h2{
+    font-family: regular;
+    font-size: 1.5rem;
+}
+
+.cardtxt h3{
+    font-family: regular;
+    font-size:1.13rem; 
+}
+
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #F6F7F9;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    -moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+    text-align: center;
+    width: 26.89rem;
+}
+
+.card p{
+    font-family: regular;
+    color: rgb(79, 79, 79);
+    font-size: 0.75rem;
+}
+
+#A1{
+    background-color: rgb(199, 238, 255);
+}
+
+#A2{
+    background-color: rgb(255, 206, 148);
+}
+
+#B1{
+    background-color: rgb(255, 227, 142);
+}
+
+#B2{
+    background-color: rgb(221, 221, 255);
+}
+
+#C1{
+    background-color: rgb(184, 239, 207);
+}
+
+#C2{
+    background-color: rgb(199, 238, 255);
+}
+
+.cardtxt .button {
+    margin-top: 20px;
+}
