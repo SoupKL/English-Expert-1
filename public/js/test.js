@@ -259,6 +259,9 @@ function loadNextQuestion() {
     }
 }
 
+
+
+
 function showResult() {
     document.getElementById('quiz-container').style.display = 'none';
     resultContainer.classList.remove('hide');
