@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/new.css') }}">
-    <link rel="icon" href="/src/img/main/logo.svg" type="image/png">
+    <link rel="icon" href="{{ asset('/img/main/logo.svg') }}" type="image/png">
     <title>Новость</title>
 </head>
 <body>
@@ -14,37 +14,38 @@
 <div class="up">
 
     <div class="wrapper">
-    <header>
-        <div id="logo">
-            <a href="/html/main.html"><img src="/src/img/main/logo_white.svg" alt="English Expert Logo"></a>
-        </div>
-        <div class="menu-toggle">
-            <img src="/src/img/main/header_swip_white.svg" alt="Menu Icon">
-        </div>
-        <nav class="menu">
-            <a href="/html/all_courses.html"><img src="/src/img/main/all_curs.svg">Все курсы</a>
-            <a href="/html/all_events.html">Мероприятия</a>
-            <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
-            <a href="tel:8005553535">8 800 555-35-35</a>
-            <form action="login.php" method="post">
-                <a href="/html/login_registration.html"><img src="/src/img/all_events/person.svg"><input
-                    type="text" id="login" name="loginname"
-                    placeholder="Войти"></a>
-            </form>
-        </nav>
-    </header>
+        <header>
+            <div id="logo">
+                <a href="{{ route('main') }}"><img src="{{ asset('img/main/logo_white.svg') }}" alt="English Expert Logo"></a>
+            </div>
+            <div class="menu-toggle">
+                <img src="{{ asset('img/main/header_swip_white.svg') }}" alt="Menu Icon">
+            </div>
+            <nav class="menu">
+                <a href="{{ route('all_courses') }}"><img src="{{ asset('img/main/all_curs.svg') }}" >Все курсы</a>
+                <a href="{{ route('all_events') }}">Мероприятия</a>
+                <a href="#"><img src="{{ asset('img/main/geolocation.svg') }}">Владивосток</a>
+                <a href="tel:8005553535">8 800 555-35-35</a>
+                <form action="login.php" method="post">
+                    <a href="{{ route('login_registration') }}"><img src="{{ asset('img/all_events/person.svg') }}"><input
+                        type="text" id="login" name="loginname"
+                        placeholder="Войти"></a>
+                </form>
+            </nav>
+        </header>
 </div>
 
-<script src="/src/js/menu.js"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
 
 </div>
+
 
 <!-- Блок новости -->
 
     <div class="wrapper">
 
         <div class="pagination">
-            <a href="/html/all_news.html">Все новости</a>
+            <a href="{{ route('all_news') }}">Все новости</a>
         </div>
 
         <div class="div container">
@@ -57,7 +58,7 @@
                     в English Expert, чтобы начать свой путь к владению английским сегодня.</p>
             </div>
 
-            <img src="/src/img/all_news/new2.svg" alt="">
+            <img src="{{ asset('img/all_news/new2.svg') }}"alt="">
 
             <div class="txt">
                 <p>Детали предложения:</p>
@@ -91,7 +92,7 @@
     <footer>
         <div class="wrapper">
             <div class="info_f">
-                <img src="/src/img/main/logo_white.svg">
+                <img src="{{ asset('img/main/logo_white.svg')}}">
                 <p>8 800 555-35-35</p>
                 <p>г. Владивосток, ул. Жигура, д. 26</p>
                 <p>English_Expert@mail.ru</p>

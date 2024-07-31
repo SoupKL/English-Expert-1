@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/all_news.css') }}">
-    <link rel="icon" href="/src/img/main/logo.svg" type="image/png">
+    <link rel="icon" href="{{ asset('/img/main/logo.svg') }}" type="image/png">
     <title>Новости</title>
 </head>
 <body>
@@ -14,29 +14,28 @@
 <div class="up">
 
     <div class="wrapper">
-    <header>
-        <div id="logo">
-            <a href="/html/main.html"><img src="/src/img/main/logo_white.svg" alt="English Expert Logo"></a>
-        </div>
-        <div class="menu-toggle">
-            <img src="/src/img/main/header_swip_white.svg" alt="Menu Icon">
-        </div>
-        <nav class="menu">
-            <a href="/html/all_courses.html"><img src="/src/img/main/all_curs.svg">Все курсы</a>
-            <a href="/html/all_events.html">Мероприятия</a>
-            <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
-            <a href="tel:8005553535">8 800 555-35-35</a>
-            <form action="login.php" method="post">
-                <a href="/html/login_registration.html"><img src="/src/img/all_events/person.svg"><input
-                    type="text" id="login" name="loginname"
-                    placeholder="Войти"></a>
-            </form>
-        </nav>
-    </header>
-</div>
+        <header>
+            <div id="logo">
+                <a href="{{ route('main') }}"><img src="{{ asset('img/main/logo_white.svg') }}" alt="English Expert Logo"></a>
+            </div>
+            <div class="menu-toggle">
+                <img src="{{ asset('img/main/header_swip_white.svg') }}" alt="Menu Icon">
+            </div>
+            <nav class="menu">
+                <a href="{{ route('all_courses') }}"><img src="{{ asset('img/main/all_curs.svg') }}" >Все курсы</a>
+                <a href="{{ route('all_events') }}">Мероприятия</a>
+                <a href="#"><img src="{{ asset('img/main/geolocation.svg') }}">Владивосток</a>
+                <a href="tel:8005553535">8 800 555-35-35</a>
+                <form action="login.php" method="post">
+                    <a href="{{ route('login_registration') }}"><img src="{{ asset('img/all_events/person.svg') }}"><input
+                        type="text" id="login" name="loginname"
+                        placeholder="Войти"></a>
+                </form>
+            </nav>
+        </header>
+    </div>
 
-<script src="/src/js/menu.js"></script>
-
+    <script src="{{ asset('js/menu.js') }}"></script>
 </div>
 
 <!-- Блок новостей -->
@@ -46,80 +45,80 @@
     <div class="news-container">
         
         <div class="news-card">
-            <img src="/src/img/all_news/card1.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card1.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">16 ноября 2024</span>
                 <h3 class="news-title">Онлайн Турнир по Английскому: Призы для Победителей!</h3>
                 <p class="news-description">Участвуйте в нашем онлайн турнире по
                     английскому и выигрывайте призы. Регистрация открыта!</p>
-                <a href="/html/new1.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new1') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>
 
         <div class="news-card">
-            <img src="/src/img/all_news/card2.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card2.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">1 июня 2024</span>
                 <h3 class="news-title">Летняя Скидка 20%!</h3>
                 <p class="news-description">Получите 20% скидку на все курсы этим летом.
                     Записывайтесь и начните учить английский уже сегодня!</p>
-                <a href="new2.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new2') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>
 
         <div class="news-card">
-            <img src="/src/img/all_news/card3.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card3.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">25 августа 2024</span>
                 <h3 class="news-title">Бесплатный Вебинар: Произношение</h3>
                 <p class="news-description">Присоединяйтесь к вебинару 25 июня в 18:00 МСК и
                     улучшите своё произношение. Регистрация на сайте.</p>
-                <a href="new3.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new3') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>
 
         <div class="news-card">
-            <img src="/src/img/all_news/card4.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card4.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">1 сентрября 2024</span>
                 <h3 class="news-title">Конкурс Эссе: Выиграйте Обучение</h3>
                 <p class="news-description">Пишите эссе на тему "Почему я хочу выучить
                     английский" и выигрывайте бесплатные курсы. Подробности на сайте.</p>
-                <a href="new4.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new4') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>
 
         <div class="news-card">
-            <img src="/src/img/all_news/card5.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card5.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">13 октября 2024</span>
                 <h3 class="news-title">Разговорные Клубы с Носителями</h3>
                 <p class="news-description">Присоединяйтесь к нашим разговорным клубам с
                     носителями языка каждую субботу. Расписание на сайте.</p>
-                <a href="new5.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new5') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>
 
         <div class="news-card">
-            <img src="/src/img/all_news/card6.svg" alt="News Image">
+            <img src="{{ asset('img/all_news/card6.svg') }}" alt="News Image">
             <div class="news-info">
                 <span class="news-date">6 ноября 2024</span>
                 <h3 class="news-title">Встреча с Известным Лингвистом: Получите
                     Советы от Профессионала!</h3>
                 <p class="news-description">Встреча с известным лингвистом для
                     обсуждения английского языка. Дата и время на сайте.</p>
-                <a href="new6.html" class="read-more">
-                    Подробнее <img src="/src/img/all_news/arrow.svg" alt="Arrow Icon">
+                <a  href="{{ route('new6') }}" class="read-more">
+                    Подробнее <img src="{{ asset('img/all_news/arrow.svg') }}" alt="Arrow Icon">
                 </a>
             </div>
         </div>

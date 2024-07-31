@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/cours.css') }}">
-    <link rel="icon" href="/src/img/main/logo.svg" type="image/png">
+    <link rel="icon" href="{{ asset('/img/main/logo.svg') }}" type="image/png">
     <title>Для работы</title>
 </head>
 <body>
+
 <!-- HEADER -->
 
 <div class="wrapper">
   <header>
       <div id="logo">
-          <a href="/html/main.html"><img src="/src/img/main/logo.svg" alt="English Expert Logo"></a>
+          <a href="{{ route('main') }}"><img src="{{ asset('img/main/logo.svg') }}" alt="English Expert Logo"></a>
       </div>
       <div class="menu-toggle">
-          <img src="/src/img/main/header_swip.svg" alt="Menu Icon">
+          <img src="{{ asset('img/main/header_swip.svg') }}" alt="Menu Icon">
       </div>
       <nav class="menu">
-          <a href="/html/all_courses.html">Все курсы</a>
-          <a href="/html/all_events.html">Мероприятия</a>
-          <a href="/html/about.html">О нас</a>
-          <a href="#"><img src="/src/img/main/geolocation.svg">Владивосток</a>
+          <a href="{{ route('all_courses') }}"><img src="{{ asset('img/main/all_curs.svg') }}" >Все курсы</a>
+          <a href="{{ route('all_events') }}">Мероприятия</a>
+          <a href="{{ route('about') }}">О нас</a>
+          <a href="#"><img src="{{ asset('img/main/geolocation.svg') }}">Владивосток</a>
           <a href="tel:8005553535">8 800 555-35-35</a>
           <form action="login.php" method="post">
-              <a href="/html/login_registration.html"><img src="/src/img/main/person.svg"><input
+              <a href="{{ route('login_registration') }}"><img src="{{ asset('img/main/person.svg') }}"><input
                   type="text" id="login" name="loginname"
                   placeholder="Войти"></a>
           </form>
@@ -33,14 +34,14 @@
   </header>
 </div>
 
-<script src="/src/js/menu.js"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
 
 <!-- Блок "Для работы" -->
 
 <section class="level">
 
         <div class="card_level" id="levelwork">
-            <img src="/src/img/cours/levelwork.svg" alt="">
+          <img src="{{ asset('img/cours/levelwork.svg') }}" alt="">
         </div>
 
 </section>
@@ -51,32 +52,32 @@
     <div class="purposes">
 
         <div class="purposes_left">
-            <img src="/src/img/cours/rabbit1.svg" alt="">
+          <img src="{{ asset('img/cours/rabbit1.svg')}}" alt="">
         </div>
 
         <div class="purposes_right">
 
             <div class="purposes_card">
-                <img src="/src/img/cours/purpose_1.svg" alt="">
-                <h3>Цель 1</h3>
+              <img src="{{ asset('img/cours/purpose_1.svg')}}"  alt="">
+              <h3>Цель 1</h3>
                 <p>Освоение специализированной терминологии, используемой в веб-разработке и программировании.</p>
             </div>
 
             <div class="purposes_card">
-                <img src="/src/img/cours/purpose_2.svg" alt="">
-                <h3>Цель 2</h3>
+              <img src="{{ asset('img/cours/purpose_2.svg')}}" alt="">
+              <h3>Цель 2</h3>
                 <p>Понимание и написание кода на английском языке для повышения профессиональной эффективности.</p>
             </div>
 
             <div class="purposes_card">
-                <img src="/src/img/cours/purpose_3.svg" alt="">
-                <h3>Цель 3</h3>
+              <img src="{{ asset('img/cours/purpose_3.svg')}}" alt="">
+              <h3>Цель 3</h3>
                 <p>Развитие навыков общения и ведения переговоров с международными командами и клиентами.</p>
             </div>
 
             <div class="purposes_card">
-                <img src="/src/img/cours/purpose_4.svg" alt="">
-                <h3>Цель 4</h3>
+              <img src="{{ asset('img/cours/purpose_4.svg')}}" alt="">
+              <h3>Цель 4</h3>
                 <p>Участие в технических дискуссиях и конференциях на английском языке для обмена опытом и знаниями.</p>
             </div>
 
@@ -90,7 +91,7 @@
 <section class="photo">
     <div class="wrapper">
 
-        <img src="/src/img/cours/photowork.svg" alt="">
+      <img src="{{ asset('img/cours/photowork.svg')}}" alt="">
 
     </div>
 </section>
@@ -98,39 +99,39 @@
 <!-- Блок приоритетов -->
 
 <div class="wrapper">
-    <section class="priorities">
+  <section class="priorities">
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_1.svg" alt="">
-            <p>Основы английского языка для начинающих</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_1.svg')}}" alt="">
+          <p>Основы английского языка для начинающих</p>
+      </div>
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_2.svg" alt="">
-            <p>Английский для взрослых и детей</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_2.svg')}}" alt="">
+          <p>Английский для взрослых и детей</p>
+      </div>
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_3.svg" alt="">
-            <p>Онлайн-уроки английского языка</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_3.svg')}}" alt="">
+          <p>Онлайн-уроки английского языка</p>
+      </div>
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_4.svg" alt="">
-            <p>Профессиональное обучение английскому</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_4.svg')}}" alt="">
+          <p>Профессиональное обучение английскому</p>
+      </div>
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_5.svg" alt="">
-            <p>Языковые игры и практические занятия</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_5.svg')}}" alt="">
+          <p>Языковые игры и практические занятия</p>
+      </div>
 
-        <div class="priority">
-            <img src="/src/img/cours/icon_6.svg" alt="">
-            <p>Сеансы разговорной практики с носителями языка</p>
-        </div>
+      <div class="priority">
+          <img src="{{ asset('img/cours/icon_6.svg')}}" alt="">
+          <p>Сеансы разговорной практики с носителями языка</p>
+      </div>
 
-    </section>
+  </section>
 </div>
 
 <!-- Блок преимуществ -->
@@ -175,68 +176,38 @@
           
                     <div class="card-item__wrapper">
                       <div class="card-item__top">
-                        <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
-                        <div class="card-item__type">
-                          <transition name="slide-fade-up">
-                            <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
-                          </transition>
-                        </div>
+                          <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
+                          <div class="card-item__type">
+                              <transition name="slide-fade-up">
+                                  <img v-bind:src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                              </transition>
+                          </div>
                       </div>
                       <label for="cardNumber" class="card-item__number" ref="cardNumber">
-                        <template v-if="getCardType === 'amex'">
-                          <span v-for="(n, $index) in amexCardMask" :key="$index">
-                            <transition name="slide-fade-up">
-                              <div class="card-item__numberItem" v-if="$index > 4 && $index < 14 && cardNumber.length > $index && n.trim() !== ''">*</div>
-                              <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
-                                {{cardNumber[$index]}}
-                              </div>
-                              <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">{{n}}</div>
-                            </transition>
-                          </span>
-                        </template>
-          
-                        <template v-else>
-                          <span v-for="(n, $index) in otherCardMask" :key="$index">
-                            <transition name="slide-fade-up">
-                              <div class="card-item__numberItem" v-if="$index > 4 && $index < 15 && cardNumber.length > $index && n.trim() !== ''">*</div>
-                              <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
-                                {{cardNumber[$index]}}
-                              </div>
-                              <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">{{n}}</div>
-                            </transition>
-                          </span>
-                        </template>
+                          <template v-if="getCardType === 'amex'">
+                              <span v-for="(n, $index) in amexCardMask" :key="$index">
+                                  <transition name="slide-fade-up">
+                                      <div class="card-item__numberItem" v-if="$index > 4 && $index < 14 && cardNumber.length > $index && n.trim() !== ''">*</div>
+                                      <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
+                                          @{{ cardNumber[$index] }}
+                                      </div>
+                                      <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">@{{ n }}</div>
+                                  </transition>
+                              </span>
+                          </template>
+                          <template v-else>
+                              <span v-for="(n, $index) in otherCardMask" :key="$index">
+                                  <transition name="slide-fade-up">
+                                      <div class="card-item__numberItem" v-if="$index > 4 && $index < 15 && cardNumber.length > $index && n.trim() !== ''">*</div>
+                                      <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" :key="$index" v-else-if="cardNumber.length > $index">
+                                          @{{ cardNumber[$index] }}
+                                      </div>
+                                      <div class="card-item__numberItem" :class="{ '-active' : n.trim() === '' }" v-else :key="$index + 1">@{{ n }}</div>
+                                  </transition>
+                              </span>
+                          </template>
                       </label>
-                      <div class="card-item__content">
-                        <label for="cardName" class="card-item__info" ref="cardName">
-                          <div class="card-item__holder">Владелец Карты</div>
-                          <transition name="slide-fade-up">
-                            <div class="card-item__name" v-if="cardName.length" key="1">
-                              <transition-group name="slide-fade-right">
-                                <span class="card-item__nameItem" v-for="(n, $index) in cardName.replace(/\s\s+/g, ' ')" v-if="$index === $index" v-bind:key="$index + 1">{{n}}</span>
-                              </transition-group>
-                            </div>
-                            <div class="card-item__name" v-else key="2">Полное Имя</div>
-                          </transition>
-                        </label>
-                        <div class="card-item__date" ref="cardDate">
-                          <label for="cardMonth" class="card-item__dateTitle">Истекает</label>
-                          <label for="cardMonth" class="card-item__dateItem">
-                            <transition name="slide-fade-up">
-                              <span v-if="cardMonth" v-bind:key="cardMonth">{{cardMonth}}</span>
-                              <span v-else key="2">MM</span>
-                            </transition>
-                          </label>
-                          /
-                          <label for="cardYear" class="card-item__dateItem">
-                            <transition name="slide-fade-up">
-                              <span v-if="cardYear" v-bind:key="cardYear">{{String(cardYear).slice(2,4)}}</span>
-                              <span v-else key="2">YY</span>
-                            </transition>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
+                  </div>
                   </div>
                   <div class="card-item__side -back">
                     <div class="card-item__cover">
@@ -262,35 +233,36 @@
                 <div class="card-input">
                   <label for="cardNumber" class="card-input__label">Номер карты</label>
                   <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
-                </div>
-                <div class="card-input">
+              </div>
+              
+              <div class="card-input">
                   <label for="cardName" class="card-input__label">Владелец</label>
                   <input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
-                </div>
-                <div class="card-form__row">
-                  <div class="card-form__col">
+              </div>
+              <div class="card-form__row">
+                <div class="card-form__col">
                     <div class="card-form__group">
-                      <label for="cardMonth" class="card-input__label">Срок годности</label>
-                      <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
-                        <option value="" disabled selected>Месяц</option>
-                        <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
-                          {{n < 10 ? '0' + n : n}}
-                        </option>
-                      </select>
-                      <select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
-                        <option value="" disabled selected>Год</option>
-                        <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
-                          {{$index + minCardYear}}
-                        </option>
-                      </select>
+                        <label for="cardMonth" class="card-input__label">Срок годности</label>
+                        <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+                            <option value="" disabled selected>Месяц</option>
+                            <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
+                                @{{ n < 10 ? '0' + n : n }}
+                            </option>
+                        </select>
+                        <select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
+                            <option value="" disabled selected>Год</option>
+                            <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
+                                @{{ $index + minCardYear }}
+                            </option>
+                        </select>
                     </div>
-                  </div>
-                  <div class="card-form__col -cvv">
+                </div>
+                <div class="card-form__col -cvv">
                     <div class="card-input">
-                      <label for="cardCvv" class="card-input__label">CVV</label>
-                      <input type="text" class="card-input__input" id="cardCvv" v-mask="'####'" maxlength="4" v-model="cardCvv" v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
+                        <label for="cardCvv" class="card-input__label">CVV</label>
+                        <input type="text" class="card-input__input" id="cardCvv" v-mask="'####'" maxlength="4" v-model="cardCvv" v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
                     </div>
-                  </div>
+                </div>
             </div>
             <button class="card-form__button">Отправить</button>
           </div>
@@ -298,15 +270,15 @@
       </div>
     </div>
   </div>
-
-<!-- Подключение Vue.js и других библиотек через CDN -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue-credit-card-validation/dist/vue-credit-card-validation.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
-
-<script  src="/src/js/modal.js"></script>
-<script src="/src/js/app.js"></script>
+  
+  <!-- Подключение Vue.js и других библиотек через CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-credit-card-validation/dist/vue-credit-card-validation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
+  
+  <script src="{{ asset('js/modal.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
 
 
 <!-- Блок содержание курса -->
@@ -332,7 +304,7 @@
         </div>
 
         <div class="content_right">
-            <img src="/src/img/cours/rabbit2.svg" alt="">
+          <img src="{{ asset('img/cours/rabbit2.svg')}}" alt="">
         </div>
 
     </section>
@@ -341,38 +313,38 @@
 <!-- Блок преподавателей -->
 
 <section class="teachers">
-    <div class="wrapper">
+  <div class="wrapper">
 
-        <h3>Наши преподаватели</h3>
+      <h3>Наши преподаватели</h3>
 
-        <div class="cards">
-            <div class="card">
-                <img src="/src/img/cours/comment1.svg" alt="">
-                <h3>Анна Морозова</h3>
-                <p> Изысканная мотиваторша с глубоким
-                    пониманием языка</p>
-            </div>
-            <div class="card">
-                <img src="/src/img/cours/comment2.svg" alt="">
-                <h3>Иван Белов</h3>
-                <p>Энергичный языковед с богатым
-                    опытом преподавания</p>
-            </div>
-            <div class="card">
-                <img src="/src/img/cours/comment3.svg" alt="">
-                <h3>Елена Николаева</h3>
-                <p>Терпеливая и креативная педагог,
-                    способная адаптироваться к нуждам каждого ученика</p>
-            </div>
-            <div class="card">
-                <img src="/src/img/cours/comment4.svg" alt="">
-                <h3>Дмитрий Ковалев</h3>
-                <p>Заботливый и инновационный учитель,
-                    вдохновляющий на достижение лучших результатов</p>
-            </div>
-        </div>
+      <div class="cards">
+          <div class="card">
+              <img src="{{ asset('img/cours/comment1.svg')}}" alt="">
+              <h3>Анна Морозова</h3>
+              <p> Изысканная мотиваторша с глубоким
+                  пониманием языка</p>
+          </div>
+          <div class="card">
+              <img src="{{ asset('img/cours/comment2.svg')}}" alt="">
+              <h3>Иван Белов</h3>
+              <p>Энергичный языковед с богатым
+                  опытом преподавания</p>
+          </div>
+          <div class="card">
+              <img src="{{ asset('img/cours/comment3.svg')}}" alt="">
+              <h3>Елена Николаева</h3>
+              <p>Терпеливая и креативная педагог,
+                  способная адаптироваться к нуждам каждого ученика</p>
+          </div>
+          <div class="card">
+              <img src="{{ asset('img/cours/comment4.svg')}}" alt="">
+              <h3>Дмитрий Ковалев</h3>
+              <p>Заботливый и инновационный учитель,
+                  вдохновляющий на достижение лучших результатов</p>
+          </div>
+      </div>
 
-    </div>
+  </div>
 </section>
 
 <!-- Блок найди ответ -->
@@ -425,7 +397,7 @@
 <footer>
     <div class="wrapper">
         <div class="info_f">
-            <img src="/src/img/main/logo_white.svg">
+          <img src="{{ asset('img/main/logo_white.svg')}}">
             <p>8 800 555-35-35</p>
             <p>г. Владивосток, ул. Жигура, д. 26</p>
             <p>English_Expert@mail.ru</p>

@@ -9,37 +9,37 @@ var work = document.getElementById('work');
 var purpose = document.getElementById('purpose');
 
 A1.addEventListener('click', function() {
-    window.location.href = 'course_A1.html'; 
+    window.location.href = 'course_A1'; 
 });
 
 A2.addEventListener('click', function() {
-    window.location.href = 'course_A2.html'; 
+    window.location.href = 'course_A2'; 
 });
 
 B1.addEventListener('click', function() {
-    window.location.href = 'course_B1.html'; 
+    window.location.href = 'course_B1'; 
 });
 
 B1.addEventListener('click', function() {
-    window.location.href = 'course_B1.html'; 
+    window.location.href = 'course_B1'; 
 });
 
 B2.addEventListener('click', function() {
-    window.location.href = 'course_B2.html'; 
+    window.location.href = 'course_B2'; 
 });
 
 C1.addEventListener('click', function() {
-    window.location.href = 'course_C1.html'; 
+    window.location.href = 'course_C1'; 
 });
 
 C2.addEventListener('click', function() {
-    window.location.href = 'course_C2.html'; 
+    window.location.href = 'course_C2'; 
 });
 
 work.addEventListener('click', function() {
-    window.location.href = 'work.html'; 
+    window.location.href = 'work'; 
 });
 
 purpose.addEventListener('click', function() {
-    window.location.href = 'purpose.html'; 
+    window.location.href = 'purpose'; 
 });

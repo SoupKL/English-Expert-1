@@ -263,7 +263,7 @@ header a:active {
 }
 
 #games{
-    background-image: url(/src/img/all_events/online.svg);
+    background-image: url('../img/all_events/online.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

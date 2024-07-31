@@ -259,9 +259,6 @@ function loadNextQuestion() {
     }
 }
 
-
-
-
 function showResult() {
     document.getElementById('quiz-container').style.display = 'none';
     resultContainer.classList.remove('hide');
@@ -287,7 +284,7 @@ function showResult() {
     courseCards[level].classList.remove('hide');
     courseButtons[level].classList.remove('hide');
     courseButtons[level].addEventListener('click', function() {
-        window.location.href = `/course_${level}.blade.php`;
+        window.location.href = `/course_${level}`;
     });
 }
 
