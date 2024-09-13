@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import TestComponent from './components/test-component/test-component.vue'
 import ReviewUser from './components/review-user/review-user.vue';
-// import scroll from './assets/script/scroll'
+import './assets/script/scroll';
 
 export default {
   components: {
@@ -25,7 +25,7 @@ export default {
       <review-user />
     </div>
   </section>
-  <script src="./assets/script/scroll.js"></script>
+
 
 
 
