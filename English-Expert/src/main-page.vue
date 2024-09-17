@@ -3,11 +3,14 @@ import { RouterLink, RouterView } from 'vue-router'
 import TestComponent from './components/test-component/test-component.vue'
 import ReviewUser from './components/review-user/review-user.vue';
 import './assets/script/scroll';
+import pruposes from './components/puposes/pruposes.vue';
 
 export default {
   components: {
     TestComponent,
     ReviewUser,
+    pruposes
+    
   }
 }
 
@@ -24,12 +27,15 @@ export default {
     <div class="slider">
       <review-user />
     </div>
+    <pruposes
+      textPruposes1="fwefwefwefewfewfewfewfewfewfewfewf"
+    />
   </section>
 
 
 
 
-  <RouterView />
+  <!-- <RouterView /> -->
 </template>
 
 <style scoped>
