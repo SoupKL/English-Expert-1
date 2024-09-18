@@ -1,6 +1,4 @@
-<script>
-import './pruposes';
-</script>
+<script lang="js" src="./pruposes.js" />
 
 <template>
     <div class="purposes">
@@ -20,24 +18,19 @@ import './pruposes';
             <div class="purposes_card">
                 <img src="../../../src/assets/cours/purpose_2.svg" alt="">
                 <h3>Цель 2</h3>
-                <p>Формирование навыков простого чтения
-                    и понимания базовых текстов на английском языке</p>
+                <p>{{ textPruposes2 }}</p>
             </div>
 
             <div class="purposes_card">
                 <img src="../../../src/assets/cours/purpose_3.svg" alt="">
                 <h3>Цель 3</h3>
-                <p>Развитие устной речи для уверенного общения
-                    в базовых ситуациях: знакомство, путешествия,
-                    повседневные дела</p>
+                <p>{{ textPruposes3 }}</p>
             </div>
 
             <div class="purposes_card">
                 <img src="../../../src/assets/cours/purpose_4.svg" alt="">
                 <h3>Цель 4</h3>
-                <p>Подготовка к простым письменным коммуникациям:
-                    заполнение форм, написание коротких сообщений
-                    и эссе.</p>
+                <p>{{ textPruposes4 }}</p>
             </div>
 
         </div>
