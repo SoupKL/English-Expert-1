@@ -10,11 +10,11 @@ export default {
             type: String,
             default: 'Sorry!!!',
         },
-        textPrupose3: {
+        textPruposes3: {
             type: String,
             default: 'Sorry!!!',
         },
-        textPrupose4: {
+        textPruposes4: {
             type: String,
             default: 'Sorry!!!',
         }

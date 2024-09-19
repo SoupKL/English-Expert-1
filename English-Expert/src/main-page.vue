@@ -4,12 +4,14 @@ import TestComponent from './components/test-component/test-component.vue'
 import ReviewUser from './components/review-user/review-user.vue';
 import './assets/script/scroll';
 import pruposes from './components/puposes/pruposes.vue';
+import Priorities from './components/priorities/priorities.vue';
 
 export default {
   components: {
     TestComponent,
     ReviewUser,
-    pruposes
+    pruposes,
+    Priorities
     
   },
   
@@ -28,9 +30,10 @@ export default {
     <div class="slider">
       <review-user />
     </div>
-    <pruposes
+    <!-- <pruposes
       textPruposes1="fwefwefwefewfewfewfewfewfewfewfewf"
-    />
+    /> -->
+    <priorities/>
   </section>
 
 
