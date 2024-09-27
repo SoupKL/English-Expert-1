@@ -1,22 +1,13 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-
 import router from './router'
-import TestComponent from './components/test-component/test-component.vue'
-import MainPage from './main-page.vue'
+import App from './App.vue' // Корневой компонент
 
-const app = createApp(MainPage)
+const app = createApp(App)
 
+// Подключаем Pinia и роутер
 app.use(createPinia())
 app.use(router)
 
+// Монтируем приложение
 app.mount('#app')
-
-export default {
-    components: {
-        TestComponent,
-    }
-}
