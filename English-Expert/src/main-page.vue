@@ -4,14 +4,16 @@ import TestComponent from './components/test-component/test-component.vue'
 import ReviewUser from './components/review-user/review-user.vue';
 import './assets/script/scroll';
 import pruposes from './components/puposes/pruposes.vue';
-import Priorities from './components/priorities/priorities.vue';
+import Priorities from './components/priorities/priorities.vue'
+import new1 from './components/new1/new_1.vue';
 
 export default {
   components: {
+    new1,
     TestComponent,
     ReviewUser,
     pruposes,
-    Priorities
+    Priorities,
     
   },
   
@@ -25,6 +27,7 @@ export default {
       <test-component />
     </header>
   </div>
+  <new1/>
   <section class="testimonials">
     <h2>Отзывы наших студентов</h2>
     <div class="slider">
@@ -43,6 +46,7 @@ export default {
 </template>
 
 <style scoped>
+
 .testimonials {
     width: 100%;
     height: 37rem;

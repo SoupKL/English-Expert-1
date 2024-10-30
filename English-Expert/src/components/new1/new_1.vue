@@ -1,0 +1,451 @@
+<script lang="js" src="./new_1.js"/>
+<template>
+
+<!-- Блок новостей -->
+<div class="wrapper">
+
+<h3 id="txt">Новости English Expert</h3>
+<div class="news-container">
+    
+    <div v-for="newsItem in newsCard" class="news-card">
+        <img :src="newsItem.image" alt="News Image">
+        <div class="news-info">
+          <span class="news-date">{{ newsItem.date }}</span>
+          <h3 class="news-title">{{ newsItem.title }}</h3>
+          <p class="news-description">{{ newsItem.description }}</p>
+          <a href="new1.html" class="read-more">
+            Подробнее <img :src="newsItem.arrow" alt="Arrow Icon">
+          </a>
+        </div>
+    </div> 
+
+</div>
+
+</div>
+
+<!-- БЛОК ФОРМЫ -->
+
+<div class="wrapper">
+
+<div class="rabbit_helper">
+    
+    <div v-for="Rabbit in Rabbits" div class="rh_l">
+        <img :src="Rabbit.rabbitimg" alt="кролик помощник нижний">
+    </div>
+
+    <div class="rh_r">
+        <form action="#" method="POST">
+            <div class="form-group full-width">
+                <input type="text" id="name" name="name" placeholder="Ваше имя">
+            </div>
+            <div class="form-group horizontal">
+                <div>
+                    <input type="phone" id="phone" name="phone" placeholder="Ваш телефон">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Ваш e-mail">
+                </div>
+            </div>
+            <div class="form-group vertical">
+                <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</div>
+
+</template>
+
+<style>
+@font-face {
+    font-family: "bold";
+    src: url(/src/font/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "medium";
+    src: url(/src/font/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: "regular";
+    src: url(/src/font/Montserrat-Regular.ttf);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+
+.up{
+    background-color: #00093C;
+}
+
+header, .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header a{
+    font-family: medium;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu{
+    margin-left: 5%;
+}
+
+#logo img {
+    max-width: 100%;
+}
+
+header a img {
+    margin-right: 5pt;
+     vertical-align: middle;
+}
+
+::placeholder {
+    color: white;
+}
+
+input#login  {
+    caret-color: transparent;
+    border: none;
+    outline: none;
+    font-family: medium;
+    cursor: pointer;
+    background-color:#00093C;
+    max-width: 50px;
+}
+
+header a:active {
+    transform: scale(0.95);
+}
+
+/* Адаптив header */
+
+@media (max-width: 1000px) {
+
+    .wrapper{
+        width: 100%;
+        max-width: 600px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative; /* Добавляем позиционирование для родительского header */
+    }
+
+    .menu-toggle {
+        display: block; /* Показываем кнопку меню */
+        cursor: pointer;
+    }
+
+    .menu {
+        display: none; /* Скрываем основное меню */
+        position: absolute;
+        top: calc(100% + 10px); /* Меню будет располагаться под кнопкой с отступом 10px */
+        right: 0;
+        left: 0;
+        background-color: #00093C;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        text-align: center; /* Центрируем элементы внутри меню */
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+    }
+
+    .menu a:hover {
+        background-color: #f0f0f0;
+        color: #00093C;
+    }
+
+    .menu input {
+        max-width: initial; /* Вернуть изначальную ширину для поля ввода */
+    }
+
+    .menu.active {
+        display: block; /* Показываем меню при активации */
+    }
+}
+
+/* Скрытие иконки меню при разрешении больше 900px */
+@media (min-width: 1000px) {
+    .menu-toggle {
+        display: none;
+    }
+  }
+
+/* Блок новостей */
+
+#txt{
+    font-family: bold;
+    font-size: 2.25rem;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.news-card {
+    width: calc(33.33% - 20px); /* 3 карточки в ряд */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 15px 25px -10px rgba(39, 170, 225, 0.5),  0 -15px 25px -10px rgba(247, 148, 29, 0.5);
+}
+
+.news-card img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+}
+
+.news-info {
+    padding: 20px;
+    background: #fff;
+}
+
+.news-date {
+    font-size: 0.75rem;
+    color: rgb(0, 0, 0);
+    font-family: regular;
+}
+
+.news-title {
+    margin: 10px 0;
+    font-size: 1.13rem;
+    color: #00093C;
+    font-family: medium;
+}
+
+.news-description {
+    color: #4F4F4F;
+    font-family: regular;
+    font-size: 0.75rem;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(0, 9, 60);
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin-top: 10px;
+    font-family: medium;
+}
+
+.read-more img {
+    margin-left: 5px;
+}
+
+/* Адаптив блок новостей */
+
+@media (max-width: 1000px) {
+
+    #txt{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .news-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .news-card{
+        width: 18rem;
+    }
+
+}
+
+/* БЛОК ФОРМЫ */
+
+.rabbit_helper{
+    margin-top: 15%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: -10%; 
+    z-index: 1; 
+}
+
+.rh_l, .rh_r{
+    padding: 2%;
+}
+
+.rh_r{
+    width: 27.5rem;
+}
+
+form {
+    padding: 3%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group.horizontal {
+    display: flex;
+    justify-content: space-between;
+    width: 27.5rem;
+}
+
+.form-group.horizontal div {
+    width: 13.13rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="phone"] {
+    padding: 8px;
+    border: none;
+    background-color: #bebebe;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-family: regular;
+    height: 3.13rem;
+}
+
+.form-group input[type="text"]{
+    width: 100%;
+}
+
+.form-group.vertical {
+    display: flex;
+    justify-content: space-between;
+    width: 27.5rem;
+}
+
+.form-group.vertical p {
+    margin: 0;
+    font-size: 0.63rem;
+    width: 13.22rem;
+}
+
+.form-group.vertical button {
+    font-size: 0.88rem;
+    font-family: bold;
+    padding: 10px 20px;
+    background-color: rgb(247, 148, 29);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 13.22rem;
+}
+
+/* Адаптив формы */
+
+@media (max-width: 1000px) {
+    
+    .rabbit_helper {
+        margin-top: 15%;
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 0%; 
+    }
+
+    .rh_l img{
+        width: 90%;
+    }
+
+    .rh_l, .rh_r {
+        width: 100%; /* Делаем элементы шириной 90% */
+        padding: 0;
+    }
+
+    .rh_r {
+        margin-top: 20px; /* Добавляем отступ сверху для формы */
+    }
+    
+    .form-group.horizontal{
+        flex-direction: column;
+        width: 105%;
+    }
+
+    .form-group.full-width{
+        margin-bottom: 0%;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="phone"] {
+        width: 565px;
+        margin-top: 5%;
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 9, 60);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.info_f{
+    display: flex;
+    justify-content: space-between;
+    height: 13.38rem;
+    align-items:end;
+}
+
+.info_f p{
+    font-family: medium;
+    font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+    .info_f{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items:center;
+    }
+
+}
+</style>
