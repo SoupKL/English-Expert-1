@@ -12,7 +12,7 @@
         <a href="#"><img src="/src/assets/main/geolocation.svg">Владивосток</a>
         <a href="tel:8005553535">8 800 555-35-35</a>
         <form action="login.php" method="post">
-            <a href="./login_registration.html"><img src="/src/assets/main/person.svg"><input type="text" id="login"
+            <a href="./auth"><img src="/src/assets/main/person.svg"><input type="text" id="login"
                     name="loginname" placeholder="Войти"></a>
         </form>
     </nav>
