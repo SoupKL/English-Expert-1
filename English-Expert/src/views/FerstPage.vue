@@ -246,17 +246,309 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	/* user-select: none */
 }
 
-.hero {
+.wrapper {
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА */
+
+#education {
 	display: flex;
 	height: 480px;
 	width: 100%;
-	background-image: url('../../src/assets/main/education.svg');
+	content: url('../../src/assets/main/education.svg');
+}
+
+/* Адаптив блока образовательной платформы */
+
+@media (max-width: 1000px) {
+
+	#education{
+		content: url('../../src/assets/about/education_small.svg');
+		width: 100%;
+		height: auto;
+	}
+
+}
+
+/* Блок с основателем */
+
+.inter{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 10%;
+}
+
+.inter_left h3{
+	font-family: bold;
+	font-size: 1.13rem;
+}
+
+.inter_left p{
+	font-family: medium;
+	font-size: 0.88rem;
+}
+
+.inter_right{
+	width: 44.81rem;
+	height: 24.69rem;
+}
+
+.inter_right p{
+	font-family: regular;
+	font-size: 1.13rem;
+}
+
+/* Адаптив блок с основателем */
+
+@media (max-width: 1000px) {
+
+	.inter{
+		flex-direction: column;
+	}
+
+	.inter_left{
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.inter_right{
+		width: 100%;
+	}
+
+	.inter_right p{
+		font-size: 1rem;
+		text-align: center;
+	}
+}
+
+/* Блок наши ценности */
+
+.values{
+	margin-top: 5%;
+}
+
+.values h1{
+	font-family: bold;
+	font-family: 2.25rem;
+}
+
+.cards{
+	display: flex;
+	justify-content: space-between;
+}
+
+.card{
+	width: 13.75rem;
+	margin-top: 2%;
+}
+
+.card p{
+	font-family: medium;
+	font-size: 1rem;
+}
+
+/* адаптив блока наши ценности */
+
+@media (max-width: 1000px) {
+
+	.values{
+		margin-top: -15%;
+	}
+
+	.cards{
+		flex-direction: column;
+		height: 50rem;
+		align-items: center;
+	}
+
+}
+
+/* Блок преподавателей */
+
+.teachers{
+	width: 100%;
+	height: 37.5rem;
+	background-image: url('./src/img/cours/teacher_background.svg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	margin-top: 5%;
+}
+
+.teachers h3{
+	font-family: bold;
+	font-size: 2.25rem;
+	text-align: center;
+	color: white;
+	margin-bottom: 6%;
+}
+
+.cards{
+	display: flex;
+	justify-content: space-between;
+}
+
+.card{
+	width: 17.5rem;
+	height: 22.5rem;
+	background-color: white;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column; /* Выстраиваем элементы по вертикали */
+	justify-content: center; /* Центрируем по вертикали */
+	align-items: center; /* Центрируем по горизонтали */
+	text-align: center;
+}
+
+.card p{
+	font-family: medium;
+	font-size: 0.88rem;
+	padding: 1%;
+}
+
+.card h3{
+	font-family: bold;
+	font-size: 1.13rem;
+	color: black;
+}
+
+/* адаптив блока преподавателей */
+
+@media (max-width: 1000px) {
+
+	.teachers{
+		display: none;
+	}
+
+}
+
+/* Блок наши программы */
+
+.programs{
+	margin-top: 8%;
+}
+
+.programs h1{
+	font-family: bold;
+	font-size: 2.25rem;
+}
+
+.program{
+	display: flex;
+	justify-content: space-between;
+}
+
+.prog{
+	width: 11.25rem;
+}
+
+.prog p{
+	font-size: 1rem;
+	font-family: medium;
+}
+
+.numbers{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5%;
+}
+
+.number p{
+	font-family: medium;
+	font-family: 1.25rem;
+}
+
+/* адаптив блока наши программы */
+
+@media (max-width: 1000px) {
+
+	.programs h1{
+		text-align: center;
+	}
+
+	.program{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.numbers{
+		display: none;
+	}
+}
+
+/* Блок наши партнеры */
+
+.partners{
+	margin-top: 10%;
+}
+
+.partners h1{
+	font-family: medium;
+	font-size: 2.25rem;
+}
+
+.partner_up, .partner_down{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* адаптив блока наши партнеры */
+
+@media (max-width: 1000px) {
+
+	.partners h1{
+		text-align: center;
+	}
+
+	.partner_up, .partner_down{
+		flex-direction: column;
+		width: 40%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+}
+
+/* FOOTER */
+
+footer {
+	display: flex;
+	flex-direction: row;
+	background-color: rgb(0, 9, 60);
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+.info_f{
+	display: flex;
+	justify-content: space-between;
+	align-items:end;
+}
+
+.info_f p{
+	font-family: medium;
+	font-size: 0.88rem;
+}
+
+/* Адаптив footer */
+
+@media (max-width: 1000px) {
+
+	.info_f{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items:center;
+	}
+
 }
 
 </style>
