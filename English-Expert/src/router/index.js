@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AuthPage from '@/views/AuthPage.vue'
+import {defineAsyncComponent} from "vue";
 
 const routes = [
   {
@@ -16,7 +17,7 @@ const routes = [
   {
     path: '/auth',
     name: 'AuthPage',
-    component: () => import('@/views/AuthPage.vue')
+    component: () => defineAsyncComponent(() => import('@/views/AuthPage.vue'))
   }
 ]
 

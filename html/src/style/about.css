@@ -1,16 +1,16 @@
 @font-face {
     font-family: "bold";
-    src: url(./src/font/Montserrat-Bold.ttf);
+    src: url(../font/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: "medium";
-    src: url(./src/font/Montserrat-Medium.ttf);
+    src: url(../font/Montserrat-Medium.ttf);
 }
 
 @font-face {
     font-family: "regular";
-    src: url(./src/font/Montserrat-Regular.ttf);
+    src: url(../font/Montserrat-Regular.ttf);
 }
 
 body {
@@ -36,7 +36,7 @@ header, .menu {
 }
 
 header a{
-    font-family: medium;
+    font-family: "medium";
     font-size: 14px;
     text-decoration: none;
     color: black;
@@ -63,7 +63,7 @@ input#login  {
     caret-color: transparent;
     border: none;
     outline: none;
-    font-family: medium;
+    font-family: "medium";
     cursor: pointer;
     background-color:white;
     max-width: 50px;
@@ -139,7 +139,7 @@ header a:active {
     display: flex;
     height: 480px;
     width: 100%;
-    content: url('./src/img/main/education.svg');
+    content: url('../img/main/education.svg');
 }
 
 /* Адаптив блока образовательной платформы */
@@ -147,7 +147,7 @@ header a:active {
 @media (max-width: 1000px) {
 
     #education{
-        content: url('./src/img/about/education_small.svg');
+        content: url('../img/about/education_small.svg');
         width: 100%;
         height: auto;
     }
@@ -224,7 +224,7 @@ header a:active {
 
    .inter{
     flex-direction: column;
-   } 
+   }
 
    .inter_left{
     margin-right: auto;
@@ -288,7 +288,7 @@ header a:active {
 .teachers{
     width: 100%;
     height: 37.5rem;
-    background-image: url('./src/img/cours/teacher_background.svg');
+    background-image: url('../img/cours/teacher_background.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -392,7 +392,7 @@ header a:active {
     }
 
     .numbers{
-       display: none; 
+       display: none;
     }
 }
 
@@ -462,5 +462,5 @@ footer {
         flex-direction: column;
         align-items:center;
     }
-  
+
   }

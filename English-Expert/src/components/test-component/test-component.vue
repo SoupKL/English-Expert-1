@@ -19,6 +19,7 @@
 </template>
 
 <style>
+@import "../../assets/font.css";
 .wrapper {
     width: 100%;
     max-width: 1180px;
