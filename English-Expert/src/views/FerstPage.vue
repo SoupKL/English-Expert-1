@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import HeaderClassic from '@/components/header/header-classic.vue';
 import HiBlock from '@/components/hi-block/hi-block.vue';
+import Offers from "@/components/offers/offers.vue";
+import Teacher from "@/components/ teacher/teacher.vue";
 
 document.addEventListener('DOMContentLoaded', function() {
 	const menuToggle = document.querySelector('.menu-toggle');
@@ -10,6 +12,69 @@ document.addEventListener('DOMContentLoaded', function() {
 		menu.classList.toggle('active');
 	});
 });
+
+const information = [
+  {
+    "img": "../../src/assets/about/values1.svg",
+    "text": "Содержание обучения должно быть актуальным,\n\t\t\t\t\t\tа методика проверенная годами."
+  },
+  {
+    "img": "../../src/assets/about/values2.svg",
+    "text": "Педагог - прежде всего личность компетентная\n\t\t\t\t\t\tи харизматичная."
+  },
+  {
+    "img": "../../src/assets/about/values3.svg",
+    "text": "Точка развития образования - ребенок, его интересы\n\t\t\t\t\t\tи потребности"
+  },
+  {
+    "img": "../../src/assets/about/values4.svg",
+    "text": "Прогрессом правит любовь к знаниям"
+  },
+  {
+    "img": "../../src/assets/about/values1.svg",
+    "text": "Технологии правят миром, а человек эти технологии создает"
+  }
+]
+
+const teachers = [
+  {
+    "img":"../../src/assets/cours/comment1.svg",
+    "name":"Анна Морозова",
+    "text":"Изысканная мотиваторша с глубоким\n" +
+        "                    пониманием языка"
+  },
+  {
+    "img":"../../src/assets/cours/comment2.svg",
+    "name":"Иван Белов",
+    "text":"Энергичный языковед с богатым\n" +
+        "                    опытом преподавания"
+  },
+  {
+    "img":"../../src/assets/cours/comment3.svg",
+    "name":"Елена Николаева",
+    "text":"Терпеливая и креативная педагог,\n" +
+        "                    способная адаптироваться к нуждам каждого ученика"
+  },
+  {
+    "img":"../../src/assets/cours/comment4.svg",
+    "name":"Дмитрий Ковалев",
+    "text":"Заботливый и инновационный учитель,\n" +
+        "                    вдохновляющий на достижение лучших результатов"
+  }
+]
+
+const program = [
+  'Предполагают пролонгированное обучение',
+    'Составлены с учетом возрастных \n' +
+    '                    и индивидуальных особенностей детей',
+    'Авторские и не имеют аналогов',
+    'Составлены на основе деятельностного\n' +
+    '                    и компетентностного подходов',
+    'Реализуются с помощью современных\n' +
+    '                    педагогических технологий',
+    'Актуальны и фундаментальны'
+
+]
 
 </script>
 
@@ -76,37 +141,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		<div class="values">
 			<h1>Наши ценности</h1>
-			<div class="cards">
 
-				<div class="card">
-					<img src="../../src/assets/about/values1.svg" alt="">
-					<p>Содержание обучения должно быть актуальным,
-						а методика проверенная годами.</p>
-				</div>
-
-				<div class="card">
-					<img src="../../src/assets/about/values2.svg" alt="">
-					<p>Педагог - прежде всего личность компетентная
-						и харизматичная.</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/about/values3.svg" alt="">
-					<p>Точка развития образования - ребенок, его интересы
-						и потребности</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/about/values4.svg" alt="">
-					<p>Прогрессом правит любовь к знаниям</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/about/values5.svg" alt="">
-					<p>Технологии правят миром, а человек эти технологии создает</p>
-				</div>
-
-			</div>
+      <offers
+          :info='information'
+      />
 		</div>
 
 	</div>
+
+
 
 	<!-- Блок преподавателей -->
 
@@ -114,33 +157,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		<div class="wrapper">
 
 			<h3>Наши преподаватели</h3>
-
-			<div class="cards">
-				<div class="card">
-					<img src="../../src/assets/cours/comment1.svg" alt="">
-					<h3>Анна Морозова</h3>
-					<p> Изысканная мотиваторша с глубоким
-						пониманием языка</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/cours/comment2.svg" alt="">
-					<h3>Иван Белов</h3>
-					<p>Энергичный языковед с богатым
-						опытом преподавания</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/cours/comment3.svg" alt="">
-					<h3>Елена Николаева</h3>
-					<p>Терпеливая и креативная педагог,
-						способная адаптироваться к нуждам каждого ученика</p>
-				</div>
-				<div class="card">
-					<img src="../../src/assets/cours/comment4.svg" alt="">
-					<h3>Дмитрий Ковалев</h3>
-					<p>Заботливый и инновационный учитель,
-						вдохновляющий на достижение лучших результатов</p>
-				</div>
-			</div>
+      <div class="cards">
+			<teacher
+        :teachers_info="teachers"
+      />
+      </div>
 
 		</div>
 	</section>
@@ -152,32 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		<div class="programs">
 			<h1>Наши программы</h1>
 			<div class="program">
-				<div class="prog">
+				<div v-for="info in program" class="prog">
 					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Предполагают пролонгированное обучение</p>
-				</div>
-				<div class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Составлены с учетом возрастных
-						и индивидуальных особенностей детей</p>
-				</div>
-				<div class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Авторские и не имеют аналогов</p>
-				</div>
-				<div class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Составлены на основе деятельностного
-						и компетентностного подходов</p>
-				</div>
-				<div class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Реализуются с помощью современных
-						педагогических технологий</p>
-				</div>
-				<div class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
-					<p>Актуальны и фундаментальны</p>
+					<p>{{info}}</p>
 				</div>
 			</div>
 
@@ -374,7 +372,7 @@ body {
 .teachers{
 	width: 100%;
 	height: 37.5rem;
-	background-image: url('./src/img/cours/teacher_background.svg');
+	background-image: url('../../src/assets/cours/teacher_background.svg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -392,30 +390,6 @@ body {
 .cards{
 	display: flex;
 	justify-content: space-between;
-}
-
-.card{
-	width: 17.5rem;
-	height: 22.5rem;
-	background-color: white;
-	border-radius: 20px;
-	display: flex;
-	flex-direction: column; /* Выстраиваем элементы по вертикали */
-	justify-content: center; /* Центрируем по вертикали */
-	align-items: center; /* Центрируем по горизонтали */
-	text-align: center;
-}
-
-.card p{
-	font-family: medium;
-	font-size: 0.88rem;
-	padding: 1%;
-}
-
-.card h3{
-	font-family: bold;
-	font-size: 1.13rem;
-	color: black;
 }
 
 /* адаптив блока преподавателей */
@@ -549,6 +523,24 @@ footer {
 		align-items:center;
 	}
 
+}
+
+/* Блок наши ценности */
+
+.values{
+  margin-top: 5%;
+}
+
+.values h1{
+  font-family: bold;
+  font-family: 2.25rem;
+}
+
+@media (max-width: 1000px) {
+
+  .values{
+    margin-top: -15%;
+  }
 }
 
 </style>
