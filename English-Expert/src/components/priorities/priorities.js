@@ -10,7 +10,7 @@ export default {
         ];
 
         function getImge(index){
-            return "../../src/assets/cours/icon_"+ index +".svg"
+            return "../../src/assets/cours/icon_"+ (index + 1) +".svg"
         }
 
         return {

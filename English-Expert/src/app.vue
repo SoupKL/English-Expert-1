@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <ferst-page></ferst-page>
+	<site-header/>
+<courses-page/>
+	<site-footer/>
 <!--    <router-view />-->
     <!-- Контент текущей страницы будет рендериться здесь -->
   </div>
 </template>
 
 <script>
-import FerstPage from "@/views/FerstPage.vue";
+import NewsPage from "@/views/NewsPage.vue";
+import HeaderClassic from "@/components/header/header-classic.vue";
+import SiteFooter from "@/components/common/SiteFooter.vue";
+import SiteHeader from "@/components/common/SiteHeader.vue";
+import CoursesPage from "@/views/CoursesPage.vue";
 
 export default {
   name: 'App',
-  components: {FerstPage}
+  components: {CoursesPage, SiteHeader, SiteFooter, HeaderClassic, NewsPage}
 }
 </script>
 
