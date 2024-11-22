@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "pinia": "^2.1.7",
+    "v-mask": "^2.3.0",
     "vue": "^3.4.29",
+    "vue-credit-card-validation": "^1.0.5",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {

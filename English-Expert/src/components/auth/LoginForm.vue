@@ -26,22 +26,22 @@ export default {
 
 <style>
 @font-face {
-  font-family: 'bold';
-  src: url(./src/font/Montserrat-Bold.ttf);
+	font-family: 'bold';
+	src: url(/src/font/Montserrat-Bold.ttf);
 }
 
 @font-face {
-  font-family: 'medium';
-  src: url(./src/font/Montserrat-Medium.ttf);
+	font-family: 'medium';
+	src: url(/src/font/Montserrat-Medium.ttf);
 }
 
 @font-face {
-  font-family: 'regular';
-  src: url(./src/font/Montserrat-Regular.ttf);
+	font-family: 'regular';
+	src: url(/src/font/Montserrat-Regular.ttf);
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: medium, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
