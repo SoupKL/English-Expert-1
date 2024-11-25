@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-	<site-header/>
-		<MainPage/>
+	<header-classic/>
+		<router-view />
 	<site-footer/>
-<!--    <router-view />-->
     <!-- Контент текущей страницы будет рендериться здесь -->
   </div>
 </template>
@@ -21,7 +20,7 @@ import MainPage from "@/views/MainPage.vue";
 
 export default {
   name: 'App',
-  components: { HomeView, BankCard, CoursesPage, SiteHeader, SiteFooter, HeaderClassic, NewsPage, MainPage}
+  components: { SiteFooter, HeaderClassic}
 }
 </script>
 

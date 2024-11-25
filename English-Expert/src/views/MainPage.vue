@@ -37,28 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <template>
-  <div class="wrapper">
-	<header>
-	  <div id="logo">
-		<a href="./main.html"><img src="../../src/assets/main/logo.svg" alt="English Expert Logo"></a>
-	  </div>
-	  <div class="menu-toggle">
-		<img src="../../src/assets/main/header_swip.svg" alt="Menu Icon">
-	  </div>
-	  <nav class="menu">
-		<a href="./all_courses.html"><img src="../../src/assets/main/all_curs.svg">Все курсы</a>
-		<a href="./all_events.html">Мероприятия</a>
-		<a href="./about.html">О нас</a>
-		<a href="#"><img src="../../src/assets/main/geolocation.svg">Владивосток</a>
-		<a href="tel:8005553535">8 800 555-35-35</a>
-		<form action="login.php" method="post">
-		  <a href="./login_registration.html"><img src="../../src/assets/main/person.svg"><input
-			  type="text" id="login" name="loginname"
-			  placeholder="Войти"></a>
-		</form>
-	  </nav>
-	</header>
-  </div>
 
 <!--  <script src="./src/js/menu.js"></script>-->
   <!-- БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА -->

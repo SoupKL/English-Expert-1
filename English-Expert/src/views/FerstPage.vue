@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import HeaderClassic from '@/components/header/header-classic.vue';
+<script setup >
 import HiBlock from '@/components/hi-block/hi-block.vue';
 import Offers from "@/components/offers/offers.vue";
 import Teacher from "@/components/ teacher/teacher.vue";
@@ -79,11 +78,6 @@ const program = [
 </script>
 
 <template>
-	<div class="wrapper">
-		<header-classic/>
-	</div>
-
-
 	<!-- БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА -->
 
 	<section class="hero" id="education">

@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				<div class="cards-container">
 					<div v-if="firstBlock" class="cards1">
-						<div class="card" id="A1" href="/tro">
+						<div class="card" id="A1">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/A1.svg">
 								<h3>Уровень А1</h3>

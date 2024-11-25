@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue'
 import AuthPage from '@/views/AuthPage.vue'
 import {defineAsyncComponent} from "vue";
 import app from "@/app.vue";
+import mainPage from "@/views/MainPage.vue";
+import AllCourses from "@/views/AllCourses.vue";
 
 const routes = [
   {
