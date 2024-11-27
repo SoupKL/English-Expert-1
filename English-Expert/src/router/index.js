@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AuthPage from '@/views/AuthPage.vue'
 import {defineAsyncComponent} from "vue";
-import app from "@/app.vue";
 import mainPage from "@/views/MainPage.vue";
 import AllCourses from "@/views/AllCourses.vue";
 
@@ -10,12 +7,12 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: app
+    component: mainPage
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/AboutView.vue')
+    path: '/all-courses',
+    name: 'all-courses',
+    component: AllCourses
   },
   {
     path: '/auth',
