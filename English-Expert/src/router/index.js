@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import {defineAsyncComponent} from "vue";
 import mainPage from "@/views/MainPage.vue";
 import AllCourses from "@/views/AllCourses.vue";
+import LogInLogOut from "@/views/LogInLogOut.vue";
 
 const routes = [
   {
@@ -16,8 +16,8 @@ const routes = [
   },
   {
     path: '/auth',
-    name: 'AuthPage',
-    component: () => defineAsyncComponent(() => import('@/views/AuthPage.vue'))
+    name: 'LogInLogOut',
+    component: LogInLogOut
   }
 ]
 

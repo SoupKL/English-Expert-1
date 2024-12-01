@@ -17,9 +17,9 @@
 				<a href="#"><img src="../../assets/main/geolocation.svg">Владивосток</a>
 				<a href="tel:8005553535">8 800 555-35-35</a>
 				<form>
-					<a href="./"><img src="../../assets/main/person.svg"><input
+					<router-link to="./auth"><img src="../../assets/main/person.svg"><input
 							type="text" id="login" name="loginname"
-							placeholder="Войти"></a>
+							placeholder="Войти"></router-link>
 				</form>
 			</nav>
 		</header>
