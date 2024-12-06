@@ -12,8 +12,8 @@
 				<img src="../../assets/main/header_swip.svg" alt="Menu Icon">
 			</div>
 			<nav class="menu">
-				<router-link to="./all-courses">Все курсы</router-link>
-				<a href="./">Мероприятия</a>
+				<router-link to="/all-courses">Все курсы</router-link>
+				<router-link to="/events">Мероприятия</router-link>
 				<a href="#"><img src="../../assets/main/geolocation.svg">Владивосток</a>
 				<a href="tel:8005553535">8 800 555-35-35</a>
 				<form>

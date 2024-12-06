@@ -1,5 +1,4 @@
 <script>
-import { RouterLink, RouterView } from 'vue-router'
 import TestComponent from './components/test-component/test-component.vue'
 import ReviewUser from './components/review-user/review-user.vue';
 import './assets/script/scroll';
@@ -48,7 +47,7 @@ export default {
     height: 37rem;
     ;
     padding: 2em 0;
-    background-image: url('/src/assets/main/background.svg');
+    background-image: url('../src/assets/main/background.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

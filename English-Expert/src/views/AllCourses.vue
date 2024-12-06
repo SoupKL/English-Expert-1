@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				<div class="cards-container">
 					<div v-if="firstBlock" class="cards1">
-						<div class="card" id="A1">
+						<router-link to="./course/a1" class="card" id="A1">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/A1.svg">
 								<h3>Уровень А1</h3>
@@ -160,9 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
 								себя интерактивные упражнения, игры и
 								диалоги, чтобы улучшить вашу языковую
 								подготовку в увлекательной форме.</p>
-						</div>
+						</router-link>
 
-						<div class="card" id="A2">
+						<router-link to="./course/a2" class="card" id="A2">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/A2.svg">
 								<h3>Уровень А2</h3>
@@ -172,11 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
 								мысли на английском. Освоите навыки неформального
 								общения, делая вашу коммуникацию более свободной
 								и естественной.</p>
-						</div>
+						</router-link>
 					</div>
 
 					<div v-if="secondBlock" class="cards2">
-						<div class="card" id="B1">
+						<router-link to="./course/b1" class="card" id="B1">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/B1.svg">
 								<h3>Уровень B1</h3>
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded', function() {
 								сложные темы. Здесь вы начнете строить
 								фундамент для более сложных языковых
 								концепций.</p>
-						</div>
+						</router-link>
 
-						<div class="card" id="B2">
+						<router-link to="./course/b2" class="card" id="B2">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/B2.svg">
 								<h3>Уровень B2</h3>
@@ -197,11 +197,11 @@ document.addEventListener('DOMContentLoaded', function() {
 								сценариях. Научитесь применять знания в реальных
 								ситуациях, что сделает ваш языковой опыт более
 								полноценным и уверенным.</p>
-						</div>
+						</router-link>
 					</div>
 
 					<div v-if="thirdBlock" class="cards3">
-						<div class="card" id="C1">
+						<router-link to="./course/c1" class="card" id="C1">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/C1.svg">
 								<h3>Уровень C1</h3>
@@ -209,9 +209,9 @@ document.addEventListener('DOMContentLoaded', function() {
 							<p>Совершенствуйте свой язык и обретайте уверенность
 								в общении на высоком уровне. Курс для тех, кто
 								стремится к языковому мастерству.</p>
-						</div>
+						</router-link>
 
-						<div class="card" id="C2">
+						<router-link to="./course/c2" class="card" id="C2">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/C2.svg">
 								<h3>Уровень C2</h3>
@@ -219,10 +219,10 @@ document.addEventListener('DOMContentLoaded', function() {
 							<p>Здесь вы достигнете вершины своего языкового
 								мастерства. Курс для тех, кто стремится к
 								безупречной владению английским.</p>
-						</div>
+						</router-link>
 					</div>
 
-					<div v-if="fourthBlock" class="cards4">
+					<div v-if="false" class="cards4">
 						<div class="card" id="work">
 							<div class="cardtxt">
 								<img src="../../src/assets/all_courses/work.svg">
@@ -264,7 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			</div>
 
 			<div class="rh_r">
-				<form action="#" method="POST">
 					<div class="form-group full-width">
 						<input type="text" id="name" name="name" placeholder="Ваше имя">
 					</div>
@@ -278,9 +277,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					</div>
 					<div class="form-group vertical">
 						<p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-						<button type="submit">Отправить</button>
+						<button onclick="alert('Упс... Что то пошло не так')" type="submit">Отправить</button>
 					</div>
-				</form>
 			</div>
 
 		</div>
@@ -290,116 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </template>
 
 <style scoped>
-.wrapper {
-	width: 100%;
-	max-width: 1180px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
-/* HEADER */
-
-.up{
-	background-color: #00093C;
-}
-
-header, .menu {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-}
-
-header a{
-	font-family: medium;
-	font-size: 14px;
-	text-decoration: none;
-	color: white;
-}
-
-.menu{
-	margin-left: 5%;
-}
-
-#logo img {
-	max-width: 100%;
-}
-
-header a img {
-	margin-right: 5pt;
-	vertical-align: middle;
-}
-
-::placeholder {
-	color: white;
-}
-
-input#login  {
-	caret-color: transparent;
-	border: none;
-	outline: none;
-	font-family: medium;
-	cursor: pointer;
-	background-color:#00093C;
-	max-width: 50px;
-}
-
-header a:active {
-	transform: scale(0.95);
-}
-
-/* Адаптив header */
-
-@media (max-width: 1000px) {
-
-	.wrapper{
-		width: 100%;
-		max-width: 600px;
-	}
-
-	header {
-		flex-direction: row;
-		justify-content: space-between;
-		position: relative; /* Добавляем позиционирование для родительского header */
-	}
-
-	.menu-toggle {
-		display: block; /* Показываем кнопку меню */
-		cursor: pointer;
-	}
-
-	.menu {
-		display: none; /* Скрываем основное меню */
-		position: absolute;
-		top: calc(100% + 10px); /* Меню будет располагаться под кнопкой с отступом 10px */
-		right: 0;
-		left: 0;
-		background-color: #00093C;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		z-index: 1000;
-		text-align: center; /* Центрируем элементы внутри меню */
-	}
-
-	.menu a {
-		display: block;
-		padding: 10px 20px;
-		text-decoration: none;
-		color: white;
-		font-size: 14px;
-	}
-
-	.menu a:hover {
-		background-color: #f0f0f0;
-		color: #00093C;
-	}
-
-	.menu input {
-		max-width: initial; /* Вернуть изначальную ширину для поля ввода */
-	}
-
-	.menu.active {
-		display: block; /* Показываем меню при активации */
-	}
+a{
+  text-decoration: none;
 }
 
 /* Скрытие иконки меню при разрешении больше 900px */
