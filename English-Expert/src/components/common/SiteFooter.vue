@@ -2,10 +2,11 @@
   <footer>
     <div class="wrapper">
       <div class="info_f">
-        <img src="@/assets/main/logo_white.svg" alt="Logo" />
+        <img src="@/assets/main/logo_white.svg" alt="Logo"/>
         <p>8 800 555-35-35</p>
         <p>г. Владивосток, ул. Жигура, д. 26</p>
-        <p>English_Expert@mail.ru</p>
+        <a class="telegram" href="https://t.me/EnglishExperte">Telegram</a>
+        <a class="vk" href="https://vk.com/club228670575">VK</a>
         <p>© English Expert</p>
       </div>
     </div>
@@ -41,5 +42,28 @@ footer {
 .info_f p {
   font-family: medium;
   font-size: 0.88rem;
+}
+
+.info_f a {
+  font-family: medium;
+  font-size: 0.98rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-decoration: none;
+}
+
+.telegram {
+  color: #73e5e8;
+}
+
+.telegram:after {
+  content: ' ';
+  background: url('../../assets/main/telegram-svgrepo-com.svg');
+  height: 100px;
+  width: 100px;
+}
+
+.vk{
+  color: #3d9cff;
 }
 </style>

@@ -37,11 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <template>
-
-<!--  <script src="./src/js/menu.js"></script>-->
   <!-- БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА -->
 
   <section class="hero">
+    <button @click="router.push('/all-courses')" class="hero__button"><p>Ознакомится со всеми курсами</p></button>
   </section>
 
   <!-- БЛОК АКТУАЛЬНЫЕ ЗНАНИЯ -->
@@ -112,8 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	</section>
   </div>
 
-<!--  <script src="./src/js/button.js"></script>-->
-
   <!-- БЛОК ОТЗЫВЫ -->
 
   <section class="testimonials">
@@ -160,6 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </template>
 
 <style scoped>
+h1 {
+  font-family: bold;
+}
+
 /* БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА */
 
 .hero {
@@ -170,6 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hero__button {
+  position: absolute;
+  top: 450px;
+  left: 130px;
+  font-size: 0.88rem;
+  padding: 5px 10px;
+  background-color: rgb(247, 148, 29);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
 }
 
 /* Адаптив образовательной платформы */

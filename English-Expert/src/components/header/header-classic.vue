@@ -6,7 +6,7 @@
 	<div class="wrapper">
 		<header>
 			<div id="logo">
-				<router-link to="./"><img src="../../assets/logo/logo.svg" alt="English Expert Logo"></router-link>
+				<router-link to="/"><img src="../../assets/logo/logo.svg" alt="English Expert Logo"></router-link>
 			</div>
 			<div class="menu-toggle">
 				<img src="../../assets/main/header_swip.svg" alt="Menu Icon">
