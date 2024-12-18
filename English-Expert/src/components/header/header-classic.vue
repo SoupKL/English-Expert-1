@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
@@ -14,10 +14,10 @@
 			<nav class="menu">
 				<router-link to="/all-courses">Все курсы</router-link>
 				<router-link to="/events">Мероприятия</router-link>
-				<a href="#"><img src="../../assets/main/geolocation.svg">Владивосток</a>
+				<a href="https://yandex.ru/maps/-/CDx~A8YI"><img src="../../assets/main/geolocation.svg" alt="Геолокация">Владивосток</a>
 				<a href="tel:8005553535">8 800 555-35-35</a>
 				<form>
-					<router-link to="./auth"><img src="../../assets/main/person.svg"><input
+					<router-link to="./auth"><img src="../../assets/main/person.svg" alt="Профиль"><input
 							type="text" id="login" name="loginname"
 							placeholder="Войти"></router-link>
 				</form>

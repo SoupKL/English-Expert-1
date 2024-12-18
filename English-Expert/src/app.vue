@@ -3,7 +3,6 @@
 	<header-classic/>
 		<router-view />
 	<site-footer/>
-    <!-- Контент текущей страницы будет рендериться здесь -->
   </div>
 </template>
 
