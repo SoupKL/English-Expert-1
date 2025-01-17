@@ -2,6 +2,7 @@
 
 import ReviewUser from "@/components/review-user/review-user.vue";
 import skils from "@/components/skils/skils.vue";
+import router from "@/router/index.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.slider');

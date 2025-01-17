@@ -4,38 +4,45 @@ import AllCourses from "@/views/AllCourses.vue";
 import LogInLogOut from "@/views/LogInLogOut.vue";
 import CoursesPage from "@/views/CoursesPage.vue";
 import Events from "@/views/Events.vue";
+import TestComponent from "@/components/test-component/test-component.vue";
 
 const routes = [
-		{
-				path: '/',
-				name: 'home',
-				component: mainPage
-		},
-		{
-				path: '/all-courses',
-				name: 'all-courses',
-				component: AllCourses
-		},
-		{
-				path: '/auth',
-				name: 'LogInLogOut',
-				component: LogInLogOut
-		},
-		{
-				path: '/course/:numdber',
-				name: 'Course',
-				component: CoursesPage
-		},
-		{
-				path: '/events',
-				name: 'Events',
-				component: Events
-		},
+	{
+		path:      '/',
+		name:      'home',
+		component: mainPage
+	},
+	{
+		path:      '/all-courses',
+		name:      'all-courses',
+		component: AllCourses
+	},
+	{
+		path:      '/auth',
+		name:      'LogInLogOut',
+		component: LogInLogOut
+	},
+	{
+		path:      '/course/:numdber',
+		name:      'Course',
+		component: CoursesPage
+	},
+	{
+		path:      '/events',
+		name:      'Events',
+		component: Events
+	},
+	{
+		path:      '/test',
+		name:      'Test',
+		component: TestComponent
+	},
+
 ]
 
 const router = createRouter({
-		history: createWebHistory(),
-		routes
+	history: createWebHistory(),
+	routes
 })
 
 export default router
