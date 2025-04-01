@@ -3,7 +3,7 @@ export default {
     setup() {
         const users = [
             {
-                avatar: '/src/assets/main/gavriil.svg',
+                avatar: '/src/assets/main/gavriil.jpeg',
                 name: 'Гавриил Архипов',
                 review: 'Рекомендую всем, кто желает выучить английский!',
                 rating: '4,87',
@@ -22,13 +22,13 @@ export default {
                 rating: '4,87',
             },
             {
-                avatar: '/src/assets/main/andre.svg',
+                avatar: '/src/assets/main/andre.jpeg',
                 name: 'Алексей Иванов',
                 review: 'Все уроки структурированы и легко понять. Я получил много практического опыта и научился говорить на английском более уверенно.',
                 rating: '4,7',
             },
             {
-                avatar: '/src/assets/main/alexsandra.svg',
+                avatar: '/src/assets/main/alexsandra.jpeg',
                 name: 'Александра Макаренко',
                 review: 'Эти курсы английского языка превзошли все мои ожидания! Очень понравился подход преподавателя к обучению. Занятия были интересными и практичными, а результаты заметны уже после нескольких уроков.',
                 rating: '4,95',

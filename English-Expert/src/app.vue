@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-	<site-header/>
-		<MainPage/>
+	<header-classic/>
+		<router-view />
 	<site-footer/>
-<!--    <router-view />-->
-    <!-- Контент текущей страницы будет рендериться здесь -->
   </div>
 </template>
 
 <script>
-import NewsPage from "@/views/NewsPage.vue";
 import HeaderClassic from "@/components/header/header-classic.vue";
 import SiteFooter from "@/components/common/SiteFooter.vue";
-import SiteHeader from "@/components/common/SiteHeader.vue";
-import CoursesPage from "@/views/CoursesPage.vue";
-import BankCard from "@/components/bank-card/bank-card.vue";
-import HomeView from "@/views/HomeView.vue";
-import MainPage from "@/views/MainPage.vue";
 
 
 export default {
   name: 'App',
-  components: { HomeView, BankCard, CoursesPage, SiteHeader, SiteFooter, HeaderClassic, NewsPage, MainPage}
+  components: { SiteFooter, HeaderClassic}
 }
 </script>
 
 <style>
 @import "./assets/font.css";
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden
+}
+
+.wrapper {
+  width:     100%;
+  max-width: 1180px;
+  margin:    0 auto;
+  padding:   20px;
+}
 
 /* Общие стили для всего приложения */
 </style>

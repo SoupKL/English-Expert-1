@@ -2,6 +2,7 @@
 
 import ReviewUser from "@/components/review-user/review-user.vue";
 import skils from "@/components/skils/skils.vue";
+import router from "@/router/index.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.querySelector('.slider');
@@ -37,33 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <template>
-  <div class="wrapper">
-	<header>
-	  <div id="logo">
-		<a href="./main.html"><img src="../../src/assets/main/logo.svg" alt="English Expert Logo"></a>
-	  </div>
-	  <div class="menu-toggle">
-		<img src="../../src/assets/main/header_swip.svg" alt="Menu Icon">
-	  </div>
-	  <nav class="menu">
-		<a href="./all_courses.html"><img src="../../src/assets/main/all_curs.svg">Все курсы</a>
-		<a href="./all_events.html">Мероприятия</a>
-		<a href="./about.html">О нас</a>
-		<a href="#"><img src="../../src/assets/main/geolocation.svg">Владивосток</a>
-		<a href="tel:8005553535">8 800 555-35-35</a>
-		<form action="login.php" method="post">
-		  <a href="./login_registration.html"><img src="../../src/assets/main/person.svg"><input
-			  type="text" id="login" name="loginname"
-			  placeholder="Войти"></a>
-		</form>
-	  </nav>
-	</header>
-  </div>
-
-<!--  <script src="./src/js/menu.js"></script>-->
   <!-- БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА -->
 
   <section class="hero">
+    <button @click="router.push('/all-courses')" class="hero__button"><p>Ознакомится со всеми курсами</p></button>
   </section>
 
   <!-- БЛОК АКТУАЛЬНЫЕ ЗНАНИЯ -->
@@ -134,8 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	</section>
   </div>
 
-<!--  <script src="./src/js/button.js"></script>-->
-
   <!-- БЛОК ОТЗЫВЫ -->
 
   <section class="testimonials">
@@ -144,8 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	  <review-user />
 	  <!-- Добавьте больше карточек при необходимости -->
 	</div>
-
-<!--	<script src="./src/js/scroll.js"></script>-->
   </section>
 
   <!-- БЛОК НАВЫКИ -->
@@ -157,15 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
   <!-- БЛОК ФОРМЫ -->
 
   <div class="wrapper">
-
 	<div class="rabbit_helper">
-
 	  <div class="rh_l">
 		<img src="../../src/assets/main/rabbit2.svg" alt="кролик помощник нижний">
 	  </div>
-
 	  <div class="rh_r">
-		<form action="#" method="POST">
+
 		  <div class="form-group full-width">
 			<input type="text" id="name" name="name" placeholder="Ваше имя">
 		  </div>
@@ -179,152 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		  </div>
 		  <div class="form-group vertical">
 			<p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-			<button type="submit">Отправить</button>
+			<button onclick="alert('Упс... Что то пошло не так')" type="submit">Отправить</button>
 		  </div>
-		</form>
 	  </div>
-
 	</div>
-
   </div>
-
-
-  <!-- FOOTER -->
-
-<!--  <footer>-->
-<!--	<div class="wrapper">-->
-<!--	  <div class="info_f">-->
-<!--		<img src="./src/img/main/logo_white.svg">-->
-<!--		<p>8 800 555-35-35</p>-->
-<!--		<p>г. Владивосток, ул. Жигура, д. 26</p>-->
-<!--		<p>English_Expert@mail.ru</p>-->
-<!--		<p>© English Expert</p>-->
-<!--	  </div>-->
-
-<!--	</div>-->
-<!--  </footer>-->
-
 </template>
 
 <style scoped>
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.wrapper {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* HEADER */
-
-header, .menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-header a{
-  font-family: medium;
-  font-size: 14px;
-  text-decoration: none;
-  color: black;
-}
-
-.menu{
-  margin-left: 5%;
-}
-
-#logo img {
-  max-width: 100%;
-}
-
-header a img {
-  margin-right: 5pt;
-  vertical-align: middle;
-}
-
-::placeholder {
-  color: black;
-}
-
-input#login  {
-  caret-color: transparent;
-  border: none;
-  outline: none;
-  font-family: medium;
-  cursor: pointer;
-  background-color:white;
-  max-width: 50px;
-}
-
-header a:active {
-  transform: scale(0.95);
-}
-
-/* Адаптив header */
-
-@media (max-width: 1000px) {
-
-  .wrapper{
-	width: 100%;
-	max-width: 600px;
-  }
-
-  header {
-	flex-direction: row;
-	justify-content: space-between;
-	position: relative; /* Добавляем позиционирование для родительского header */
-  }
-
-  .menu-toggle {
-	display: block; /* Показываем кнопку меню */
-	cursor: pointer;
-  }
-
-  .menu {
-	display: none; /* Скрываем основное меню */
-	position: absolute;
-	top: calc(100% + 10px); /* Меню будет располагаться под кнопкой с отступом 10px */
-	right: 0;
-	left: 0;
-	background-color: #ffffff;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-	text-align: center; /* Центрируем элементы внутри меню */
-  }
-
-  .menu a {
-	display: block;
-	padding: 10px 20px;
-	text-decoration: none;
-	color: black;
-	font-size: 14px;
-  }
-
-  .menu a:hover {
-	background-color: #f0f0f0;
-  }
-
-  .menu input {
-	max-width: initial; /* Вернуть изначальную ширину для поля ввода */
-  }
-
-  .menu.active {
-	display: block; /* Показываем меню при активации */
-  }
-}
-
-/* Скрытие иконки меню при разрешении больше 900px */
-@media (min-width: 1000px) {
-  .menu-toggle {
-	display: none;
-  }
+h1 {
+  font-family: bold;
 }
 
 /* БЛОК ОБРАЗОВАТЕЛЬНАЯ ПЛАТФОРМА */
@@ -337,6 +172,18 @@ header a:active {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.hero__button {
+  position: absolute;
+  top: 450px;
+  left: 130px;
+  font-size: 0.88rem;
+  padding: 5px 10px;
+  background-color: rgb(247, 148, 29);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
 }
 
 /* Адаптив образовательной платформы */
@@ -770,35 +617,6 @@ form {
 
   .rabbit_helper{
 	display: none;
-  }
-
-}
-
-/* FOOTER */
-
-footer {
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(0, 9, 60);
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-.info_f p{
-  font-family: medium;
-  font-size: 0.88rem;
-}
-
-/* Адаптив footer */
-
-@media (max-width: 1000px) {
-
-  .info_f{
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-	align-items:center;
   }
 
 }

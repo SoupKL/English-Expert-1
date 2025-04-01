@@ -30,21 +30,6 @@ console.log(currentTab)
 </script>
 
 <style>
-@font-face {
-  font-family: 'bold';
-  src: url(/src/font/Montserrat-Bold.ttf);
-}
-
-@font-face {
-  font-family: 'medium';
-  src: url(/src/font/Montserrat-Medium.ttf);
-}
-
-@font-face {
-  font-family: 'regular';
-  src: url(/src/font/Montserrat-Regular.ttf);
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
