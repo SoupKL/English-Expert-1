@@ -8,31 +8,11 @@
         </div>
 
         <div class="purposes_right">
-
-            <div class="purposes_card">
-                <img src="../../../src/assets/cours/purpose_1.svg" alt="">
-                <h3>Цель 1</h3>
-                <p>{{ textPruposes1 }}</p>
-            </div>
-
-            <div class="purposes_card">
-                <img src="../../../src/assets/cours/purpose_2.svg" alt="">
-                <h3>Цель 2</h3>
-                <p>{{ textPruposes2 }}</p>
-            </div>
-
-            <div class="purposes_card">
-                <img src="../../../src/assets/cours/purpose_3.svg" alt="">
-                <h3>Цель 3</h3>
-                <p>{{ textPruposes3 }}</p>
-            </div>
-
-            <div class="purposes_card">
-                <img src="../../../src/assets/cours/purpose_4.svg" alt="">
-                <h3>Цель 4</h3>
-                <p>{{ textPruposes4 }}</p>
-            </div>
-
+          <div v-for="(text, index) in textPruposes1" class="purposes_card">
+            <img :src="'../../../src/assets/cours/purpose_'+(index+1)+'.svg'" alt="">
+            <h3>Цель {{index+1}}</h3>
+            <p>{{ text }}</p>
+          </div>
         </div>
 
     </div>
