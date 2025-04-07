@@ -1,16 +1,16 @@
 @font-face {
     font-family: "bold";
-    src: url(/src/font/Montserrat-Bold.ttf);
+    src: url(./src/font/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: "medium";
-    src: url(/src/font/Montserrat-Medium.ttf);
+    src: url(./src/font/Montserrat-Medium.ttf);
 }
 
 @font-face {
     font-family: "regular";
-    src: url(/src/font/Montserrat-Regular.ttf);
+    src: url(./src/font/Montserrat-Regular.ttf);
 }
 
 body {
@@ -139,7 +139,7 @@ header a:active {
     display: flex;
     height: 480px;
     width: 100%;
-    background-image: url('/src/img/main/education.svg');
+    background-image: url('./src/img/main/education.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;  
@@ -151,7 +151,7 @@ header a:active {
     section.hero{
         width: 100%;
         height: 900px;
-        background-image: url('/src/img/main/background_ms.svg');
+        background-image: url('./src/img/main/background_ms.svg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;  
@@ -377,7 +377,7 @@ header a:active {
     width: 100%;
     height: 37rem;;
     padding: 2em 0;
-    background-image: url('/src/img/main/background.svg');
+    background-image: url('./src/img/main/background.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
