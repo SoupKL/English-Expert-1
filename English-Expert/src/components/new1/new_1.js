@@ -1,4 +1,7 @@
+import Rabbit from "@/components/rabbit/rabbit.vue";
+
 export default {
+  components: {Rabbit},
     setup() {
       const newsCard = [
         {
@@ -42,7 +45,7 @@ export default {
         },
 
         {
-            image: '/src/assets/all_news/card6.svg',
+            image: '/src/assets/all_news/linguist.webp',
             date: '6 ноября 2024',
             title: 'Встреча с Известным Лингвистом: Получите Советы от Профессионала!',
             description: 'Встреча с известным лингвистом для обсуждения английского языка. Дата и время на сайте.',
