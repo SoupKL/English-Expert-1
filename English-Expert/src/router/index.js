@@ -5,6 +5,7 @@ import LogInLogOut from "@/views/LogInLogOut.vue";
 import CoursesPage from "@/views/CoursesPage.vue";
 import Events from "@/views/Events.vue";
 import TestComponent from "@/components/test-component/test-component.vue";
+import new_1 from "@/components/new1/new_1.vue";
 
 const routes = [
 	{
@@ -37,6 +38,11 @@ const routes = [
 		name:      'Test',
 		component: TestComponent
 	},
+	{
+		path:      '/news',
+		name:      'News',
+		component: new_1
+	}
 
 ]
 
