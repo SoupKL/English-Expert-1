@@ -280,28 +280,24 @@ h1 {
 }
 
 .action-item {
-  width: 20rem;
-}
-
-.action-item{
+  width:           20rem;
   display:         flex;
   flex-direction:  column;
   justify-content: space-between;
   align-items:     center;
   text-align:      center;
   border-radius:   1.25rem;
+  transition:      transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.action-item:hover {
+  transform:  scale(1.02);
+  box-shadow: 0 0 20px rgba(39, 170, 225, 0.5), 0 0 20px rgba(247, 148, 29, 0.5);
+
 }
 
 .action {
   padding-top: 10%;
-}
-
-#i1 {
-  background-color: #FFE38E;
-}
-
-#i2 {
-  background-color: #DDDDFF;
 }
 
 /* Адаптив КАРТОЧЕК НОВОСТЕЙ */
@@ -415,20 +411,20 @@ h1 {
 }
 
 .slider {
-  display: flex;
-  gap: 1em;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display:                    flex;
+  gap:                        1em;
+  overflow-x:                 auto;
+  scroll-behavior:            smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 0;
-  width: 100%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  cursor: grab;
+  padding:                    20px 0;
+  width:                      100%;
+  scrollbar-width:            none;
+  -ms-overflow-style:         none;
+  user-select:                none;
+  -webkit-user-select:        none;
+  -moz-user-select:           none;
+  -ms-user-select:            none;
+  cursor:                     grab;
 }
 
 .slider:active {
@@ -436,10 +432,10 @@ h1 {
 }
 
 .slider * {
-  user-select: none;
+  user-select:         none;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
 }
 
 .slider::-webkit-scrollbar-thumb:hover {
