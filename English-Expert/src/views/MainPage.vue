@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  </div>
 
 	  <div class="event-actions">
-		<div class="action-item1">
+		<div class="action-item">
 		  <div class="action">
 			<img src="../../src/assets/main/try.svg">
 			<h3>Попробуй!</h3>
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		</div>
 
-		<div @click="router.push('/news')" class="action-item1">
+		<div @click="router.push('/news')" class="action-item">
 		  <div class="action">
 			<img src="../../src/assets/main/newspaper.svg" alt="Новости">
 			<h3>Новости Академии</h3>
@@ -266,45 +266,38 @@ h1 {
   font-family: regular;
 }
 
-.action-item1 {
-  width:            20.31rem;
-}
 
 .action-item {
   background-color: #DDDDFF;
 }
 
-.action-item1:last-child {
+.action-item:last-child {
   background-color: #B8EFCF;
 }
 
-.action-item1:first-child {
+.action-item:first-child {
   background-color: #FFE38E;
 }
 
 .action-item {
-  width: 20rem;
-}
-
-.action-item, .action-item1 {
+  width:           20rem;
   display:         flex;
   flex-direction:  column;
   justify-content: space-between;
   align-items:     center;
   text-align:      center;
   border-radius:   1.25rem;
+  transition:      transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.action-item:hover {
+  transform:  scale(1.02);
+  box-shadow: 0 0 20px rgba(39, 170, 225, 0.5), 0 0 20px rgba(247, 148, 29, 0.5);
+
 }
 
 .action {
   padding-top: 10%;
-}
-
-#i1 {
-  background-color: #FFE38E;
-}
-
-#i2 {
-  background-color: #DDDDFF;
 }
 
 /* Адаптив КАРТОЧЕК НОВОСТЕЙ */
@@ -418,35 +411,39 @@ h1 {
 }
 
 .slider {
-  display:        flex;
-  gap:            1em;
-  overflow-x:     auto;
-  margin-left:    auto;
-  margin-right:   auto;
-  margin-top:     5%;
-  padding-bottom: 5em;
+  display:                    flex;
+  gap:                        1em;
+  overflow-x:                 auto;
+  scroll-behavior:            smooth;
+  -webkit-overflow-scrolling: touch;
+  padding:                    20px 0;
+  width:                      100%;
+  scrollbar-width:            none;
+  -ms-overflow-style:         none;
+  user-select:                none;
+  -webkit-user-select:        none;
+  -moz-user-select:           none;
+  -ms-user-select:            none;
+  cursor:                     grab;
 }
 
-.slider::-webkit-scrollbar {
-  height: 6px;
+.slider:active {
+  cursor: grabbing;
 }
 
-.slider::-webkit-scrollbar-track {
-  background:    #ffffff;
-  border-radius: 10px;
-}
-
-.slider::-webkit-scrollbar-thumb {
-  background:    linear-gradient(45deg, rgb(247, 148, 29), rgb(39, 170, 225)); /* Gradient thumb */
-  border-radius: 10px;
+.slider * {
+  user-select:         none;
+  -webkit-user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
 }
 
 .slider::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, rgb(39, 170, 225), rgb(247, 148, 29));
 }
 
-.slider::-webkit-scrollbar-button {
-  display: none;
+.slider.active * {
+  pointer-events: none;
 }
 
 .testimonial-item p {
