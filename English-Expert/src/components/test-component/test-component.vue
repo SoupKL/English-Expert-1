@@ -314,49 +314,53 @@ export default {
 
 </template>
 
-<style>
-/* Блок теста*/
+<style lang="scss">
+$test-bg: #F6F7F9;
+$test-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+$test-radius: 5px;
+$test-orange: #F7941D;
+$test-blue: #27AAE1;
+$test-font-regular: regular;
+$test-font-medium: medium;
 
 #questionContainer {
 	padding: 20px;
-	border-radius: 5px;
-	background-color: #F6F7F9;
+	border-radius: $test-radius;
+	background-color: $test-bg;
 	margin-bottom: 20px;
-	-webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
-	-moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
-	box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+	box-shadow: $test-shadow;
 	text-align: center;
 }
 
 .question {
-	font-family: regular;
+	font-family: $test-font-regular;
 	font-size: 1.5rem;
 	margin-bottom: 20px;
 	color: rgb(0, 0, 0);
 }
 
-.answers .answer {
-	margin-bottom: 10px;
-}
-
-.answers{
+.answers {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-}
 
-.answer-text {
-	font-family: regular;
-	font-size: 0.88rem;
-	padding: 10px;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 11rem;
-}
+	.answer {
+		margin-bottom: 10px;
+	}
 
-.answer-text.selected {
-	background: linear-gradient(to right, #F7941D, #27AAE1);
-	color: white;
+	.answer-text {
+		font-family: $test-font-regular;
+		font-size: 0.88rem;
+		padding: 10px;
+		border-radius: $test-radius;
+		cursor: pointer;
+		width: 11rem;
+
+		&.selected {
+			background: linear-gradient(to right, $test-orange, $test-blue);
+			color: white;
+		}
+	}
 }
 
 .progress-button-container {
@@ -368,91 +372,75 @@ export default {
 	margin-left: auto;
 }
 
-#progress{
-	font-family: regular;
+#progress {
+	font-family: $test-font-regular;
 	font-size: 1.13rem;
 }
 
 .button {
-	font-family: medium;
+	font-family: $test-font-medium;
 	font-size: 16px;
-	background-color: #F7941D;
+	background-color: $test-orange;
 	color: white;
 	border: none;
 	padding: 10px 20px;
-	border-radius: 5px;
+	border-radius: $test-radius;
 	cursor: pointer;
 	text-align: center;
-}
 
-.button:hover {
-	background-color: #27AAE1;
+	&:hover {
+		background-color: $test-blue;
+	}
 }
 
 .hide {
 	display: none;
 }
 
-#result-container{
+#result-container {
 	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
+
+	h2 {
+		font-family: $test-font-regular;
+		font-size: 1.5rem;
+	}
 }
 
-#result-container h2{
-	font-family: regular;
-	font-size: 1.5rem;
-}
-
-.cardtxt h3{
-	font-family: regular;
-	font-size:1.13rem;
+.cardtxt {
+	h3 {
+		font-family: $test-font-regular;
+		font-size: 1.13rem;
+	}
 }
 
 .card {
 	padding: 20px;
-	border-radius: 5px;
-	background-color: #F6F7F9;
+	border-radius: $test-radius;
+	background-color: $test-bg;
 	margin-bottom: 20px;
-	-webkit-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
-	-moz-box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
-	box-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
+	box-shadow: $test-shadow;
 	text-align: center;
 	width: 26.89rem;
+
+	p {
+		font-family: $test-font-regular;
+		color: rgb(79, 79, 79);
+		font-size: 0.75rem;
+	}
+
+	.button {
+		margin-top: 20px;
+	}
 }
 
-.card p{
-	font-family: regular;
-	color: rgb(79, 79, 79);
-	font-size: 0.75rem;
-}
-
-#A1{
-	background-color: rgb(199, 238, 255);
-}
-
-#A2{
-	background-color: rgb(255, 206, 148);
-}
-
-#B1{
-	background-color: rgb(255, 227, 142);
-}
-
-#B2{
-	background-color: rgb(221, 221, 255);
-}
-
-#C1{
-	background-color: rgb(184, 239, 207);
-}
-
-#C2{
-	background-color: rgb(199, 238, 255);
-}
-
-.cardtxt .button {
-	margin-top: 20px;
-}
+// Индивидуальные цвета для карточек-уровней
+#A1 { background-color: rgb(199, 238, 255); }
+#A2 { background-color: rgb(255, 206, 148); }
+#B1 { background-color: rgb(255, 227, 142); }
+#B2 { background-color: rgb(221, 221, 255); }
+#C1 { background-color: rgb(184, 239, 207); }
+#C2 { background-color: rgb(199, 238, 255); }
 
 </style>

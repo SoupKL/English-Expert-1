@@ -10,37 +10,40 @@
   </div>
 </template>
 
-<style scoped>
-.cards{
+<style lang="scss" scoped>
+$card-width: 17.5rem;
+$card-height: 22.5rem;
+$card-radius: 20px;
+$card-bg: white;
+$card-font: medium;
+$card-font-size: 0.88rem;
+
+.cards {
   display: flex;
   justify-content: space-between;
-}
 
-.card{
-  width: 17.5rem;
-  height: 22.5rem;
-  background-color: white;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column; /* Выстраиваем элементы по вертикали */
-  justify-content: center; /* Центрируем по вертикали */
-  align-items: center; /* Центрируем по горизонтали */
-  text-align: center;
-}
-
-.card p{
-  font-family: medium;
-  font-size: 0.88rem;
-  padding: 1%;
-}
-
-@media (max-width: 1000px) {
-
-  .cards{
+  @media (max-width: 1000px) {
     flex-direction: column;
     height: 50rem;
     align-items: center;
   }
 
+  .card {
+    width: $card-width;
+    height: $card-height;
+    background-color: $card-bg;
+    border-radius: $card-radius;
+    display: flex;
+    flex-direction: column; // Выстраиваем элементы по вертикали
+    justify-content: center; // Центрируем по вертикали
+    align-items: center; // Центрируем по горизонтали
+    text-align: center;
+
+    p {
+      font-family: $card-font;
+      font-size: $card-font-size;
+      padding: 1%;
+    }
+  }
 }
 </style>

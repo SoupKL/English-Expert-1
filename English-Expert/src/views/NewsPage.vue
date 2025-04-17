@@ -63,62 +63,70 @@ export default {
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+$main-width: 1180px;
+$main-padding: 20px;
+$main-title-size: 2.25rem;
+$main-title-size-mobile: 1.5rem;
+$main-desc-size: 1.13rem;
+$main-desc-size-mobile: 0.8rem;
+$main-date-size: 0.75rem;
+$main-link-color: rgb(109, 109, 109);
+$main-black: rgb(0, 0, 0);
+
 .news_wrapper {
   width: 100%;
-  max-width: 1180px;
+  max-width: $main-width;
   margin: 0 auto;
-  padding: 20px;
-}
-/* Блок новости  */
+  padding: $main-padding;
 
-.pagination a{
-  text-decoration: none;
-  color: rgb(109, 109, 109);
-  font-family: medium;
-  font-size: 0.95rem;
-}
-
-.news-title{
-  font-family: bold;
-  font-size: 2.25rem;
-  color: rgb(0, 0, 0);
-}
-
-.news-date{
-  font-family: regular;
-  font-size: 0.75rem;
-  color: rgb(0, 0, 0);
-}
-
-.news-description{
-  font-family: regular;
-  font-size: 1.13rem;
-  color: rgb(0, 0, 0);
-}
-
-.txt{
-  font-family: regular;
-  font-size: 1.13rem;
-  color: rgb(0, 0, 0);
-  line-height: 26px;
-}
-
-/* Адаптив новости */
-
-@media (max-width: 1000px) {
-
-  .news-title{
-    font-size: 1.5rem;
+  .pagination {
+    a {
+      text-decoration: none;
+      color: $main-link-color;
+      font-family: medium;
+      font-size: 0.95rem;
+    }
   }
 
-  img{
-    width: 100%;
+  .container_txt {
+    .news-title {
+      font-family: bold;
+      font-size: $main-title-size;
+      color: $main-black;
+      @media (max-width: 1000px) {
+        font-size: $main-title-size-mobile;
+      }
+    }
+
+    .news-date {
+      font-family: regular;
+      font-size: $main-date-size;
+      color: $main-black;
+    }
+
+    .news-description {
+      font-family: regular;
+      font-size: $main-desc-size;
+      color: $main-black;
+    }
   }
 
-  .txt{
-    font-size: 0.8rem;
+  img {
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
   }
 
+  .txt {
+    font-family: regular;
+    font-size: $main-desc-size;
+    color: $main-black;
+    line-height: 26px;
+
+    @media (max-width: 1000px) {
+      font-size: $main-desc-size-mobile;
+    }
+  }
 }
 </style>

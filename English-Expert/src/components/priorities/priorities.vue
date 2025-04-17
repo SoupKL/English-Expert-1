@@ -11,32 +11,32 @@
         </section>
 </template>
 
-<style>
-.priorities{
+<style lang="scss">
+$priority-font: regular;
+$priority-font-size: 0.88rem;
+
+.priorities {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
-}
 
-.priority p{
-  font-family: regular;
-  font-size: 0.88rem;
-  width: 11.25rem;
-}
+  .priority {
+    p {
+      font-family: $priority-font;
+      font-size: $priority-font-size;
+      width: 11.25rem;
+    }
+  }
 
-/* Адаптив блока приоритетов */
-
-@media (max-width: 1000px) {
-
-  .priorities{
+  // Вложенный медиа-запрос
+  @media (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
 
-  .priority{
-    margin-top: 5%;
+    .priority {
+      margin-top: 5%;
+    }
   }
-
 }
 </style>
