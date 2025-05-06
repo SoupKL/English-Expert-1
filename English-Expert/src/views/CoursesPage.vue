@@ -8,6 +8,7 @@ import Pruposes from "@/components/puposes/pruposes.vue";
 import Priorities from "@/components/priorities/priorities.vue"
 import Teacher from "@/components/ teacher/teacher.vue";
 import BankCard from "@/components/bank-card/bank-card.vue";
+import Loading from "@/components/loading/loading.vue";
 
 
 onMounted(async (Vue) => {
@@ -45,7 +46,7 @@ onMounted(async (Vue) => {
 // };
 
 export default {
-  components: {BankCard, Teacher, Priorities, Pruposes, Offers},
+  components: {BankCard, Teacher, Priorities, Pruposes, Offers, Loading},
   directives: {
     mask: VueMask.VueMaskDirective,
   },
@@ -256,9 +257,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="isLoading" class="loading">
-    Загрузка данных...
-  </div>
+  <Loading v-if="isLoading" />
   <div v-else-if="!datePage" class="error">
     Не удалось загрузить данные
   </div>
