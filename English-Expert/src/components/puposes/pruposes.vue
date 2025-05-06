@@ -31,11 +31,13 @@
 }
 
 .purposes_right{
+  align-items: baseline;
     display: flex;
     justify-content: space-between;
 }
 
 .purposes_card{
+    align-content: center;
     width: 11rem;
     margin-right: 1%;
     margin-left: 1%;
