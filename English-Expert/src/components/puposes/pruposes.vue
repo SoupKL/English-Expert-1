@@ -29,7 +29,7 @@
 		padding-right: 7%;
 	}
 
-	&right {
+	&_right {
 		display:         flex;
 		justify-content: space-between;
 	}
