@@ -121,5 +121,60 @@ $rabbit-form-btn-color: #fff;
   @media (max-width: 1000px) {
     display: none;
   }
+
+  @media (max-width: 430px) {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 0;
+    flex-direction: column;
+    
+    .rh_l {
+      display: none;
+    }
+    
+    .rh_r {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      &.horizontal {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+
+        div {
+          width: 100%;
+        }
+      }
+
+      &.vertical {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+
+        p {
+          width: 100%;
+          font-size: 0.7rem;
+          text-align: center;
+        }
+
+        button {
+          width: 100%;
+          padding: 12px;
+          font-size: 1rem;
+        }
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="phone"] {
+        height: 2.8rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
 </style>

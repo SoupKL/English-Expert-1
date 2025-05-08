@@ -429,30 +429,7 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-$main-radius: 20px;
-$main-bg: #fff;
-$main-blue: rgb(0, 9, 60);
-$main-orange: rgb(247, 148, 29);
-$main-shadow: 0 0 20px rgba(39, 170, 225, 0.5), 0 0 20px rgba(247, 148, 29, 0.5);
-$main-form-bg: #bebebe;
-$main-form-radius: 4px;
-$main-form-font: regular;
-$main-form-font-bold: bold;
-$main-form-font-medium: medium;
-$main-form-btn-bg: rgb(247, 148, 29);
-$main-form-btn-color: #fff;
-
-.loading, .error {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.2rem;
-  font-family: regular;
-}
-
-.loading {
-  color: #27AAE1;
-}
+<style scoped>
 
 .error {
   color: #F7941D;
@@ -467,53 +444,28 @@ $main-form-btn-color: #fff;
 
 /* Блок целей */
 
-.purposes {
-  display: flex;
-  width: 100%;
-  margin-top: 5%;
-
-  .purposes_left {
-    padding-right: 7%;
-  }
-
-  .purposes_right {
-    display: flex;
-    justify-content: space-between;
-
-    .purposes_card {
-      width: 11rem;
-      margin-right: 1%;
-      margin-left: 1%;
 
 .purposes_card h3 {
   font-family: bold;
   font-size: 1.5rem;
 }
 
-      p {
-        font-family: regular;
-        font-size: 0.88rem;
-      }
-    }
-  }
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-
-    .purposes_right {
-      margin-top: 5%;
-      width: 100%;
-    }
-  }
+.purposes_card p {
+  font-family: regular;
+  font-size: 0.88rem;
 }
 
-.photo {
-  @media (max-width: 1000px) {
-    img {
-      width: 100%;
-    }
+/* Адаптив блока фото */
+
+@media (max-width: 1000px) {
+
+  .photo img {
+    width: 100%;
   }
+
 }
+
+/* Блок преимуществ */
 
 .benefits {
   width: 100%;
@@ -525,103 +477,116 @@ $main-form-btn-color: #fff;
   display: flex;
   flex-direction: column;
   margin-top: 5%;
-
-  .txt {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-    margin-bottom: 1rem;
-
-    p {
-      font-family: regular;
-      font-size: 1.13rem;
-      color: white;
-      width: 28.63rem;
-    }
-  }
-
-  button[type="button"], button[type="submit"] {
-    margin-top: 1rem;
-    padding: 10px 20px;
-    font-size: 0.88rem;
-    width: 11.94rem;
-    height: 3.13rem;
-    cursor: pointer;
-    background-color: $main-orange;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    align-self: center;
-
-    &:hover {
-      background-color: rgb(218, 120, 0);
-    }
-  }
 }
+
+.txt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-bottom: 1rem;
+}
+
+.txt p {
+  font-family: regular;
+  font-size: 1.13rem;
+  color: white;
+  width: 28.63rem;
+}
+
+button[type="button"], button[type="submit"] {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  width: 11.94rem;
+  height: 3.13rem;
+  cursor: pointer;
+  background-color: rgba(247, 148, 29, 1.00);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+  background-color: rgb(218, 120, 0);
+}
+
+/* Блок содержание курса */
 
 .content {
   display: flex;
   justify-content: space-between;
+}
 
-  .content_left {
-    margin-right: 3%;
+.content_left {
+  margin-right: 3%;
+}
 
-    h3, h4 {
-      font-family: bold;
-    }
+.content_right {
+  margin-left: 3%;
+}
 
-    h3 {
-      font-size: 2.25rem;
-    }
+.content_left h3, .content_left h4 {
+  font-family: bold;
+}
 
-    p {
-      font-family: regular;
-      font-size: 1.13rem;
-    }
+.content_left h3 {
+  font-size: 2.25rem;
+}
 
-    button {
-      width: 17.69rem;
-    }
+.content_left p {
+  font-family: regular;
+  font-size: 1.13rem;
+}
 
-    .txtcontent {
-      display: flex;
-      justify-content: space-between;
-      width: 28.63rem;
+.content_left button {
+  width: 17.69rem;
+}
 
-      p {
-        font-family: regular;
-        font-size: 0.88rem;
-      }
+.txtcontent {
+  display: flex;
+  justify-content: space-between;
+  width: 28.63rem;
+}
 
-      #term {
-        width: 7.44rem;
-      }
+.txtcontent p {
+  font-family: regular;
+  font-size: 0.88rem;
+}
 
-      #mode {
-        width: 19.31rem;
-      }
-    }
+#term {
+  width: 7.44rem;
+}
 
-    h4 {
-      font-size: 1.75rem;
-    }
+#mode {
+  width: 19.31rem;
+}
+
+.content_left h4 {
+  font-size: 1.75rem;
+}
+
+.content_right {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Адаптив блока содержание курса */
+
+@media (max-width: 1000px) {
+
+  .content {
+    flex-direction: column;
   }
 
   .content_right {
-    margin-left: 3%;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-
-  @media (max-width: 1000px) {
-    flex-direction: column;
-
-    .content_right {
-      margin-top: 5%;
-    }
+    margin-top: 5%;
   }
 }
+
+
+/* Блок преподавателей */
 
 .teachers {
   width: 100%;
@@ -631,110 +596,125 @@ $main-form-btn-color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 5%;
+}
 
-  h3 {
-    font-family: bold;
-    font-size: 2.25rem;
-    text-align: center;
-    color: white;
-    margin-bottom: 6%;
+.teachers h3 {
+  font-family: bold;
+  font-size: 2.25rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 6%;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 17.5rem;
+  height: 22.5rem;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; /* Выстраиваем элементы по вертикали */
+  justify-content: center; /* Центрируем по вертикали */
+  align-items: center; /* Центрируем по горизонтали */
+  text-align: center;
+}
+
+.card p {
+  font-family: medium;
+  font-size: 0.88rem;
+  padding: 1%;
+}
+
+.card h3 {
+  font-family: bold;
+  font-size: 1.13rem;
+  color: black;
+}
+
+/* адаптив блока преподавателей */
+
+@media (max-width: 1000px) {
+
+  .teachers {
+    height: 100%;
   }
 
   .cards {
-    display: flex;
-    justify-content: space-between;
-
-    .card {
-      width: 17.5rem;
-      height: 22.5rem;
-      background-color: white;
-      border-radius: $main-radius;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      p {
-        font-family: medium;
-        font-size: 0.88rem;
-        padding: 1%;
-      }
-
-      h3 {
-        font-family: bold;
-        font-size: 1.13rem;
-        color: black;
-      }
-    }
-
-    @media (max-width: 1000px) {
-      flex-direction: column;
-      align-items: center;
-
-      .card {
-        margin-bottom: 5%;
-      }
-    }
+    flex-direction: column;
+    align-items: center;
   }
+
+  .card {
+    margin-bottom: 5%;
+  }
+
 }
+
+/*  Блок найди ответ */
 
 .container {
   width: 100%;
-  margin-top: 5%;
+  margin-top: 5%
+}
 
-  h1 {
-    font-family: bold;
-    font-size: 1.75rem;
-  }
+.container h1 {
+  font-family: bold;
+  font-size: 1.75rem;
+}
 
-  .faq-section {
-    margin: 20px 0;
+.faq-section {
+  margin: 20px 0;
+}
 
-    details {
-      border: 1px solid transparent;
-      border-radius: 5px;
-      padding: 15px;
-      background: #fff;
-      margin-bottom: 10px;
-      position: relative;
-      box-shadow: 0 0 10px rgba(39, 170, 225, 0.3), 0 0 10px rgba(247, 148, 29, 0.3);
-      transition: box-shadow 0.3s ease;
+details {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 15px;
+  background: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(39, 170, 225, 0.3), 0 0 10px rgba(247, 148, 29, 0.3);
+  transition: box-shadow 0.3s ease;
+}
 
-      &::before {
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-      }
+details::before {
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+  linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box,
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
 
-      summary {
-        font-size: 1.13rem;
-        font-family: medium;
-        font-weight: bold;
-        cursor: pointer;
-        list-style: none;
 
-        &::after {
-          content: url('../../src/assets/cours/stick1.svg');
-          float: right;
-        }
-      }
+summary {
+  font-size: 1.13rem;
+  font-family: medium;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
 
-      &[open] summary::after {
-        content: url('../../src/assets/cours/stick2.svg');
-      }
+details summary::after {
+  content: url('../../src/assets/cours/stick1.svg');
+  float: right;
+}
 
-      ul, p {
-        margin: 10px 0 0;
-        font-family: regular;
-        font-size: 0.88rem;
-      }
+details[open] summary::after {
+  content: url('../../src/assets/cours/stick2.svg');
+}
 
-      &[open] {
-        box-shadow: 0 0 15px rgba(247, 148, 29, 0.5), 0 0 15px rgba(39, 170, 225, 0.5);
-      }
-    }
-  }
+details ul, p {
+  margin: 10px 0 0;
+  font-family: regular;
+  font-size: 0.88rem;
+}
+
+details[open] {
+  box-shadow: 0 0 15px rgba(247, 148, 29, 0.5), 0 0 15px rgba(39, 170, 225, 0.5);
 }
 </style>

@@ -314,133 +314,178 @@ export default {
 
 </template>
 
-<style lang="scss">
-$test-bg: #F6F7F9;
-$test-shadow: 0px 2px 32px -3px rgba(167, 167, 167, 0.5);
-$test-radius: 5px;
-$test-orange: #F7941D;
-$test-blue: #27AAE1;
-$test-font-regular: regular;
-$test-font-medium: medium;
+<style scoped>
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+#quiz-container {
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin: 2rem auto;
+}
 
 #questionContainer {
-	padding: 20px;
-	border-radius: $test-radius;
-	background-color: $test-bg;
-	margin-bottom: 20px;
-	box-shadow: $test-shadow;
-	text-align: center;
+	margin-bottom: 2rem;
 }
 
 .question {
-	font-family: $test-font-regular;
-	font-size: 1.5rem;
-	margin-bottom: 20px;
-	color: rgb(0, 0, 0);
+	font-size: clamp(1.2rem, 3vw, 1.5rem);
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+	color: #333;
+	line-height: 1.4;
 }
 
 .answers {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
 
-	.answer {
-		margin-bottom: 10px;
-	}
+.answer-option {
+	padding: 1rem;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+}
 
-	.answer-text {
-		font-family: $test-font-regular;
-		font-size: 0.88rem;
-		padding: 10px;
-		border-radius: $test-radius;
-		cursor: pointer;
-		width: 11rem;
+.answer-option:hover {
+	border-color: #4CAF50;
+	background-color: #f9f9f9;
+}
 
-		&.selected {
-			background: linear-gradient(to right, $test-orange, $test-blue);
-			color: white;
-		}
-	}
+.answer-option.selected {
+	border-color: #4CAF50;
+	background-color: #e8f5e9;
 }
 
 .progress-button-container {
 	display: flex;
 	justify-content: space-between;
-	width: 40%;
-	margin-top: 2%;
-	margin-right: auto;
-	margin-left: auto;
+	align-items: center;
+	margin-top: 2rem;
 }
 
 #progress {
-	font-family: $test-font-regular;
-	font-size: 1.13rem;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	color: #666;
 }
 
 .button {
-	font-family: $test-font-medium;
-	font-size: 16px;
-	background-color: $test-orange;
+	padding: 0.8rem 1.5rem;
+	background: linear-gradient(45deg, rgb(247, 148, 29), rgb(39, 170, 225));
 	color: white;
 	border: none;
-	padding: 10px 20px;
-	border-radius: $test-radius;
+	border-radius: 5px;
 	cursor: pointer;
-	text-align: center;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	transition: all 0.3s ease;
+}
 
-	&:hover {
-		background-color: $test-blue;
-	}
+.button:hover {
+	background: linear-gradient(45deg, rgb(39, 170, 225), rgb(247, 148, 29));
+	transform: translateY(-2px);
+}
+
+#result-container {
+	text-align: center;
+	padding: 2rem;
+}
+
+#result-container h2 {
+	font-size: clamp(1.5rem, 4vw, 2rem);
+	margin-bottom: 2rem;
+	color: #333;
+}
+
+.card {
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+	margin: 2rem auto;
+	max-width: 600px;
+}
+
+.cardtxt {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.cardtxt img {
+	width: clamp(60px, 10vw, 80px);
+	height: auto;
+}
+
+.cardtxt h3 {
+	font-size: clamp(1.2rem, 3vw, 1.5rem);
+	color: #333;
+}
+
+.card p {
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	line-height: 1.6;
+	color: #666;
+	margin-bottom: 1.5rem;
 }
 
 .hide {
 	display: none;
 }
 
-#result-container {
-	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
-
-	h2 {
-		font-family: $test-font-regular;
-		font-size: 1.5rem;
+@media (max-width: 768px) {
+	.wrapper {
+		padding: 0.5rem;
 	}
-}
 
-.cardtxt {
-	h3 {
-		font-family: $test-font-regular;
-		font-size: 1.13rem;
+	.container {
+		padding: 0.5rem;
 	}
-}
 
-.card {
-	padding: 20px;
-	border-radius: $test-radius;
-	background-color: $test-bg;
-	margin-bottom: 20px;
-	box-shadow: $test-shadow;
-	text-align: center;
-	width: 26.89rem;
+	#quiz-container {
+		padding: 1.5rem;
+		margin: 1rem auto;
+	}
 
-	p {
-		font-family: $test-font-regular;
-		color: rgb(79, 79, 79);
-		font-size: 0.75rem;
+	.progress-button-container {
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.button {
-		margin-top: 20px;
+		width: 100%;
 	}
 }
 
-// Индивидуальные цвета для карточек-уровней
-#A1 { background-color: rgb(199, 238, 255); }
-#A2 { background-color: rgb(255, 206, 148); }
-#B1 { background-color: rgb(255, 227, 142); }
-#B2 { background-color: rgb(221, 221, 255); }
-#C1 { background-color: rgb(184, 239, 207); }
-#C2 { background-color: rgb(199, 238, 255); }
+@media (max-width: 480px) {
+	#quiz-container {
+		padding: 1rem;
+	}
 
+	.card {
+		padding: 1.5rem;
+	}
+
+	.cardtxt {
+		flex-direction: column;
+		text-align: center;
+	}
+}
 </style>

@@ -147,6 +147,20 @@ $main-form-font-medium: medium;
 $main-form-btn-bg: rgb(247, 148, 29);
 $main-form-btn-color: #fff;
 
+/* Prevent horizontal scroll */
+:root {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 h1 {
   font-family: $main-form-font-bold;
 }
@@ -156,10 +170,13 @@ h1 {
   display: flex;
   height: 480px;
   width: 100%;
+  max-width: 100vw;
   background-image: url('../../src/assets/main/education.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
 
   &__button {
     position: absolute;
@@ -181,31 +198,79 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  @media (max-width: 430px) {
+    height: 600px;
+    
+    &__button {
+      top: 400px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      text-align: center;
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
 }
 
 /* БЛОК АКТУАЛЬНЫЕ ЗНАНИЯ */
 .stat {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 15px;
+  box-sizing: border-box;
+
   h1 {
     font-family: $main-form-font-bold;
     font-size: larger;
     text-align: center;
     margin-top: 10%;
+    padding: 0 15px;
+    box-sizing: border-box;
   }
   .stats {
     display: flex;
     justify-content: space-around;
     padding: 20px;
     margin-top: 5%;
+    flex-wrap: wrap;
 
     .stat-item {
       text-align: center;
       font-family: $main-form-font-medium;
+      margin: 10px;
     }
   }
 
   @media (max-width: 1000px) {
     .stats {
       flex-direction: column;
+    }
+  }
+
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 1.2rem;
+      padding: 0 15px;
+    }
+
+    .stats {
+      padding: 10px;
+      
+      .stat-item {
+        margin: 10px 0;
+        
+        img {
+          width: 60px;
+          height: auto;
+        }
+        
+        p {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 }
@@ -216,15 +281,20 @@ h1 {
   border-radius: 15px;
   height: 10rem;
   width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  padding: 0 15px;
 
   .cardtxt {
     display: flex;
     justify-content: space-around;
-    width: 43.13rem;
+    width: 100%;
+    max-width: 43.13rem;
     align-items: center;
+    flex-wrap: wrap;
 
     .date-image {
       margin-right: 20px;
@@ -235,6 +305,8 @@ h1 {
     .info {
       text-align: left;
       line-height: 1.5rem;
+      flex: 1;
+      min-width: 200px;
 
       .title {
         font-size: 2.25em;
@@ -248,14 +320,47 @@ h1 {
       }
     }
   }
+
+  @media (max-width: 430px) {
+    height: auto;
+    padding: 20px 15px;
+
+    .cardtxt {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+
+      .date-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 80px;
+      }
+
+      .info {
+        text-align: center;
+
+        .title {
+          font-size: 1.5em;
+        }
+
+        .description {
+          font-size: 1em;
+        }
+      }
+    }
+  }
 }
 
 .event-actions {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 13.75rem;
+  height: auto;
   margin-top: 3%;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 15px;
+  box-sizing: border-box;
 
   h3 {
     font-family: $main-form-font-medium;
@@ -265,7 +370,8 @@ h1 {
   }
 
   .action-item {
-    width: 20rem;
+    width: calc(33.333% - 20px);
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -291,6 +397,39 @@ h1 {
 
     .action {
       padding-top: 10%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 0 15px;
+
+    .action-item {
+      width: 100%;
+      height: auto;
+      padding: 20px 15px;
+
+      .action {
+        padding-top: 5%;
+
+        img {
+          width: 40px;
+          height: auto;
+        }
+
+        h3 {
+          font-size: 1.1rem;
+          margin: 10px 0;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 }
@@ -360,7 +499,9 @@ h1 {
 /* БЛОК ОТЗЫВЫ */
 .testimonials {
   width: 100%;
-  height: 37rem;
+  max-width: 100vw;
+  height: auto;
+  min-height: 37rem;
   padding: 2em 0;
   background-image: url('../../src/assets/main/background.svg');
   background-size: cover;
@@ -368,12 +509,14 @@ h1 {
   background-repeat: no-repeat;
   color: #fff;
   margin-top: 10%;
+  overflow: hidden;
 
   h2 {
     font-family: $main-form-font-bold;
     font-size: 2.25rem;
     margin-top: 3.5%;
     text-align: center;
+    padding: 0 15px;
   }
 
   .slider {
@@ -382,8 +525,9 @@ h1 {
     overflow-x: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding: 20px 0;
+    padding: 20px 15px;
     width: 100%;
+    box-sizing: border-box;
     scrollbar-width: none;
     -ms-overflow-style: none;
     user-select: none;
@@ -426,8 +570,65 @@ h1 {
     width: 20px;
   }
 
-  @media (max-width: 1000px) {
-    margin-top: 50%;
+  @media (max-width: 430px) {
+    height: auto;
+    padding: 1em 0;
+    margin-top: 5%;
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2%;
+    }
+
+    .slider {
+      padding: 10px 15px;
+    }
+  }
+}
+
+/* БЛОК НАВЫКИ */
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  @media (max-width: 430px) {
+    padding: 0 15px;
+  }
+}
+
+/* БЛОК ФОРМЫ */
+.rabbit_helper {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 5%;
+  margin-bottom: 0;
+  border-radius: 20px;
+  display: flex;
+  background-color: $rabbit-bg;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 15px;
+
+  @media (max-width: 430px) {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 0;
+    flex-direction: column;
+    padding: 0 15px;
+    
+    .rh_l {
+      display: none;
+    }
+    
+    .rh_r {
+      width: 100%;
+      padding: 15px;
+    }
   }
 }
 </style>
