@@ -3,17 +3,19 @@
 	<header-classic/>
 		<router-view />
 	<site-footer/>
+	<scroll-to-top/>
   </div>
 </template>
 
 <script>
 import HeaderClassic from "@/components/header/header-classic.vue";
 import SiteFooter from "@/components/common/SiteFooter.vue";
+import ScrollToTop from "@/components/ScrollToTop.vue";
 
 
 export default {
   name: 'App',
-  components: { SiteFooter, HeaderClassic}
+  components: { SiteFooter, HeaderClassic, ScrollToTop }
 }
 </script>
 
