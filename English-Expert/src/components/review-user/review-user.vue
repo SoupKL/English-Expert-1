@@ -17,25 +17,38 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
+$main-bg: url('./src/img/main/background.svg');
+$main-gradient: linear-gradient(45deg, rgb(247, 148, 29), rgb(39, 170, 225));
+$main-gradient-hover: linear-gradient(45deg, rgb(39, 170, 225), rgb(247, 148, 29));
+$main-white: #fff;
+$main-black: #000;
+$main-border: #ddd;
+$main-radius: 10px;
+$main-orange: rgb(247, 148, 29);
+$main-blue: rgb(39, 170, 225);
+
 .testimonials {
     width: 100%;
     height: 37rem;
-    ;
     padding: 2em 0;
-    background-image: url('./src/img/main/background.svg');
+    background-image: $main-bg;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
+    color: $main-white;
     margin-top: 10%;
-}
 
-.testimonials h2 {
-    font-family: bold;
-    font-size: 2.25rem;
-    margin-top: 3.5%;
-    text-align: center;
+    h2 {
+        font-family: bold;
+        font-size: 2.25rem;
+        margin-top: 3.5%;
+        text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+        margin-top: 50%;
+    }
 }
 
 .slider {
@@ -46,63 +59,62 @@
     margin-right: auto;
     margin-top: 5%;
     padding-bottom: 5em;
-}
 
-.slider::-webkit-scrollbar {
-    height: 6px;
-}
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
 
-.slider::-webkit-scrollbar-track {
-    background: #ffffff;
-    border-radius: 10px;
-}
+    &::-webkit-scrollbar-track {
+        background: $main-white;
+        border-radius: $main-radius;
+    }
 
-.slider::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, rgb(247, 148, 29), rgb(39, 170, 225));
-    /* Gradient thumb */
-    border-radius: 10px;
-}
+    &::-webkit-scrollbar-thumb {
+        background: $main-gradient;
+        border-radius: $main-radius;
 
-.slider::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, rgb(39, 170, 225), rgb(247, 148, 29));
-}
+        &:hover {
+            background: $main-gradient-hover;
+        }
+    }
 
-.slider::-webkit-scrollbar-button {
-    display: none;
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
 }
 
 .testimonial-item {
     width: 17.5rem;
     flex: 0 0 auto;
-    border: 1px solid #ddd;
+    border: 1px solid $main-border;
     padding: 1em;
     scroll-snap-align: start;
-    background: white;
-    border-radius: 10px;
-    color: #000;
+    background: $main-white;
+    border-radius: $main-radius;
+    color: $main-black;
     margin: 0 2% 0 2%;
-}
 
-.testimonial-item p {
-    font-family: medium;
-    font-size: 0.88rem;
+    p {
+        font-family: medium;
+        font-size: 0.88rem;
+    }
 }
 
 .user-info {
     display: flex;
     align-items: center;
     gap: 1em;
-}
 
-.user-info h2 {
-    font-size: 0.88rem;
-    font-family: bold;
-}
+    h2 {
+        font-size: 0.88rem;
+        font-family: bold;
+    }
 
-.user-info img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .review-author {
@@ -119,19 +131,9 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
-}
 
-.stars img {
-    width: 20px;
-}
-
-/* Адаптив Отзывов*/
-
-@media (max-width: 1000px) {
-
-    .testimonials {
-        margin-top: 50%;
+    .stars img {
+        width: 20px;
     }
-
 }
 </style>

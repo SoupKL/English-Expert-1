@@ -287,357 +287,299 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </template>
 
-<style scoped>
-a{
+<style lang="scss" scoped>
+$main-radius: 20px;
+$main-bg: #fff;
+$main-blue: rgb(0, 9, 60);
+$main-orange: rgb(247, 148, 29);
+$main-shadow: 0 0 20px rgba(39, 170, 225, 0.5), 0 0 20px rgba(247, 148, 29, 0.5);
+$main-shadow-active: 10px 10px 20px rgba(39, 170, 225, 0.7), -10px -10px 20px rgba(247, 148, 29, 0.7);
+$main-form-bg: #bebebe;
+$main-form-radius: 4px;
+$main-form-font: regular;
+$main-form-font-bold: bold;
+$main-form-font-medium: medium;
+$main-form-btn-bg: rgb(247, 148, 29);
+$main-form-btn-color: #fff;
+
+a {
   text-decoration: none;
 }
 
-/* Скрытие иконки меню при разрешении больше 900px */
+// Скрытие иконки меню при разрешении больше 900px
 @media (min-width: 1000px) {
-	.menu-toggle {
-		display: none;
-	}
+  .menu-toggle {
+    display: none;
+  }
 }
-
 
 /* Блок выборки */
-
 .txt {
-	font-family: bold;
-	font-size: 2.25rem;
+  font-family: bold;
+  font-size: 2.25rem;
 }
 
-.cours{
-	display: flex;
-	justify-content: space-between;
-}
+.cours {
+  display: flex;
+  justify-content: space-between;
 
-/* Адаптив выборки */
-
-@media (max-width: 1000px) {
-
-	.txt{
-		text-align: center;
-	}
-
-	.cours{
-		flex-direction: column;
-		align-items: center;
-	}
-
-}
-
-/* Блок Карточек */
-
-.cards-container{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.cards1, .cards2, .cards3, .cards4{
-	display: flex;
-	justify-content: space-between;
-}
-
-.card{
-	width: 26rem;
-	border-radius: 20px;
-	display: flex;
-	flex-direction: column;
-	padding: 5%;
-	margin: 0 1% 1% 1%;
-	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-	cursor: pointer;
-}
-
-.card:hover {
-	transform: scale(1.02);
-	box-shadow: 0 0 20px  rgba(39, 170, 225, 0.5), 0 0 20px  rgba(247, 148, 29, 0.5);
-}
-
-.card:active {
-	transform: scale(0.98);
-	box-shadow: 10px 10px 20px rgba(39, 170, 225, 0.7), -10px -10px 20px rgba(247, 148, 29, 0.7);
-}
-
-.card p{
-	font-family: regular;
-	color: rgb(79, 79, 79);
-	font-size: 0.75rem;
-}
-
-#A1{
-	background-color: rgb(199, 238, 255);
-}
-
-#A2{
-	background-color: rgb(255, 206, 148);
-}
-
-#B1{
-	background-color: rgb(255, 227, 142);
-}
-
-#B2{
-	background-color: rgb(221, 221, 255);
-}
-
-#C1{
-	background-color: rgb(184, 239, 207);
-}
-
-#C2{
-	background-color: rgb(199, 238, 255);
-}
-
-#work{
-	background-color: rgb(197, 221, 255);
-}
-
-#purpose{
-	background-color: rgb(255, 233, 168);
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .txt2 {
-	font-weight: bold;
-	margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.txt{
-	font-family: medium;
-	font-size: 1rem;
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.cardtxt{
-	display: flex;
-	justify-content: space-between;
-	width: 12rem;
+.cards1, .cards2, .cards3, .cards4 {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-top: 8%;
+  }
 }
 
-.cardtxt h3{
-	color: rgb(0, 9, 60);
-	font-size: 1.13rem;
-	font-family: medium;
+.card {
+  width: 26rem;
+  border-radius: $main-radius;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  margin: 0 1% 1% 1%;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: $main-shadow;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: $main-shadow-active;
+  }
+
+  p {
+    font-family: $main-form-font;
+    color: rgb(79, 79, 79);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 2%;
+    width: 18.75rem;
+  }
 }
 
-.level0 p, .level1, .level2, .level3{
-	display: flex;
-}
+// Индивидуальные цвета для карточек-уровней
+#A1 { background-color: rgb(199, 238, 255); }
+#A2 { background-color: rgb(255, 206, 148); }
+#B1 { background-color: rgb(255, 227, 142); }
+#B2 { background-color: rgb(221, 221, 255); }
+#C1 { background-color: rgb(184, 239, 207); }
+#C2 { background-color: rgb(199, 238, 255); }
+#work { background-color: rgb(197, 221, 255); }
+#purpose { background-color: rgb(255, 233, 168); }
 
-.level0 p, .level1 p, .level2 p, .level3 p{
-	margin-left: 5%;
-	font-size: 0.88rem;
-	font-family: regular;
+.cardtxt {
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
+
+  h3 {
+    color: $main-blue;
+    font-size: 1.13rem;
+    font-family: $main-form-font-medium;
+  }
 }
 
 .level {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-.level > div {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-.level > div > input[type="radio"] {
-	appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 2px solid #333333;
-	border-radius: 50%;
-	outline: none;
-	cursor: pointer;
-	position: relative;
-}
+    > input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #333333;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      position: relative;
 
-.level > div > input[type="radio"]:checked {
-	background: linear-gradient(to right, rgba(247, 148, 29, 1.00), rgba(39, 170, 225, 1.00));
-	border: 2px solid #333333;
-}
+      &:checked {
+        background: linear-gradient(to right, $main-orange, rgba(39, 170, 225, 1.00));
+        border: 2px solid #333333;
+      }
 
-.level > div > input[type="radio"]:focus {
-	box-shadow: 0 0 2px 2px rgba(39, 170, 225, 0.5);
-}
+      &:focus {
+        box-shadow: 0 0 2px 2px rgba(39, 170, 225, 0.5);
+      }
+    }
 
-.level > div > p {
-	margin: 0;
-}
-
-/* Адаптив карточек */
-
-@media (max-width: 1000px) {
-
-	.cards1, .cards2, .cards3, .cards4, .cards5{
-		flex-direction: column;
-		margin-top: 8%;
-	}
-
-	.card{
-		margin-top: 2%;
-		width: 18.75rem;
-	}
-
+    > p {
+      margin: 0;
+      margin-left: 5%;
+      font-size: 0.88rem;
+      font-family: $main-form-font;
+    }
+  }
 }
 
 /* БЛОК ФОРМЫ */
+.rabbit_helper {
+  margin-top: 15%;
+  width: 100%;
+  border-radius: $main-radius;
+  display: flex;
+  background-color: $main-bg;
+  position: relative;
+  margin-bottom: -10%;
+  z-index: 1;
 
-.rabbit_helper{
-	margin-top: 15%;
-	width: 100%;
-	border-radius: 20px;
-	display: flex;
-	background-color: #fff;
-	position: relative;
-	margin-bottom: -10%;
-	z-index: 1;
-}
+  .rh_l, .rh_r {
+    padding: 2%;
+  }
 
-.rh_l, .rh_r{
-	padding: 2%;
-}
+  .rh_r {
+    width: 27.5rem;
+  }
 
-.rh_r{
-	width: 27.5rem;
-}
+  form {
+    padding: 3%;
+  }
 
-form {
-	padding: 3%;
-}
+  .form-group {
+    margin-bottom: 20px;
 
-.form-group {
-	margin-bottom: 20px;
-}
+    &.full-width {
+      width: 100%;
+    }
 
-.form-group.full-width {
-	width: 100%;
-}
+    &.horizontal {
+      display: flex;
+      justify-content: space-between;
+      width: 27.5rem;
 
-.form-group.horizontal {
-	display: flex;
-	justify-content: space-between;
-	width: 27.5rem;
-}
+      div {
+        width: 13.13rem;
+      }
+    }
 
-.form-group.horizontal div {
-	width: 13.13rem;
-}
+    &.vertical {
+      display: flex;
+      justify-content: space-between;
+      width: 27.5rem;
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="phone"] {
-	padding: 8px;
-	border: none;
-	background-color: #bebebe;
-	border-radius: 4px;
-	font-size: 0.88rem;
-	font-family: regular;
-	height: 3.13rem;
-}
+      p {
+        margin: 0;
+        font-size: 0.63rem;
+        width: 13.22rem;
+      }
 
-.form-group input[type="text"]{
-	width: 100%;
-}
+      button {
+        font-size: 0.88rem;
+        font-family: $main-form-font-bold;
+        padding: 10px 20px;
+        background-color: $main-form-btn-bg;
+        color: $main-form-btn-color;
+        border: none;
+        border-radius: 10px;
+        width: 13.22rem;
+      }
+    }
 
-.form-group.vertical {
-	display: flex;
-	justify-content: space-between;
-	width: 27.5rem;
-}
+    input[type="text"],
+    input[type="email"],
+    input[type="phone"] {
+      padding: 8px;
+      border: none;
+      background-color: $main-form-bg;
+      border-radius: $main-form-radius;
+      font-size: 0.88rem;
+      font-family: $main-form-font;
+      height: 3.13rem;
+      width: 100%;
+    }
+  }
 
-.form-group.vertical p {
-	margin: 0;
-	font-size: 0.63rem;
-	width: 13.22rem;
-}
+  @media (max-width: 1000px) {
+    margin-top: 15%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
 
-.form-group.vertical button {
-	font-size: 0.88rem;
-	font-family: bold;
-	padding: 10px 20px;
-	background-color: rgb(247, 148, 29);
-	color: #fff;
-	border: none;
-	border-radius: 10px;
-	width: 13.22rem;
-}
+    .rh_l img {
+      width: 90%;
+    }
 
-/* Адаптив формы */
+    .rh_l, .rh_r {
+      width: 100%;
+      padding: 0;
+    }
 
-@media (max-width: 1000px) {
+    .rh_r {
+      margin-top: 20px;
+    }
 
-	.rabbit_helper {
-		margin-top: 15%;
-		flex-direction: column;
-		align-items: center;
-		margin-bottom: 0;
-	}
+    .form-group.horizontal {
+      flex-direction: column;
+      width: 105%;
+    }
 
-	.rh_l img{
-		width: 90%;
-	}
+    .form-group.full-width {
+      margin-bottom: 0;
+    }
 
-	.rh_l, .rh_r {
-		width: 100%; /* Делаем элементы шириной 90% */
-		padding: 0;
-	}
-
-	.rh_r {
-		margin-top: 20px; /* Добавляем отступ сверху для формы */
-	}
-
-	.form-group.horizontal{
-		flex-direction: column;
-		width: 105%;
-	}
-
-	.form-group.full-width{
-		margin-bottom: 0;
-	}
-
-	.form-group input[type="email"],
-	.form-group input[type="phone"] {
-		width: 565px;
-		margin-top: 5%;
-	}
+    .form-group input[type="email"],
+    .form-group input[type="phone"] {
+      width: 565px;
+      margin-top: 5%;
+    }
+  }
 }
 
 /* FOOTER */
-
 footer {
-	display: flex;
-	flex-direction: row;
-	background-color: rgb(0, 9, 60);
-	color: #fff;
-	text-align: center;
-	padding: 20px;
-}
+  display: flex;
+  flex-direction: row;
+  background-color: $main-blue;
+  color: $main-form-btn-color;
+  text-align: center;
+  padding: 20px;
 
-.info_f{
-	display: flex;
-	justify-content: space-between;
-	height: 13.38rem;
-	align-items:end;
-}
+  .info_f {
+    display: flex;
+    justify-content: space-between;
+    height: 13.38rem;
+    align-items: end;
 
-.info_f p{
-	font-family: medium;
-	font-size: 0.88rem;
-}
+    p {
+      font-family: $main-form-font-medium;
+      font-size: 0.88rem;
+    }
 
-/* Адаптив footer */
-
-@media (max-width: 1000px) {
-
-	.info_f{
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		align-items:center;
-	}
-
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 </style>

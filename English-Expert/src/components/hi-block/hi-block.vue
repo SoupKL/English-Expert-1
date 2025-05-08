@@ -34,26 +34,29 @@
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+$hi-font: regular;
+$hi-font-size: 0.88rem;
 
 .hi {
 	margin-top: 5%;
 	display:    flex;
-}
 
-.hi_right {
-	display:      flex;
-	margin-right: 2%;
-}
+	.hi_left {
+		// Можно добавить стили для левой части, если потребуется
+	}
 
-.right_1 {
-	width:       15.38rem;
-	margin-left: 5%;
-}
+	.hi_right {
+		display:      flex;
+		margin-right: 2%;
 
-.right_1 {
-	font-size:   0.88rem;
-	font-family: regular;
+		.right_1 {
+			width:       15.38rem;
+			margin-left: 5%;
+			font-size:    $hi-font-size;
+			font-family:  $hi-font;
+		}
+	}
 }
 
 /* Адаптив блока приветствия */

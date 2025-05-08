@@ -147,315 +147,296 @@
 
 </template>
 
-<style scoped>
-h1{
-  font-family: medium
+<style lang="scss" scoped>
+$main-radius: 20px;
+$main-bg: #fff;
+$main-blue: rgb(0, 9, 60);
+$main-orange: rgb(247, 148, 29);
+$main-form-bg: #bebebe;
+$main-form-radius: 4px;
+$main-form-font: regular;
+$main-form-font-bold: bold;
+$main-form-font-medium: medium;
+$main-form-btn-bg: rgb(247, 148, 29);
+$main-form-btn-color: #fff;
+
+h1 {
+  font-family: $main-form-font-medium;
 }
 
 /* Блок мероприятий */
-
 .events2, .events3, .events4 {
   display: flex;
 }
 
 .card-info {
   background-color: #f3a563;
-  border-radius:    15px;
-  height:           10rem;
-  width:            100%;
-  display:          flex;
-  justify-content:  center;
-  align-items:      center;
-}
+  border-radius: 15px;
+  height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.cardtxt {
-  display:         flex;
-  justify-content: space-around;
-  width:           43.13rem;
-  align-items:     center;
-}
+  .cardtxt {
+    display: flex;
+    justify-content: space-around;
+    width: 43.13rem;
+    align-items: center;
 
-.date-image {
-  margin-right: 20px;
-  width:        100px;
-  height:       auto;
-}
+    .date-image {
+      margin-right: 20px;
+      width: 100px;
+      height: auto;
+    }
 
-.info {
-  text-align:  left;
-  line-height: 1.5rem;
-}
+    .info {
+      text-align: left;
+      line-height: 1.5rem;
 
-.title {
-  font-size:   2.25em;
-  font-family: medium;
-}
+      .title {
+        font-size: 2.25em;
+        font-family: $main-form-font-medium;
+      }
 
-.description {
-  font-size:   1.13em;
-  line-height: 1.5;
-  font-family: regular;
+      .description {
+        font-size: 1.13em;
+        line-height: 1.5;
+        font-family: $main-form-font;
+      }
+    }
+  }
 }
 
 .events2, .events4 {
-  display:         flex;
-  flex-direction:  row;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  height:          13.75rem;
-  margin-top:      3%;
-}
+  height: 13.75rem;
+  margin-top: 3%;
 
-.events2 h3, .events3 h3, .events4 h3 {
-  font-family: medium;
-  font-size:   1.13rem;
-  color:       rgb(0, 9, 60);
-}
+  h3 {
+    font-family: $main-form-font-medium;
+    font-size: 1.13rem;
+    color: $main-blue;
+  }
 
-.events2 p, .events3 p, .events4 p {
-  font-family: regular;
-  font-size:   0.75rem;
-  color:       rgb(79, 79, 79);
+  p {
+    font-family: $main-form-font;
+    font-size: 0.75rem;
+    color: rgb(79, 79, 79);
+  }
 }
 
 .event2, .event4 {
-  width:           21rem;
-  height:          15.63rem;
+  width: 21rem;
+  height: 15.63rem;
   justify-content: space-between;
-  border-radius:   20px;
-  padding:         2%;
+  border-radius: $main-radius;
+  padding: 2%;
+
+  .cardtxt2, .cardtxt4 {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      margin-right: 5%;
+    }
+  }
 }
 
-.cardtxt2, .cardtxt4 {
-  display:         flex;
-  justify-content: space-between;
-}
-
-.cardtxt2 img, .cardtxt4 img {
-  margin-right: 5%;
-}
-
-#conversation-club {
-  background-color: rgb(199, 238, 255);
-}
-
-#webinars {
-  background-color: rgb(255, 227, 142);
-}
-
-#travel-english {
-  background-color: rgb(221, 221, 255);
-}
-
-#movies {
-  background-color: rgb(197, 221, 255);
-}
-
-#everyday-english {
-  background-color: rgb(255, 238, 246);
-}
-
-#writing-workshop {
-  background-color: rgb(255, 206, 148);
-}
+#conversation-club { background-color: rgb(199, 238, 255); }
+#webinars { background-color: rgb(255, 227, 142); }
+#travel-english { background-color: rgb(221, 221, 255); }
+#movies { background-color: rgb(197, 221, 255); }
+#everyday-english { background-color: rgb(255, 238, 246); }
+#writing-workshop { background-color: rgb(255, 206, 148); }
 
 #literature-evenings {
-  width:            48.75rem;
-  height:           15.63rem;
+  width: 48.75rem;
+  height: 15.63rem;
   background-color: rgb(184, 239, 207);
-  border-radius:    20px;
-  display:          flex;
+  border-radius: $main-radius;
+  display: flex;
+
+  h3, p {
+    padding-top: 5%;
+    text-align: center;
+  }
 }
 
 .events3 {
   justify-content: space-between;
-  margin-top:      10%;
-}
-
-#literature-evenings h3, p {
-  padding-top: 5%;
-  text-align:  center;
+  margin-top: 10%;
 }
 
 #games {
-  background-image:    url(../../src/assets/all_events/online.svg);
-  background-size:     cover;
+  background-image: url(../../src/assets/all_events/online.svg);
+  background-size: cover;
   background-position: center;
-  background-repeat:   no-repeat;
-  width:               23.75rem;
-  height:              15.63rem;
-  display:             flex;
-  flex-direction:      column;
-  justify-content:     center;
-  align-items:         center;
-  text-align:          center;
+  background-repeat: no-repeat;
+  width: 23.75rem;
+  height: 15.63rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  p, h3 {
+    color: #fff;
+  }
 }
 
-#games p, #games h3 {
-  color: rgb(255, 255, 255);
-}
-
-/* адпатив блока мероприятий */
-
+/* Адаптив блока мероприятий */
 @media (max-width: 1000px) {
-
   .events {
-	margin-bottom: 50%;
+    margin-bottom: 50%;
   }
 
   .info h1 {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .info p {
-	font-size: 0.88rem;
+    font-size: 0.88rem;
   }
 
   .events2 {
-	flex-direction: column;
-	align-items:    center;
-
+    flex-direction: column;
+    align-items: center;
   }
 
   .event2 {
-	margin-bottom: 5%;
+    margin-bottom: 5%;
   }
 
   .events3 {
-	display: none;
+    display: none;
   }
 
   .events4 {
-	flex-direction: column;
-	margin-top:     95%;
-	align-items:    center;
+    flex-direction: column;
+    margin-top: 95%;
+    align-items: center;
   }
 
   .event4 {
-	margin-bottom: 5%;
+    margin-bottom: 5%;
   }
 }
 
 /* БЛОК ФОРМЫ */
-
 .rabbit_helper {
-  margin-top:       15%;
-  width:            100%;
-  border-radius:    20px;
-  display:          flex;
-  background-color: #fff;
-  position:         relative;
-  margin-bottom:    -10%;
-  z-index:          1;
-}
-
-.rh_l, .rh_r {
-  padding: 2%;
-}
-
-.rh_r {
-  width: 27.5rem;
-}
-
-form {
-  padding: 3%;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group.full-width {
+  margin-top: 15%;
   width: 100%;
-}
-
-.form-group.horizontal {
-  display:         flex;
-  justify-content: space-between;
-  width:           27.5rem;
-}
-
-.form-group.horizontal div {
-  width: 13.13rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="phone"] {
-  padding:          8px;
-  border:           none;
-  background-color: #bebebe;
-  border-radius:    4px;
-  color:            #4F4F4F;
-  font-size:        0.88rem;
-  font-family:      regular;
-  height:           3.13rem;
-}
-
-.form-group input[type="text"] {
-  width: 100%;
-}
-
-.form-group.vertical {
-  display:         flex;
-  justify-content: space-between;
-  width:           27.5rem;
-}
-
-.form-group.vertical p {
-  margin:    0;
-  font-size: 0.63rem;
-  width:     13.22rem;
-}
-
-.form-group.vertical button {
-  font-size:        0.88rem;
-  font-family:      bold;
-  padding:          10px 20px;
-  background-color: rgb(247, 148, 29);
-  color:            #fff;
-  border:           none;
-  border-radius:    10px;
-  width:            13.22rem;
-}
-
-/* Адаптив формы */
-
-@media (max-width: 1000px) {
-
-  .rabbit_helper {
-	margin-top:     40%;
-	flex-direction: column;
-	align-items:    center;
-	margin-bottom:  0%;
-  }
-
-  .rh_l img {
-	width: 90%;
-  }
+  border-radius: $main-radius;
+  display: flex;
+  background-color: $main-bg;
+  position: relative;
+  margin-bottom: -10%;
+  z-index: 1;
 
   .rh_l, .rh_r {
-	width:   100%; /* Делаем элементы шириной 90% */
-	padding: 0;
+    padding: 2%;
   }
 
   .rh_r {
-	margin-top: 20px; /* Добавляем отступ сверху для формы */
+    width: 27.5rem;
   }
 
-  .form-group.horizontal {
-	flex-direction: column;
-	width:          105%;
+  form {
+    padding: 3%;
+
+    .form-group {
+      margin-bottom: 20px;
+
+      &.full-width {
+        width: 100%;
+      }
+
+      &.horizontal {
+        display: flex;
+        justify-content: space-between;
+        width: 27.5rem;
+
+        div {
+          width: 13.13rem;
+        }
+      }
+
+      &.vertical {
+        display: flex;
+        justify-content: space-between;
+        width: 27.5rem;
+
+        p {
+          margin: 0;
+          font-size: 0.63rem;
+          width: 13.22rem;
+        }
+
+        button {
+          font-size: 0.88rem;
+          font-family: $main-form-font-bold;
+          padding: 10px 20px;
+          background-color: $main-form-btn-bg;
+          color: $main-form-btn-color;
+          border: none;
+          border-radius: 10px;
+          width: 13.22rem;
+        }
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="phone"] {
+        padding: 8px;
+        border: none;
+        background-color: $main-form-bg;
+        border-radius: $main-form-radius;
+        color: #4F4F4F;
+        font-size: 0.88rem;
+        font-family: $main-form-font;
+        height: 3.13rem;
+        width: 100%;
+      }
+    }
   }
 
-  .form-group.full-width {
-	margin-bottom: 0%;
-  }
+  @media (max-width: 1000px) {
+    margin-top: 40%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0%;
 
-  .form-group input[type="email"],
-  .form-group input[type="phone"] {
-	width:      565px;
-	margin-top: 5%;
+    .rh_l img {
+      width: 90%;
+    }
+
+    .rh_l, .rh_r {
+      width: 100%;
+      padding: 0;
+    }
+
+    .rh_r {
+      margin-top: 20px;
+    }
+
+    .form-group.horizontal {
+      flex-direction: column;
+      width: 105%;
+    }
+
+    .form-group.full-width {
+      margin-bottom: 0%;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="phone"] {
+      width: 565px;
+      margin-top: 5%;
+    }
   }
 }
-
 </style>

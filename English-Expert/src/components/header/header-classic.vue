@@ -26,63 +26,87 @@
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+$main-black:    black;
+$main-white:    white;
+$main-blue:     #f0f0f0;
+$header-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 .wrapper {
 	width:     100%;
 	max-width: 1180px;
 	margin:    0 auto;
 	padding:   20px;
+
+	@media (max-width: 1000px) {
+		width:     100%;
+		max-width: 600px;
+	}
 }
 
-header, .menu {
+header {
 	display:         flex;
 	justify-content: space-between;
 	align-items:     center;
 	width:           100%;
-}
 
-header a {
-	font-family:     medium;
-	font-size:       14px;
-	text-decoration: none;
-	color:           black;
-}
+	#logo {
+		img {
+			max-width: 100%;
+		}
+	}
 
-.menu {
-	margin-left: 5%;
-}
+	.menu-toggle {
+		display: none;
 
-#logo img {
-	max-width: 100%;
-}
+		@media (max-width: 1000px) {
+			display: block;
+			cursor:  pointer;
+		}
+	}
 
-header a img {
-	margin-right:   5pt;
-	vertical-align: middle;
+	.menu {
+		display:         flex;
+		justify-content: space-between;
+		align-items:     center;
+		margin-left:     5%;
+
+		a {
+			font-family:     medium;
+			font-size:       14px;
+			text-decoration: none;
+			color:           $main-black;
+
+			&:active {
+				transform: scale(0.95);
+			}
+
+			img {
+				margin-right:   5pt;
+				vertical-align: middle;
+			}
+		}
+
+		form {
+			input#login {
+				caret-color:      transparent;
+				border:           none;
+				outline:          none;
+				font-family:      medium;
+				cursor:           pointer;
+				background-color: $main-white;
+				max-width:        50px;
+			}
+		}
+	}
 }
 
 ::placeholder {
-	color: black;
-}
-
-input#login {
-	caret-color:      transparent;
-	border:           none;
-	outline:          none;
-	font-family:      medium;
-	cursor:           pointer;
-	background-color: white;
-	max-width:        50px;
-}
-
-header a:active {
-	transform: scale(0.95);
+	color: $main-black;
 }
 
 /* Адаптив header */
-
 @media (max-width: 1000px) {
-
 	.wrapper {
 		width:     100%;
 		max-width: 600px;
@@ -105,30 +129,30 @@ header a:active {
 		top:              calc(100% + 10px); /* Меню будет располагаться под кнопкой с отступом 10px */
 		right:            0;
 		left:             0;
-		background-color: #fff;
+		background-color: $main-white;
 		box-shadow:       0 4px 8px rgba(0, 0, 0, 0.1);
 		z-index:          1000;
 		text-align:       center; /* Центрируем элементы внутри меню */
-	}
 
-	.menu a {
-		display:         block;
-		padding:         10px 20px;
-		text-decoration: none;
-		color:           black;
-		font-size:       14px;
-	}
+		&.active {
+			display: block; /* Показываем меню при активации */
+		}
 
-	.menu a:hover {
-		background-color: #f0f0f0;
-	}
+		a {
+			display:         block;
+			padding:         10px 20px;
+			text-decoration: none;
+			color:           $main-black;
+			font-size:       14px;
 
-	.menu input {
-		max-width: initial; /* Вернуть изначальную ширину для поля ввода */
-	}
+			&:hover {
+				background-color: $main-blue;
+			}
+		}
 
-	.menu.active {
-		display: block; /* Показываем меню при активации */
+		input {
+			max-width: initial; /* Вернуть изначальную ширину для поля ввода */
+		}
 	}
 }
 
@@ -138,5 +162,4 @@ header a:active {
 		display: none;
 	}
 }
-
 </style>
