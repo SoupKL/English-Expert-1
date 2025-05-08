@@ -17,7 +17,7 @@
 				<a href="https://yandex.ru/maps/-/CDx~A8YI"><img src="../../assets/main/geolocation.svg" alt="Геолокация">Владивосток</a>
 				<a href="tel:8005553535">8 800 555-35-35</a>
 				<form>
-					<router-link to="./auth"><img src="../../assets/main/person.svg" alt="Профиль"><input
+					<router-link to="/auth"><img src="../../assets/main/person.svg" alt="Профиль"><input
 							type="text" id="login" name="loginname"
 							placeholder="Войти"></router-link>
 				</form>

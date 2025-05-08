@@ -55,14 +55,17 @@ export default {
     const isLoading = ref(true);
     const datePage = ref(null);
     const purposesInfo = ref([]);
+    const textGrout = ref([])
 
     onMounted(async () => {
       try {
         const response = await fetch(`http://127.0.0.1:8000/api/cures-info/${group}`);
         const data = await response.json();
+
         datePage.value = data;
-        purposesInfo.value = data.purposesInfo.split('"').filter((element)=>element !== '[' && element !==', ' && element !==']');
-        console.log(purposesInfo.value)
+        purposesInfo.value = data.purposesInfo.split('"').filter((element) => element !== '[' && element !== ', ' && element !== ']');
+
+        textGrout.value = data.textGrout.split('"').filter((element) => element !== '[' && element !== ', ' && element !== ']');
       } catch (error) {
         console.error('Error fetching course data:', error);
       } finally {
@@ -113,51 +116,51 @@ export default {
             "                    вдохновляющий на достижение лучших результатов"
       }
     ];
-    const textGrout = {
-      'a1': [
-        'алфавит, простые времена, основные части речи.',
-        'числа, цвета, дни недели, месяцы, еда, одежда и т.д.',
-        'диалоги на темы повседневной жизни, ролевые игры.',
-        'короткие тексты, адаптированные материалы, упражнения по чтению и пониманию текста.',
-        'написание коротких сообщений, эссе, заполнение форм.',
-        '',
-      ],
-      'a2': [
-        'сложные времена, согласование времен, предлоги, более сложные части речи.',
-        'профессии, транспорт, здоровье, погода и т.д.',
-        'диалоги на темы повседневной жизни, ролевые игры.',
-        'тексты средней длины, адаптированные материалы, упражнения по чтению и пониманию текста.',
-        'написание писем, эссе, заполнение форм.'
-      ],
-      'b1': [
-        'условные предложения, страдательный залог, модальные глаголы.',
-        'экономика, культура, спорт, технологии и т.д.',
-        'обсуждение новостей, презентации, дебаты.',
-        'статьи, рассказы, учебные материалы.',
-        'написание эссе, отчётов, официальных писем.'
-      ],
-      'b2': [
-        'сложные времена, фразовые глаголы, идиомы.',
-        'юриспруденция, медицина, инженерия, философия и т.д.',
-        'дебаты, презентации, переговоры.',
-        'научные статьи, литературные произведения, документы.',
-        'написание диссертаций, статей, обзоров.'
-      ],
-      'c1': [
-        'сложные конструкции, согласование времён, условные предложения второго и третьего типа.',
-        'бизнес, наука, политика, экология и т.д.',
-        'дискуссии, переговоры, публичные выступления.',
-        'статьи, научные работы, книги.',
-        'написание исследований, отчётов, проектов.'
-      ],
-      'c2': [
-        'все аспекты языка на уровне носителя.',
-        'специализированные области (наука, техника, искусство и т.д.).',
-        'сложные дискуссии, лекции, презентации.',
-        'сложные литературные и научные тексты.',
-        'написание высококачественных научных и профессиональных текстов.'
-      ],
-    }
+    // const textGrout = {
+    //   'a1': [
+    //     'алфавит, простые времена, основные части речи.',
+    //     'числа, цвета, дни недели, месяцы, еда, одежда и т.д.',
+    //     'диалоги на темы повседневной жизни, ролевые игры.',
+    //     'короткие тексты, адаптированные материалы, упражнения по чтению и пониманию текста.',
+    //     'написание коротких сообщений, эссе, заполнение форм.',
+    //     '',
+    //   ],
+    //   'a2': [
+    //     'сложные времена, согласование времен, предлоги, более сложные части речи.',
+    //     'профессии, транспорт, здоровье, погода и т.д.',
+    //     'диалоги на темы повседневной жизни, ролевые игры.',
+    //     'тексты средней длины, адаптированные материалы, упражнения по чтению и пониманию текста.',
+    //     'написание писем, эссе, заполнение форм.'
+    //   ],
+    //   'b1': [
+    //     'условные предложения, страдательный залог, модальные глаголы.',
+    //     'экономика, культура, спорт, технологии и т.д.',
+    //     'обсуждение новостей, презентации, дебаты.',
+    //     'статьи, рассказы, учебные материалы.',
+    //     'написание эссе, отчётов, официальных писем.'
+    //   ],
+    //   'b2': [
+    //     'сложные времена, фразовые глаголы, идиомы.',
+    //     'юриспруденция, медицина, инженерия, философия и т.д.',
+    //     'дебаты, презентации, переговоры.',
+    //     'научные статьи, литературные произведения, документы.',
+    //     'написание диссертаций, статей, обзоров.'
+    //   ],
+    //   'c1': [
+    //     'сложные конструкции, согласование времён, условные предложения второго и третьего типа.',
+    //     'бизнес, наука, политика, экология и т.д.',
+    //     'дискуссии, переговоры, публичные выступления.',
+    //     'статьи, научные работы, книги.',
+    //     'написание исследований, отчётов, проектов.'
+    //   ],
+    //   'c2': [
+    //     'все аспекты языка на уровне носителя.',
+    //     'специализированные области (наука, техника, искусство и т.д.).',
+    //     'сложные дискуссии, лекции, презентации.',
+    //     'сложные литературные и научные тексты.',
+    //     'написание высококачественных научных и профессиональных текстов.'
+    //   ],
+    // }
 
     const getCardType = computed(() => {
       let number = cardNumber.value;
@@ -257,7 +260,7 @@ export default {
 </script>
 
 <template>
-  <Loading v-if="isLoading" />
+  <Loading v-if="isLoading"/>
   <div v-else-if="!datePage" class="error">
     Не удалось загрузить данные
   </div>
@@ -326,11 +329,11 @@ export default {
 
         <div class="content_left">
           <h3>Содержание курса</h3>
-          <p>Грамматика: {{ textGrout[group][0] }}<br><br>
-            Лексика: {{ textGrout[group][1] }}<br><br>
-            Устная практика: {{ textGrout[group][2] }}<br><br>
-            Чтение: {{ textGrout[group][3] }}<br><br>
-            Письмо: {{ textGrout[group][4] }}<br><br>
+          <p>Грамматика: {{ textGrout[0] }}<br><br>
+            Лексика: {{ textGrout[1] }}<br><br>
+            Устная практика: {{ textGrout[2] }}<br><br>
+            Чтение: {{ textGrout[3] }}<br><br>
+            Письмо: {{ textGrout[4] }}<br><br>
           </p>
           <div class="txtcontent">
             <p id="term">Срок обучения:
@@ -482,13 +485,13 @@ $main-form-btn-color: #fff;
       margin-right: 1%;
       margin-left: 1%;
 
-      h3 {
-        font-family: $main-form-font-bold;
-        font-size: 1.5rem;
-      }
+.purposes_card h3 {
+  font-family: bold;
+  font-size: 1.5rem;
+}
 
       p {
-        font-family: $main-form-font;
+        font-family: regular;
         font-size: 0.88rem;
       }
     }
@@ -530,7 +533,7 @@ $main-form-btn-color: #fff;
     margin-bottom: 1rem;
 
     p {
-      font-family: $main-form-font;
+      font-family: regular;
       font-size: 1.13rem;
       color: white;
       width: 28.63rem;
@@ -565,7 +568,7 @@ $main-form-btn-color: #fff;
     margin-right: 3%;
 
     h3, h4 {
-      font-family: $main-form-font-bold;
+      font-family: bold;
     }
 
     h3 {
@@ -573,7 +576,7 @@ $main-form-btn-color: #fff;
     }
 
     p {
-      font-family: $main-form-font;
+      font-family: regular;
       font-size: 1.13rem;
     }
 
@@ -587,7 +590,7 @@ $main-form-btn-color: #fff;
       width: 28.63rem;
 
       p {
-        font-family: $main-form-font;
+        font-family: regular;
         font-size: 0.88rem;
       }
 
@@ -630,7 +633,7 @@ $main-form-btn-color: #fff;
   margin-top: 5%;
 
   h3 {
-    font-family: $main-form-font-bold;
+    font-family: bold;
     font-size: 2.25rem;
     text-align: center;
     color: white;
@@ -653,13 +656,13 @@ $main-form-btn-color: #fff;
       text-align: center;
 
       p {
-        font-family: $main-form-font-medium;
+        font-family: medium;
         font-size: 0.88rem;
         padding: 1%;
       }
 
       h3 {
-        font-family: $main-form-font-bold;
+        font-family: bold;
         font-size: 1.13rem;
         color: black;
       }
@@ -681,7 +684,7 @@ $main-form-btn-color: #fff;
   margin-top: 5%;
 
   h1 {
-    font-family: $main-form-font-bold;
+    font-family: bold;
     font-size: 1.75rem;
   }
 
@@ -707,7 +710,7 @@ $main-form-btn-color: #fff;
 
       summary {
         font-size: 1.13rem;
-        font-family: $main-form-font-medium;
+        font-family: medium;
         font-weight: bold;
         cursor: pointer;
         list-style: none;
@@ -724,7 +727,7 @@ $main-form-btn-color: #fff;
 
       ul, p {
         margin: 10px 0 0;
-        font-family: $main-form-font;
+        font-family: regular;
         font-size: 0.88rem;
       }
 
