@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 /* БЛОК НАВЫКИ */
 
 .txt_skills h2{
@@ -33,13 +33,13 @@
   margin-top: 6%;
 }
 
-.skill p{
-  font-size: 1.13rem;
-  font-family: medium;
-}
+.skill {
+	width: 17.5rem;
 
-.skill{
-  width: 17.5rem;
+	p{
+		font-size: 1.13rem;
+		font-family: medium;
+	}
 }
 
 /* Адаптив Блока навыков */

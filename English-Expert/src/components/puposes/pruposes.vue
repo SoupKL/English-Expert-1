@@ -1,55 +1,52 @@
-<script lang="js" src="./pruposes.js" />
+<script lang="js" src="./pruposes.js"/>
 
 <template>
-    <div class="purposes">
+	<div class="purposes">
 
-        <div class="purposes_left">
-            <img src="../../../src/assets/cours/rabbit1.svg" alt="">
-        </div>
+		<div class="purposes_left">
+			<img src="../../../src/assets/cours/rabbit1.svg" alt="">
+		</div>
 
-        <div class="purposes_right">
-          <div v-for="(text, index) in textPruposes1" class="purposes_card">
-            <img :src="'../../../src/assets/cours/purpose_'+(index+1)+'.svg'" alt="">
-            <h3>Цель {{index+1}}</h3>
-            <p>{{ text }}</p>
-          </div>
-        </div>
+		<div class="purposes_right">
+			<div v-for="(text, index) in textPruposes1" class="purposes_card">
+				<img :src="'../../../src/assets/cours/purpose_'+(index+1)+'.svg'" alt="">
+				<h3>Цель {{ index + 1 }}</h3>
+				<p>{{ text }}</p>
+			</div>
+		</div>
 
-    </div>
+	</div>
 
 </template>
-<style>
-.purposes{
-    color: black;
-    display: flex;
-    width: 100%;
-    margin-top: 5%;
-}
+<style lang="scss">
+.purposes {
+	color:      black;
+	display:    flex;
+	width:      100%;
+	margin-top: 5%;
 
-.purposes_left{
-    padding-right: 7%;
-}
+	&_left {
+		padding-right: 7%;
+	}
 
-.purposes_right{
-  align-items: baseline;
-    display: flex;
-    justify-content: space-between;
-}
+	&_right {
+		display:         flex;
+		justify-content: space-between;
+	}
 
-.purposes_card{
-    align-content: center;
-    width: 11rem;
-    margin-right: 1%;
-    margin-left: 1%;
-}
+	&_card {
+		width:        11rem;
+		margin-right: 1%;
+		margin-left:  1%;
 
-.purposes_card h3{
-    font-family: bold;
-    font-size: 1.5rem;
-}
+		h3 {
+			font-family: bold;
+			font-size:   1.5rem;
+		}
 
-.purposes_card p{
-    font-family: regular;
-    font-size: 0.88rem;
+		p {
+			font-family: regular;
+			font-size:   0.88rem;
+		}	}
 }
 </style>
