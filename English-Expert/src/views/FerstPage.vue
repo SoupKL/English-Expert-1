@@ -233,7 +233,19 @@ const program = [
 	</footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+$main-radius: 20px;
+$main-bg: #fff;
+$main-blue: rgb(0, 9, 60);
+$main-orange: rgb(247, 148, 29);
+$main-form-bg: #bebebe;
+$main-form-radius: 4px;
+$main-form-font: regular;
+$main-form-font-bold: bold;
+$main-form-font-medium: medium;
+$main-form-btn-bg: rgb(247, 148, 29);
+$main-form-btn-color: #fff;
+
 body {
 	margin: 0;
 	padding: 0;
@@ -254,18 +266,12 @@ body {
 	height: 480px;
 	width: 100%;
 	content: url('../../src/assets/main/education.svg');
-}
 
-/* Адаптив блока образовательной платформы */
-
-@media (max-width: 1000px) {
-
-	#education{
+	@media (max-width: 1000px) {
 		content: url('../../src/assets/about/education_small.svg');
 		width: 100%;
 		height: auto;
 	}
-
 }
 
 /* Блок с основателем */
@@ -277,12 +283,12 @@ body {
 }
 
 .inter_left h3{
-	font-family: bold;
+	font-family: $main-form-font-bold;
 	font-size: 1.13rem;
 }
 
 .inter_left p{
-	font-family: medium;
+	font-family: $main-form-font-medium;
 	font-size: 0.88rem;
 }
 
@@ -292,7 +298,7 @@ body {
 }
 
 .inter_right p{
-	font-family: regular;
+	font-family: $main-form-font;
 	font-size: 1.13rem;
 }
 
@@ -326,8 +332,8 @@ body {
 }
 
 .values h1{
-	font-family: bold;
-	font-family: 2.25rem;
+	font-family: $main-form-font-bold;
+	font-size: 2.25rem;
 }
 
 .cards{
@@ -341,7 +347,7 @@ body {
 }
 
 .card p{
-	font-family: medium;
+	font-family: $main-form-font-medium;
 	font-size: 1rem;
 }
 
@@ -374,7 +380,7 @@ body {
 }
 
 .teachers h3{
-	font-family: bold;
+	font-family: $main-form-font-bold;
 	font-size: 2.25rem;
 	text-align: center;
 	color: white;
@@ -403,8 +409,12 @@ body {
 }
 
 .programs h1{
-	font-family: bold;
+	font-family: $main-form-font-bold;
 	font-size: 2.25rem;
+
+	@media (max-width: 1000px) {
+		text-align: center;
+	}
 }
 
 .program{
@@ -418,7 +428,7 @@ body {
 
 .prog p{
 	font-size: 1rem;
-	font-family: medium;
+	font-family: $main-form-font-medium;
 }
 
 .numbers{
@@ -428,8 +438,8 @@ body {
 }
 
 .number p{
-	font-family: medium;
-	font-family: 1.25rem;
+	font-family: $main-form-font-medium;
+	font-size: 1.25rem;
 }
 
 /* адаптив блока наши программы */
@@ -457,8 +467,12 @@ body {
 }
 
 .partners h1{
-	font-family: medium;
+	font-family: $main-form-font-medium;
 	font-size: 2.25rem;
+
+	@media (max-width: 1000px) {
+		text-align: center;
+	}
 }
 
 .partner_up, .partner_down{
@@ -470,10 +484,6 @@ body {
 /* адаптив блока наши партнеры */
 
 @media (max-width: 1000px) {
-
-	.partners h1{
-		text-align: center;
-	}
 
 	.partner_up, .partner_down{
 		flex-direction: column;
@@ -489,7 +499,7 @@ body {
 footer {
 	display: flex;
 	flex-direction: row;
-	background-color: rgb(0, 9, 60);
+	background-color: $main-blue;
 	color: #fff;
 	text-align: center;
 	padding: 20px;
@@ -502,7 +512,7 @@ footer {
 }
 
 .info_f p{
-	font-family: medium;
+	font-family: $main-form-font-medium;
 	font-size: 0.88rem;
 }
 
@@ -526,8 +536,8 @@ footer {
 }
 
 .values h1{
-  font-family: bold;
-  font-family: 2.25rem;
+  font-family: $main-form-font-bold;
+  font-size: 2.25rem;
 }
 
 @media (max-width: 1000px) {
