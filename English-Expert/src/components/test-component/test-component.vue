@@ -315,12 +315,6 @@ export default {
 </template>
 
 <style scoped>
-.wrapper {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 1rem;
-}
 
 .container {
 	width: 100%;
@@ -353,25 +347,6 @@ export default {
 	display: grid;
 	gap: 1rem;
 	margin-bottom: 2rem;
-}
-
-.answer-option {
-	padding: 1rem;
-	border: 2px solid #ddd;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-.answer-option:hover {
-	border-color: #4CAF50;
-	background-color: #f9f9f9;
-}
-
-.answer-option.selected {
-	border-color: #4CAF50;
-	background-color: #e8f5e9;
 }
 
 .progress-button-container {
@@ -451,9 +426,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-	.wrapper {
-		padding: 0.5rem;
-	}
 
 	.container {
 		padding: 0.5rem;

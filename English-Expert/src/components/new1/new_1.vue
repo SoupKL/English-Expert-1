@@ -35,19 +35,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-.wrapper {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 20px;
-
-  @media (max-width: 1000px) {
-    max-width: 600px;
-    width: 100%;
-  }
-}
-
 /* HEADER */
 .up {
   background-color: $main-bg;

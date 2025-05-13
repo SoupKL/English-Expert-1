@@ -18,13 +18,6 @@ const handleScroll = () => {
 	showScrollTop.value = window.scrollY > 300
 }
 
-const scrollToTop = () => {
-	window.scrollTo({
-		top:      0,
-		behavior: 'smooth'
-	})
-}
-
 const navigateTo = (path) => {
 	router.push(path)
 	isMenuOpen.value = false
@@ -124,27 +117,9 @@ watch(isMenuOpen, (newVal) => {
 		</div>
 	</nav>
 
-	<button
-			class="scroll-top"
-			:class="{ 'show': showScrollTop }"
-			@click="scrollToTop"
-			aria-label="Scroll to top"
-	>
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-		</svg>
-	</button>
 </template>
 
 <style scoped>
-.wrapper {
-	width:      100%;
-	max-width:  1180px;
-	margin:     0 auto;
-	padding:    20px;
-	position:   relative;
-	box-sizing: border-box;
-}
 
 header {
 	display:         flex;
@@ -158,7 +133,6 @@ header {
 	background:      rgba(255, 255, 255, 0.95);
 	backdrop-filter: blur(10px);
 	border-radius:   16px;
-	padding:         15px 25px;
 	box-shadow:      0 4px 20px rgba(0, 0, 0, 0.05);
 	transition:      all 0.3s ease;
 }
@@ -280,10 +254,7 @@ header a:hover img {
 }
 
 @media (max-width: 768px) {
-	.wrapper {
-		max-width: 540px;
-		padding:   10px;
-	}
+
 
 	header {
 		padding:  12px 20px;
@@ -315,9 +286,7 @@ header a:hover img {
 }
 
 @media (max-width: 576px) {
-	.wrapper {
-		padding: 8px;
-	}
+
 
 	header {
 		padding: 10px 15px;

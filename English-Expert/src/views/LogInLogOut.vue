@@ -97,13 +97,6 @@ body {
   box-sizing: border-box;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 /*  БЛОК ФОРМЫ ВХОДА/РЕГИСТРАЦИИ */
 .container {
   width: 100%;
