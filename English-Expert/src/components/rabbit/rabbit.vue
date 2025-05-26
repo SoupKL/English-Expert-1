@@ -118,12 +118,56 @@ $rabbit-form-btn-color: #fff;
     }
   }
 
-  @media (max-width: 1000px) {
-    display: none;
+  // Large tablets and small desktops
+  @media (max-width: 1200px) {
+    margin-top: 10%;
+    margin-bottom: -5%;
+    
+    .rh_r {
+      width: 25rem;
+    }
+    
+    .form-group {
+      &.horizontal,
+      &.vertical {
+        width: 25rem;
+      }
+    }
   }
 
-  @media (max-width: 430px) {
-    display: flex;
+  // Tablets
+  @media (max-width: 992px) {
+    margin-top: 8%;
+    margin-bottom: -3%;
+    
+    .rh_r {
+      width: 22rem;
+    }
+    
+    .form-group {
+      &.horizontal,
+      &.vertical {
+        width: 22rem;
+      }
+      
+      &.horizontal div {
+        width: 10.5rem;
+      }
+      
+      &.vertical {
+        p {
+          width: 11rem;
+        }
+        
+        button {
+          width: 11rem;
+        }
+      }
+    }
+  }
+
+  // Large phones
+  @media (max-width: 768px) {
     margin-top: 5%;
     margin-bottom: 0;
     flex-direction: column;
@@ -134,7 +178,7 @@ $rabbit-form-btn-color: #fff;
     
     .rh_r {
       width: 100%;
-      padding: 15px;
+      padding: 20px;
     }
 
     .form-group {
@@ -167,7 +211,16 @@ $rabbit-form-btn-color: #fff;
           font-size: 1rem;
         }
       }
+    }
+  }
 
+  // Small phones
+  @media (max-width: 430px) {
+    .rh_r {
+      padding: 15px;
+    }
+
+    .form-group {
       input[type="text"],
       input[type="email"],
       input[type="phone"] {
