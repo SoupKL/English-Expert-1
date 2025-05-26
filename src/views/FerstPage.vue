@@ -37,25 +37,25 @@ const information = [
 
 const teachers = [
   {
-    "img":"../../src/assets/cours/comment1.svg",
+    "img":"/src/assets/cours/comment1.svg",
     "name":"Анна Морозова",
     "text":"Изысканная мотиваторша с глубоким\n" +
         "                    пониманием языка"
   },
   {
-    "img":"../../src/assets/cours/comment2.svg",
+    "img":"/src/assets/cours/comment2.svg",
     "name":"Иван Белов",
     "text":"Энергичный языковед с богатым\n" +
         "                    опытом преподавания"
   },
   {
-    "img":"../../src/assets/cours/comment3.svg",
+    "img":"/src/assets/cours/comment3.svg",
     "name":"Елена Николаева",
     "text":"Терпеливая и креативная педагог,\n" +
         "                    способная адаптироваться к нуждам каждого ученика"
   },
   {
-    "img":"../../src/assets/cours/comment4.svg",
+    "img":"/src/assets/cours/comment4.svg",
     "name":"Дмитрий Ковалев",
     "text":"Заботливый и инновационный учитель,\n" +
         "                    вдохновляющий на достижение лучших результатов"
