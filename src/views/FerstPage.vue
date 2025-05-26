@@ -14,48 +14,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const information = [
   {
-    "img": "../../src/assets/about/values1.svg",
+    "img": "/public/about/values1.svg",
     "text": "Содержание обучения должно быть актуальным,\n\t\t\t\t\t\tа методика проверенная годами."
   },
   {
-    "img": "../../src/assets/about/values2.svg",
+    "img": "/public/about/values2.svg",
     "text": "Педагог - прежде всего личность компетентная\n\t\t\t\t\t\tи харизматичная."
   },
   {
-    "img": "../../src/assets/about/values3.svg",
+    "img": "/public/about/values3.svg",
     "text": "Точка развития образования - ребенок, его интересы\n\t\t\t\t\t\tи потребности"
   },
   {
-    "img": "../../src/assets/about/values4.svg",
+    "img": "/public/about/values4.svg",
     "text": "Прогрессом правит любовь к знаниям"
   },
   {
-    "img": "../../src/assets/about/values1.svg",
+    "img": "/public/about/values1.svg",
     "text": "Технологии правят миром, а человек эти технологии создает"
   }
 ]
 
 const teachers = [
   {
-    "img":"/src/assets/cours/comment1.svg",
+    "img":"/public/cours/comment1.svg",
     "name":"Анна Морозова",
     "text":"Изысканная мотиваторша с глубоким\n" +
         "                    пониманием языка"
   },
   {
-    "img":"/src/assets/cours/comment2.svg",
+    "img":"/public/cours/comment2.svg",
     "name":"Иван Белов",
     "text":"Энергичный языковед с богатым\n" +
         "                    опытом преподавания"
   },
   {
-    "img":"/src/assets/cours/comment3.svg",
+    "img":"/public/cours/comment3.svg",
     "name":"Елена Николаева",
     "text":"Терпеливая и креативная педагог,\n" +
         "                    способная адаптироваться к нуждам каждого ученика"
   },
   {
-    "img":"/src/assets/cours/comment4.svg",
+    "img":"/public/cours/comment4.svg",
     "name":"Дмитрий Ковалев",
     "text":"Заботливый и инновационный учитель,\n" +
         "                    вдохновляющий на достижение лучших результатов"
@@ -99,7 +99,7 @@ const program = [
 		<div class="inter">
 
 			<div class="inter_left">
-				<img src="../../src/assets/about/man.svg" alt="">
+				<img src="../../public/about/man.svg" alt="">
 				<h3>Сергей Кузнецов</h3>
 				<p>Основатель Школы English Expert</p>
 			</div>
@@ -168,22 +168,22 @@ const program = [
 			<h1>Наши программы</h1>
 			<div class="program">
 				<div v-for="info in program" class="prog">
-					<img src="../../src/assets/about/vector.svg" alt="">
+					<img src="../../public/about/vector.svg" alt="">
 					<p>{{info}}</p>
 				</div>
 			</div>
 
 			<div class="numbers">
 				<div class="number">
-					<img src="../../src/assets/main/8.svg" alt="">
+					<img src="../../public/main/8.svg" alt="">
 					<p>Курсов</p>
 				</div>
 				<div class="number">
-					<img src="../../src/assets/main/32.svg" alt="">
+					<img src="../../public/main/32.svg" alt="">
 					<p>Ведущих преподавателей</p>
 				</div>
 				<div class="number">
-					<img src="../../src/assets/main/14795.svg" alt="">
+					<img src="../../public/main/14795.svg" alt="">
 					<p>Выпускников</p>
 				</div>
 			</div>
@@ -196,20 +196,20 @@ const program = [
 			<div class="partners">
 				<h1>Наши партнеры</h1>
 				<div class="partner_up">
-					<img src="../../src/assets/about/tinkoff.svg" alt="">
-					<img src="../../src/assets/about/alpha.svg" alt="">
-					<img src="../../src/assets/about/vk.svg" alt="">
-					<img src="../../src/assets/about/avito.svg" alt="">
-					<img src="../../src/assets/about/yandex.svg" alt="">
-					<img src="../../src/assets/about/wildberries.svg" alt="">
+					<img src="../../public/about/tinkoff.svg" alt="">
+					<img src="../../public/about/alpha.svg" alt="">
+					<img src="../../public/about/vk.svg" alt="">
+					<img src="../../public/about/avito.svg" alt="">
+					<img src="../../public/about/yandex.svg" alt="">
+					<img src="../../public/about/wildberries.svg" alt="">
 				</div>
 				<div class="partner_down">
-					<img src="../../src/assets/about/mail.svg" alt="">
-					<img src="../../src/assets/about/samsung.svg" alt="">
-					<img src="../../src/assets/about/rosstel.svg" alt="">
-					<img src="../../src/assets/about/leroymerlin.svg" alt="">
-					<img src="../../src/assets/about/google.svg" alt="">
-					<img src="../../src/assets/about/apiship.svg" alt="">
+					<img src="../../public/about/mail.svg" alt="">
+					<img src="../../public/about/samsung.svg" alt="">
+					<img src="../../public/about/rosstel.svg" alt="">
+					<img src="../../public/about/leroymerlin.svg" alt="">
+					<img src="../../public/about/google.svg" alt="">
+					<img src="../../public/about/apiship.svg" alt="">
 				</div>
 			</div>
 
@@ -222,7 +222,7 @@ const program = [
 	<footer>
 		<div class="wrapper">
 			<div class="info_f">
-				<img src="../../src/assets/main/logo_white.svg">
+				<img src="/public/main/logo_white.svg" alt="LOGO">
 				<p>8 800 555-35-35</p>
 				<p>г. Владивосток, ул. Жигура, д. 26</p>
 				<p>English_Expert@mail.ru</p>
@@ -258,10 +258,10 @@ body {
 	display: flex;
 	height: 480px;
 	width: 100%;
-	content: url('../../src/assets/main/education.svg');
+	content: url('../../public/main/education.svg');
 
 	@media (max-width: 1000px) {
-		content: url('../../src/assets/about/education_small.svg');
+		content: url('../../public/about/education_small.svg');
 		width: 100%;
 		height: auto;
 	}
@@ -365,7 +365,7 @@ body {
 .teachers{
 	width: 100%;
 	height: 37.5rem;
-	background-image: url('../../src/assets/cours/teacher_background.svg');
+	background-image: url('../../public/cours/teacher_background.svg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
