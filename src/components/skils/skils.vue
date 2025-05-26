@@ -9,7 +9,7 @@
 	<section class="skills">
 
 	  <div v-for="info in skill" class="skill">
-		<img :src="genImage(info.image)" alt="Skill 1">
+		<img :src="info.image" alt="Skill 1">
 		<p>{{ info.text }}</p>
 	  </div>
 	</section>
