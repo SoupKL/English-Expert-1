@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from "vue";
+import Rabbit from "@/components/rabbit/rabbit.vue";
 
 const firstBlock  = ref(true);
 const secondBlock = ref(true);
@@ -255,35 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	<!-- БЛОК ФОРМЫ -->
 
-	<div class="wrapper">
 
-		<div class="rabbit_helper">
+		<rabbit/>
 
-			<div class="rh_l">
-				<img src="../../src/assets/main/rabbit2.svg" alt="кролик помощник нижний">
-			</div>
-
-			<div class="rh_r">
-					<div class="form-group full-width">
-						<input type="text" id="name" name="name" placeholder="Ваше имя">
-					</div>
-					<div class="form-group horizontal">
-						<div>
-							<input type="phone" id="phone" name="phone" placeholder="Ваш телефон">
-						</div>
-						<div>
-							<input type="email" id="email" name="email" placeholder="Ваш e-mail">
-						</div>
-					</div>
-					<div class="form-group vertical">
-						<p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-						<button onclick="alert('Упс... Что то пошло не так')" type="submit">Отправить</button>
-					</div>
-			</div>
-
-		</div>
-
-	</div>
 
 </template>
 

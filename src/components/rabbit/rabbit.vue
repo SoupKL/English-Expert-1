@@ -1,9 +1,11 @@
 <script setup>
-
+defineOptions({
+  name: 'RabbitHelper'
+})
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="rabbit-wrapper">
 	<div class="rabbit_helper">
 	  <div class="rh_l">
 		<img src="../../../src/assets/main/rabbit2.svg" alt="кролик помощник нижний">
@@ -41,6 +43,14 @@ $rabbit-form-bg: rgba(0, 9, 60, 0.1);
 $rabbit-form-btn-bg: rgb(247, 148, 29);
 $rabbit-form-btn-color: #fff;
 
+.rabbit-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
 .rabbit_helper {
   margin-top: 15%;
   width: 100%;
@@ -50,21 +60,27 @@ $rabbit-form-btn-color: #fff;
   position: relative;
   margin-bottom: -10%;
   z-index: 1;
+  box-sizing: border-box;
 
-  .rh_l, .rh_r {
+  .rh_l {
     padding: 2%;
+    flex-shrink: 0;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   .rh_r {
     width: 27.5rem;
-  }
-
-  form {
-    padding: 3%;
+    padding: 2%;
+    box-sizing: border-box;
   }
 
   .form-group {
     margin-bottom: 20px;
+    box-sizing: border-box;
 
     &.full-width {
       width: 100%;
@@ -73,22 +89,26 @@ $rabbit-form-btn-color: #fff;
     &.horizontal {
       display: flex;
       justify-content: space-between;
-      width: 27.5rem;
+      width: 100%;
+      gap: 15px;
 
       div {
-        width: 13.13rem;
+        flex: 1;
+        min-width: 0;
       }
     }
 
     &.vertical {
       display: flex;
       justify-content: space-between;
-      width: 27.5rem;
+      width: 100%;
+      gap: 15px;
 
       p {
         margin: 0;
         font-size: 0.63rem;
-        width: 13.22rem;
+        flex: 1;
+        min-width: 0;
       }
 
       button {
@@ -99,7 +119,14 @@ $rabbit-form-btn-color: #fff;
         color: $rabbit-form-btn-color;
         border: none;
         border-radius: 10px;
-        width: 13.22rem;
+        flex: 1;
+        min-width: 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($rabbit-form-btn-bg, 5%);
+        }
       }
     }
 
@@ -115,6 +142,11 @@ $rabbit-form-btn-color: #fff;
       font-family: $rabbit-form-font;
       height: 3.13rem;
       width: 100%;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: rgba($rabbit-form-color, 0.7);
+      }
     }
   }
 
@@ -122,17 +154,6 @@ $rabbit-form-btn-color: #fff;
   @media (max-width: 1200px) {
     margin-top: 10%;
     margin-bottom: -5%;
-    
-    .rh_r {
-      width: 25rem;
-    }
-    
-    .form-group {
-      &.horizontal,
-      &.vertical {
-        width: 25rem;
-      }
-    }
   }
 
   // Tablets
@@ -141,28 +162,7 @@ $rabbit-form-btn-color: #fff;
     margin-bottom: -3%;
     
     .rh_r {
-      width: 22rem;
-    }
-    
-    .form-group {
-      &.horizontal,
-      &.vertical {
-        width: 22rem;
-      }
-      
-      &.horizontal div {
-        width: 10.5rem;
-      }
-      
-      &.vertical {
-        p {
-          width: 11rem;
-        }
-        
-        button {
-          width: 11rem;
-        }
-      }
+      width: 100%;
     }
   }
 
@@ -186,17 +186,11 @@ $rabbit-form-btn-color: #fff;
 
       &.horizontal {
         flex-direction: column;
-        width: 100%;
         gap: 15px;
-
-        div {
-          width: 100%;
-        }
       }
 
       &.vertical {
         flex-direction: column;
-        width: 100%;
         gap: 15px;
 
         p {
