@@ -22,17 +22,26 @@ export default {
 <style lang="scss">
 @import "./assets/font.css";
 
-body {
+html, body {
 	margin:     0;
 	padding:    0;
-	overflow-x: hidden
+	overflow-x: hidden;
+	width:      100%;
+	position:   relative;
+}
+
+#app {
+	width:      100%;
+	overflow-x: hidden;
+	position:   relative;
 }
 
 .wrapper {
-	width:     100%;
-	max-width: 1180px;
-	margin:    0 auto;
-	padding:   20px;
+	width:      100%;
+	max-width:  1180px;
+	margin:     0 auto;
+	padding:    20px;
+	box-sizing: border-box;
 
 	@media (max-width: 768px) {
 		max-width: 540px;
