@@ -60,7 +60,7 @@ export default {
 
 		onMounted(async () => {
 			try {
-				const response = await fetch(`http://127.0.0.1:8000/api/cures-info/${group}`);
+				const response = await fetch(`https://laravel-api-gmjs.onrender.com/api/cures-info/${group}`);
 				const data     = await response.json();
 
 				datePage.value     = data;

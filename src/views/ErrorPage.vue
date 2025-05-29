@@ -166,7 +166,6 @@ $main-white: #fff;
       gap: 10px;
 
       .refresh-button, .home-button {
-        width: 100%;
         padding: 10px 25px;
         font-size: 14px;
       }
