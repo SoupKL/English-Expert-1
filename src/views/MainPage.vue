@@ -56,15 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				для новичков и практикующих специалистов.</h1>
 			<section class="stats">
 				<div class="stat-item">
-					<img src="../../src/assets/main/8.svg">
+					<img alt="8" src="../../src/assets/main/8.svg">
 					<p>Курсов</p>
 				</div>
 				<div class="stat-item">
-					<img src="../../src/assets/main/32.svg">
+					<img alt="32" src="../../src/assets/main/32.svg">
 					<p>Ведущих преподавателей</p>
 				</div>
 				<div class="stat-item">
-					<img src="../../src/assets/main/14795.svg">
+					<img alt="14795" src="../../src/assets/main/14795.svg">
 					<p>Выпускников</p>
 				</div>
 			</section>
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			<div class="event-actions">
 				<div class="action-item">
 					<div class="action">
-						<img src="../../src/assets/main/try.svg">
+						<img alt="test" src="../../src/assets/main/try.svg">
 						<h3>Попробуй!</h3>
 						<p>Пройдите тест и узнайте свои способности в сфере информационных технологий</p>
 					</div>
@@ -173,6 +173,11 @@ h1 {
 	position:            relative;
 	overflow:            hidden;
 
+	:hover {
+		transform:  scale(1.02);
+		box-shadow: 0 0 20px rgba(39, 170, 225, 0.5), 0 0 20px rgba(247, 148, 29, 0.5);
+	}
+
 	&__button {
 		position:         absolute;
 		top:              350px;
@@ -183,6 +188,11 @@ h1 {
 		color:            #fff;
 		border:           none;
 		border-radius:    10px;
+
+		:hover {
+			transform:  none;
+			box-shadow: none;
+		}
 	}
 
 	@media (max-width: 1000px) {
@@ -196,10 +206,10 @@ h1 {
 
 	@media (max-width: 430px) {
 		margin-left: 9px;
-		height: 600px;
+		height:      600px;
 
 		&__button {
-			display:    none;
+			display: none;
 		}
 	}
 }
@@ -350,7 +360,6 @@ h1 {
 	margin-top:      3%;
 	flex-wrap:       wrap;
 	gap:             20px;
-	padding:         0 15px;
 	box-sizing:      border-box;
 
 	h3 {

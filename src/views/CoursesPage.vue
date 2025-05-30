@@ -64,9 +64,9 @@ export default {
 				const data     = await response.json();
 
 				datePage.value     = data;
-				purposesInfo.value = data.purposesInfo.split('"').filter((element) => element !== '[' && element !== ', ' && element !== ']');
+				purposesInfo.value = JSON.parse(data.purposesInfo);
 
-				textGrout.value = data.textGrout.split('"').filter((element) => element !== '[' && element !== ', ' && element !== ']');
+				textGrout.value =JSON.parse(data.textGrout);
 			} catch (error) {
 				console.error('Error fetching course data:', error);
 			} finally {

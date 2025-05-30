@@ -50,7 +50,6 @@ $rabbit-form-btn-color: #fff;
 	padding:       0 15px;
 	box-sizing:    border-box;
 	border-radius: 20px;
-	box-shadow:    0 4px 160px #00000014;
 }
 
 .rabbit_helper {
@@ -63,6 +62,7 @@ $rabbit-form-btn-color: #fff;
 	margin-bottom:    -10%;
 	z-index:          1;
 	box-sizing:       border-box;
+	box-shadow:       0 4px 160px #00000014;
 
 	.rh_l {
 		padding:     2%;
