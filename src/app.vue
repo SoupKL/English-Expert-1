@@ -34,6 +34,9 @@ html, body {
 	width:      100%;
 	overflow-x: hidden;
 	position:   relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .wrapper {
@@ -42,6 +45,7 @@ html, body {
 	margin:     0 auto;
 	padding:    20px;
 	box-sizing: border-box;
+	flex: 1;
 
 	@media (max-width: 768px) {
 		max-width: 540px;

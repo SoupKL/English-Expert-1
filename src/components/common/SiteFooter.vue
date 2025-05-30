@@ -37,13 +37,14 @@ footer {
 	color:            $footer-color;
 	text-align:       center;
 	padding:          $footer-padding;
+	margin-top:       auto;
 
 	.info_f {
 		display:         flex;
 		justify-content: space-between;
 		height:          9.69rem;
 		align-items:     end;
-		width: 100%;
+		width:           100%;
 
 		p {
 			font-family: $footer-font;
@@ -78,18 +79,18 @@ footer {
 @media screen and (max-width: 768px) {
 	footer {
 		.info_f {
-			height: auto;
+			height:    auto;
 			flex-wrap: wrap;
-			gap: 1rem;
-			padding: 1rem 0;
+			gap:       1rem;
+			padding:   1rem 0;
 
 			img {
-				width: 120px;
+				width:  120px;
 				height: auto;
 			}
 
 			p, a {
-				width: 100%;
+				width:      100%;
 				text-align: center;
 			}
 		}
@@ -102,26 +103,26 @@ footer {
 
 		.info_f {
 			flex-direction: column;
-			align-items: center;
-			gap: 0.5rem;
+			align-items:    center;
+			gap:            0.5rem;
 
 			img {
-				width: 100px;
+				width:         100px;
 				margin-bottom: 0.5rem;
 			}
 
 			p {
 				font-size: 0.8rem;
-				margin: 0.3rem 0;
+				margin:    0.3rem 0;
 			}
 
 			a {
 				font-size: 0.9rem;
-				margin: 0.3rem 0;
+				margin:    0.3rem 0;
 
 				&.telegram:after {
 					height: 50px;
-					width: 50px;
+					width:  50px;
 				}
 			}
 		}
