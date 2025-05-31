@@ -34,11 +34,11 @@
 					<div v-for="level in Object.keys(courseDescriptions)" :key="level">
 						<div v-if="userLevel === level" class="card" :id="level">
 							<div class="cardtxt">
-								<img :src="`@/assets/img/all_courses/${level}.svg`"/>
+								<img :src="getCourseImage(level)"/>
 								<h3>Уровень {{ level }}</h3>
 							</div>
 							<p>{{ courseDescriptions[level] }}</p>
-							<button class="button" @click="goToCourse(level)">Перейти к курсу</button>
+							<button class="button" @click="router.push(`/course/${level.toLowerCase()}`)">Перейти к курсу</button>
 						</div>
 					</div>
 				</div>
@@ -49,6 +49,7 @@
 
 <script setup>
 import {ref, computed} from 'vue'
+import router from "@/router/index.js";
 
 const questions = [
 	{
@@ -206,8 +207,8 @@ function calculateLevel() {
 	}
 }
 
-function goToCourse(level) {
-	window.location.href = `/course_${level}.html`
+function getCourseImage(level) {
+	return new URL(`/public/all_courses/${level}.svg`, import.meta.url).href
 }
 
 const courseDescriptions = {
@@ -293,11 +294,6 @@ const courseDescriptions = {
 .button {
 	@extend .progress-button-container .button;
 }
-
-.hide {
-	display: none;
-}
-
 /* RESULTS */
 #result-container {
 	display:        flex;
@@ -340,7 +336,17 @@ const courseDescriptions = {
 		}
 
 		.button {
-			margin-top: 20px;
+			font-size: 0.88rem;
+			font-family: bold;
+			padding: 10px 20px;
+			background-color: rgb(247, 148, 29);
+			color: #fff;
+			border: none;
+			border-radius: 10px;
+			flex: 1;
+			min-width: 0;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
 		}
 	}
 

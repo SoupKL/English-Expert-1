@@ -66,7 +66,7 @@ export default {
 				datePage.value     = data;
 				purposesInfo.value = JSON.parse(data.purposesInfo);
 
-				textGrout.value =JSON.parse(data.textGrout);
+				textGrout.value = JSON.parse(data.textGrout);
 			} catch (error) {
 				console.error('Error fetching course data:', error);
 			} finally {
@@ -438,44 +438,39 @@ export default {
 	</div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
 .error {
 	color: #f7941d;
 }
 
 /* Адаптив блока уровня */
-
 @media (max-width: 1000px) {
-
-
+	// Empty media query preserved for future use
 }
 
 /* Блок целей */
+.purposes_card {
+	h3 {
+		font-family: bold;
+		font-size:   1.5rem;
+	}
 
-
-.purposes_card h3 {
-	font-family: bold;
-	font-size:   1.5rem;
-}
-
-.purposes_card p {
-	font-family: regular;
-	font-size:   0.88rem;
+	p {
+		font-family: regular;
+		font-size:   0.88rem;
+	}
 }
 
 /* Адаптив блока фото */
-
 @media (max-width: 1000px) {
-
-	.photo img {
-		width: 100%;
+	.photo {
+		img {
+			width: 100%;
+		}
 	}
-
 }
 
 /* Блок преимуществ */
-
 .benefits {
 	width:               100%;
 	height:              19.38rem;
@@ -486,117 +481,110 @@ export default {
 	display:             flex;
 	flex-direction:      column;
 	margin-top:          5%;
-}
 
-.txt {
-	display:         flex;
-	justify-content: space-between;
-	margin-top:      2%;
-	margin-bottom:   1rem;
-}
+	.txt {
+		display:         flex;
+		justify-content: space-between;
+		margin-top:      2%;
+		margin-bottom:   1rem;
 
-.txt p {
-	font-family: regular;
-	font-size:   1.13rem;
-	color:       white;
-	width:       28.63rem;
-}
+		p {
+			font-family: regular;
+			font-size:   1.13rem;
+			color:       white;
+			width:       28.63rem;
+		}
+	}
 
-button[type="button"], button[type="submit"] {
-	margin-top:       1rem;
-	padding:          10px 20px;
-	font-size:        0.88rem;
-	width:            11.94rem;
-	height:           3.13rem;
-	cursor:           pointer;
-	background-color: rgba(247, 148, 29, 1.00);
-	color:            white;
-	border:           none;
-	border-radius:    10px;
-	transition:       background-color 0.3s ease;
-	align-self:       center;
-}
+	button[type="button"],
+	button[type="submit"] {
+		margin-top:       1rem;
+		padding:          10px 20px;
+		font-size:        0.88rem;
+		width:            11.94rem;
+		height:           3.13rem;
+		cursor:           pointer;
+		background-color: rgba(247, 148, 29, 1.00);
+		color:            white;
+		border:           none;
+		border-radius:    10px;
+		transition:       background-color 0.3s ease;
+		align-self:       center;
 
-button[type="button"]:hover, button[type="submit"]:hover {
-	background-color: rgb(218, 120, 0);
+		&:hover {
+			background-color: rgb(218, 120, 0);
+		}
+	}
 }
 
 /* Блок содержание курса */
-
 .content {
 	display:         flex;
 	justify-content: space-between;
-}
 
-.content_left {
-	margin-right: 3%;
-}
+	&_left {
+		margin-right: 3%;
 
-.content_right {
-	margin-left: 3%;
-}
+		h3, h4 {
+			font-family: bold;
+		}
 
-.content_left h3, .content_left h4 {
-	font-family: bold;
-}
+		h3 {
+			font-size: 2.25rem;
+		}
 
-.content_left h3 {
-	font-size: 2.25rem;
-}
+		p {
+			font-family: regular;
+			font-size:   1.13rem;
+		}
 
-.content_left p {
-	font-family: regular;
-	font-size:   1.13rem;
-}
+		button {
+			width: 17.69rem;
+		}
 
-.content_left button {
-	width: 17.69rem;
-}
+		.txtcontent {
+			display:         flex;
+			justify-content: space-between;
+			width:           28.63rem;
 
-.txtcontent {
-	display:         flex;
-	justify-content: space-between;
-	width:           28.63rem;
-}
+			p {
+				font-family: regular;
+				font-size:   0.88rem;
+			}
 
-.txtcontent p {
-	font-family: regular;
-	font-size:   0.88rem;
-}
+			#term {
+				width: 7.44rem;
+			}
 
-#term {
-	width: 7.44rem;
-}
+			#mode {
+				width: 19.31rem;
+			}
+		}
 
-#mode {
-	width: 19.31rem;
-}
+		h4 {
+			font-size: 1.75rem;
+		}
+	}
 
-.content_left h4 {
-	font-size: 1.75rem;
-}
-
-.content_right {
-	margin-top:    auto;
-	margin-bottom: auto;
+	&_right {
+		margin-left:   3%;
+		margin-top:    auto;
+		margin-bottom: auto;
+	}
 }
 
 /* Адаптив блока содержание курса */
-
 @media (max-width: 1000px) {
-
 	.content {
 		flex-direction: column;
-	}
 
-	.content_right {
-		margin-top: 5%;
+		&_right {
+			margin-top: 5%;
+		}
 	}
 }
 
-
 /* Блок преподавателей */
-
 .teachers {
 	width:               100%;
 	height:              37.5rem;
@@ -605,125 +593,140 @@ button[type="button"]:hover, button[type="submit"]:hover {
 	background-position: center;
 	background-repeat:   no-repeat;
 	margin-top:          5%;
-}
 
-.teachers h3 {
-	font-family:   bold;
-	font-size:     2.25rem;
-	text-align:    center;
-	color:         white;
-	margin-bottom: 6%;
-}
-
-.cards {
-	display:         flex;
-	justify-content: space-between;
-}
-
-.card {
-	width:            17.5rem;
-	height:           22.5rem;
-	background-color: white;
-	border-radius:    20px;
-	display:          flex;
-	flex-direction:   column; /* Выстраиваем элементы по вертикали */
-	justify-content:  center; /* Центрируем по вертикали */
-	align-items:      center; /* Центрируем по горизонтали */
-	text-align:       center;
-}
-
-.card p {
-	font-family: medium;
-	font-size:   0.88rem;
-	padding:     1%;
-}
-
-.card h3 {
-	font-family: bold;
-	font-size:   1.13rem;
-	color:       black;
-}
-
-/* адаптив блока преподавателей */
-
-@media (max-width: 1000px) {
-
-	.teachers {
-		height: 100%;
+	h3 {
+		font-family:   bold;
+		font-size:     2.25rem;
+		text-align:    center;
+		color:         white;
+		margin-bottom: 6%;
 	}
 
 	.cards {
-		flex-direction: column;
-		align-items:    center;
-	}
+		display:         flex;
+		justify-content: space-between;
 
-	.card {
-		margin-bottom: 5%;
-	}
+		.card {
+			width:            17.5rem;
+			height:           22.5rem;
+			background-color: white;
+			border-radius:    20px;
+			display:          flex;
+			flex-direction:   column;
+			justify-content:  center;
+			align-items:      center;
+			text-align:       center;
 
+			p {
+				font-family: medium;
+				font-size:   0.88rem;
+				padding:     1%;
+			}
+
+			h3 {
+				font-family: bold;
+				font-size:   1.13rem;
+				color:       black;
+			}
+		}
+	}
+}
+
+/* адаптив блока преподавателей */
+@media (max-width: 1000px) {
+	.teachers {
+		height: 100%;
+
+		.cards {
+			flex-direction: column;
+			align-items:    center;
+
+			.card {
+				margin-bottom: 5%;
+			}
+		}
+	}
 }
 
 /*  Блок найди ответ */
-
 .container {
 	width:      100%;
-	margin-top: 5%
-}
+	margin-top: 5%;
 
-.container h1 {
-	font-family: bold;
-	font-size:   1.75rem;
-}
+	h1 {
+		font-family: bold;
+		font-size:   1.75rem;
+	}
 
-.faq-section {
-	margin: 20px 0;
-}
+	.faq-section {
+		margin: 20px 0;
 
-details {
-	border:        1px solid transparent;
-	border-radius: 5px;
-	padding:       15px;
-	background:    #fff;
-	margin-bottom: 10px;
-	position:      relative;
-	box-shadow:    0 0 10px rgba(39, 170, 225, 0.3), 0 0 10px rgba(247, 148, 29, 0.3);
-	transition:    box-shadow 0.3s ease;
-}
+		details {
+			border:        1px solid transparent;
+			border-radius: 5px;
+			padding:       15px;
+			background:    #fff;
+			margin-bottom: 10px;
+			position:      relative;
+			box-shadow:    0 0 10px rgba(39, 170, 225, 0.3), 0 0 10px rgba(247, 148, 29, 0.3);
+			transition:    all 0.3s ease;
+			cursor:        pointer;
 
-details::before {
-	-webkit-mask:           linear-gradient(#fff 0 0) padding-box,
-													linear-gradient(#fff 0 0);
-	mask:                   linear-gradient(#fff 0 0) padding-box,
-													linear-gradient(#fff 0 0);
-	-webkit-mask-composite: xor;
-	mask-composite:         exclude;
-}
+			&:hover {
+				transform:    translateY(-2px);
+				box-shadow:   0 5px 15px rgba(39, 170, 225, 0.4), 0 5px 15px rgba(247, 148, 29, 0.4);
+				border-color: rgba(247, 148, 29, 0.3);
+				background:   linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(247, 148, 29, 0.05));
+			}
 
+			&::before {
+				-webkit-mask:           linear-gradient(#fff 0 0) padding-box,
+																linear-gradient(#fff 0 0);
+				mask:                   linear-gradient(#fff 0 0) padding-box,
+																linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite:         exclude;
+			}
 
-summary {
-	font-size:   1.13rem;
-	font-family: medium;
-	font-weight: bold;
-	cursor:      pointer;
-	list-style:  none;
-}
+			summary {
+				font-size:   1.13rem;
+				font-family: medium;
+				font-weight: bold;
+				cursor:      pointer;
+				list-style:  none;
+				transition:  color 0.3s ease;
 
-details summary::after {
-	content: url('../../src/assets/cours/stick1.svg');
-	float:   right;
-}
+				&:hover {
+					color: #f7941d;
+				}
 
-details[open] summary::after {
-	content: url('../../src/assets/cours/stick2.svg');
-}
+				&::after {
+					content:    url('../../src/assets/cours/stick1.svg');
+					float:      right;
+					transition: transform 0.3s ease;
+				}
+			}
 
-details ul, p {
-	margin:      10px 0 0;
-	font-family: regular;
-	font-size:   0.88rem;
-}
+			&[open] {
+				box-shadow: 0 0 15px rgba(247, 148, 29, 0.5), 0 0 15px rgba(39, 170, 225, 0.5);
+				background: linear-gradient(to right, rgba(255, 255, 255, 0.98), rgba(39, 170, 225, 0.05));
 
-details[open] {
-	box-shadow: 0 0 15px rgba(247, 148, 29, 0.5), 0 0 15px rgba(39, 170, 225, 0.5);
+				summary {
+					color: #27aae1;
+
+					&::after {
+						content:   url('../../src/assets/cours/stick2.svg');
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			ul, p {
+				margin:      10px 0 0;
+				font-family: regular;
+				font-size:   0.88rem;
+			}
+		}
+	}
 }
 </style>

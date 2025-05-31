@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			</div>
 
 			<div class="event-actions">
-				<div class="action-item">
+				<div @click="router.push('/test')" class="action-item">
 					<div class="action">
 						<img alt="test" src="../../src/assets/main/try.svg">
 						<h3>Попробуй!</h3>

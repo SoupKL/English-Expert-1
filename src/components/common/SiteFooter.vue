@@ -37,7 +37,6 @@ footer {
 	color:            $footer-color;
 	text-align:       center;
 	padding:          $footer-padding;
-	margin-top:       auto;
 
 	.info_f {
 		display:         flex;
