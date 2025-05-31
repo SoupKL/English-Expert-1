@@ -45,7 +45,7 @@ const routes = [
 		component: new_1
 	},
 	{
-		path:      '/:pathMatch(.*)*',
+		path:      '/:catchAll(.*)',
 		name:      'NotFound',
 		component: NotFound
 	}
