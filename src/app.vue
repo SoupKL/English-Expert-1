@@ -11,11 +11,20 @@
 import HeaderClassic from "@/components/header/header-classic.vue";
 import SiteFooter from "@/components/common/SiteFooter.vue";
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop.vue";
+import { useUserStore } from '@/stores/userStore'
 
 
 export default {
 	name:       'App',
-	components: {SiteFooter, HeaderClassic, ScrollToTop}
+	components: {SiteFooter, HeaderClassic, ScrollToTop},
+	setup() {
+		const userStore = useUserStore();
+
+		// Пример использования
+		if (userStore.isAuthenticated) {
+			console.log("Вы вошли как:", userStore.user?.name);
+		}
+	},
 }
 </script>
 

@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted, onUnmounted, watch} from 'vue'
 import {useRouter} from 'vue-router'
+import {useUserStore} from '@/stores/userStore' // Импорт Pinia
 
 const router        = useRouter()
 const isMenuOpen    = ref(false)
@@ -8,6 +9,8 @@ const showScrollTop = ref(false)
 
 const menuRef    = ref(null)
 const menuToggle = ref(null)
+
+const userStore = useUserStore() // Хранилище пользователя
 
 const toggleMenu = (event) => {
 	event.stopPropagation()
@@ -42,6 +45,7 @@ onMounted(() => {
 	}
 	window.addEventListener('scroll', handleScroll)
 	document.addEventListener('click', handleClickOutside)
+	userStore.fetchUser() // ⬅️ загружаем пользователя при монтировании
 })
 
 onUnmounted(() => {
@@ -53,6 +57,7 @@ watch(isMenuOpen, (newVal) => {
 	document.body.style.overflow = newVal ? 'hidden' : ''
 })
 </script>
+
 
 <template>
 	<div class="wrapper">
@@ -83,9 +88,11 @@ watch(isMenuOpen, (newVal) => {
 						<span>8 800 555-35-35</span>
 					</a>
 				</div>
-				<div class="nav-item" @click="navigateTo('/auth')" style="--i: 5">
+				<div class="nav-item" style="--i: 5" @click="userStore.isAuthenticated ? navigateTo('/profile') : navigateTo('/auth')">
 					<img src="../../assets/main/person.svg" alt="Профиль">
-					<span>Войти</span>
+					<span>
+						{{ userStore.isAuthenticated ? userStore.user?.name : 'Войти' }}
+					</span>
 				</div>
 			</nav>
 		</header>
@@ -111,9 +118,11 @@ watch(isMenuOpen, (newVal) => {
 				<span>8 800 555-35-35</span>
 			</a>
 		</div>
-		<div class="nav-item" @click="navigateTo('/auth')" style="--i: 5">
+		<div class="nav-item" style="--i: 5" @click="userStore.isAuthenticated ? navigateTo('/profile') : navigateTo('/auth')">
 			<img src="../../assets/main/person.svg" alt="Профиль">
-			<span>Войти</span>
+			<span>
+				{{ userStore.isAuthenticated ? userStore.user?.name : 'Войти' }}
+			</span>
 		</div>
 	</nav>
 
