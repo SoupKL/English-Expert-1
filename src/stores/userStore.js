@@ -2,50 +2,58 @@
 import {defineStore} from 'pinia'
 
 export const useUserStore = defineStore('user', {
-	state: () => ({
+	state:   () => ({
 		user:  null,
-		token: localStorage.getItem('auth_token') || null,
+		token: null,
 	}),
-
-	getters: {
-		isAuthenticated: (state) => !!state.token,
-	},
-
 	actions: {
-		setUser(userData) {
-			this.user = userData
+		setUser(user) {
+			this.user = user
+			localStorage.setItem('user', JSON.stringify(user))
 		},
 		setToken(token) {
 			this.token = token
-			localStorage.setItem('auth_token', token)
+			localStorage.setItem('token', token)
 		},
 		logout() {
 			this.user  = null
 			this.token = null
-			localStorage.removeItem('auth_token')
+			localStorage.removeItem('user')
+			localStorage.removeItem('token')
 		},
-		fetchUser() {
-			if (!this.token) {
-				return
-			}
-			return fetch('http://127.0.0.1:8000/api/user', {
-				headers: {
-					'Authorization': 'Bearer ' + this.token,
-					'Accept':        'application/json'
-				}
-			})
-				.then(async (res) => {
-					if (!res.ok) {
-						throw new Error('Недействительный токен')
-					}
-					const data = await res.json()
-					this.setUser(data)
-				})
-				.catch((err) => {
-					console.warn('fetchUser error:', err)
-					this.logout()
-				})
-		}
+		initFromStorage() {
+			const token = localStorage.getItem('token')
+			const user = localStorage.getItem('user')
 
+			if (token) {
+				this.token = token
+			}
+
+			if (user && user !== 'undefined') {
+				try {
+					this.user = JSON.parse(user)
+				} catch (e) {
+					this.user = null
+					localStorage.removeItem('user') // очистим некорректное значение
+				}
+			}
+		},
+		async validateToken() {
+			try {
+				const response = await fetch('https://laravel-api-gmjs.onrender.com/api/user', {
+					headers: {
+						Authorization: `Bearer ${this.token}`,
+						Accept:        'application/json',
+					}
+				})
+
+				if (!response.ok) {
+					throw new Error()
+				}
+				this.user = await response.json()
+			} catch {
+				this.logout()
+			}
+		}
 	}
 })

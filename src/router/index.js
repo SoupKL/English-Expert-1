@@ -7,6 +7,7 @@ import Events from "@/views/Events.vue";
 import new_1 from "@/components/new1/new_1.vue";
 import NotFound from "@/views/NotFound.vue";
 import TestPage from "@/views/TestPage.vue";
+import ProfilePage from "@/views/ProfilePage.vue";
 
 const routes = [
 	{
@@ -43,6 +44,11 @@ const routes = [
 		path:      '/news',
 		name:      'News',
 		component: new_1
+	},
+	{
+		path:      '/profile',
+		name:      'Profile',
+		component: ProfilePage
 	},
 	{
 		path:      '/:catchAll(.*)',

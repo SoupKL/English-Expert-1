@@ -1,19 +1,17 @@
-import {createApp} from 'vue'
-import {createPinia} from 'pinia'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
 import router from './router'
-import App from './app.vue'
-import VueCreditCardValidation from 'vue-credit-card-validation'
-import {useUserStore} from '@/stores/userStore.js'
+import { useUserStore } from '@/stores/userStore'
 
-const app   = createApp(App)
+const app = createApp(App)
 const pinia = createPinia()
 
-app.use(pinia) // ✅ сначала активируем Pinia
-app.use(router)
-app.use(VueCreditCardValidation)
+app.use(pinia)
 
-// ✅ теперь можно использовать store
 const userStore = useUserStore()
-userStore.fetchUser()
+userStore.initFromStorage()
+userStore.validateToken() // ✅ здесь вызываем проверку токена
 
+app.use(router)
 app.mount('#app')

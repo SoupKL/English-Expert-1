@@ -43,76 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		menu.classList.toggle('active');
 	});
 });
-//
-//
-// // Получаем ссылки на каждый блок
-//
-// A1.addEventListener('click', function() {
-// 	window.location.href = '/';
-// });
-//
-// A2.addEventListener('click', function() {
-// 	window.location.href = 'course_A2.html';
-// });
-//
-// B1.addEventListener('click', function() {
-// 	window.location.href = 'course_B1.html';
-// });
-//
-// B1.addEventListener('click', function() {
-// 	window.location.href = 'course_B1.html';
-// });
-//
-// B2.addEventListener('click', function() {
-// 	window.location.href = 'course_B2.html';
-// });
-//
-// C1.addEventListener('click', function() {
-// 	window.location.href = 'course_C1.html';
-// });
-//
-// C2.addEventListener('click', function() {
-// 	window.location.href = 'course_C2.html';
-// });
-//
-// work.addEventListener('click', function() {
-// 	window.location.href = 'work.html';
-// });
-//
-// purpose.addEventListener('click', function() {
-// 	window.location.href = 'purpose.html';
-// });
-
 </script>
 
 <template>
-	<!-- HEADER -->
-
-	<!--	<div class="up">-->
-
-	<!--		<div class="wrapper">-->
-	<!--			<header>-->
-	<!--				<div id="logo">-->
-	<!--					<a href="./main.html"><img src="./src/img/main/logo_white.svg" alt="English Expert Logo"></a>-->
-	<!--				</div>-->
-	<!--				<div class="menu-toggle">-->
-	<!--					<img src="./src/img/main/header_swip_white.svg" alt="Menu Icon">-->
-	<!--				</div>-->
-	<!--				<nav class="menu">-->
-	<!--					<a href="./all_courses.html"><img src="./src/img/main/all_curs.svg">Все курсы</a>-->
-	<!--					<a href="./all_events.html">Мероприятия</a>-->
-	<!--					<a href="./about.html">О нас</a>-->
-	<!--					<a href="#"><img src="./src/img/main/geolocation.svg">Владивосток</a>-->
-	<!--					<a href="tel:8005553535">8 800 555-35-35</a>-->
-	<!--					<form action="login.php" method="post">-->
-	<!--						<a href="./login_registration.html"><img src="./src/img/all_events/person.svg"><input-->
-	<!--								type="text" id="login" name="loginname"-->
-	<!--								placeholder="Войти"></a>-->
-	<!--					</form>-->
-	<!--				</nav>-->
-	<!--			</header>-->
-	<!--		</div>-->
-	<!--	</div>-->
 
 	<!-- Блок Выборки -->
 

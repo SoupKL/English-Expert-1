@@ -1,16 +1,21 @@
 <script>
 import {ref} from 'vue'
+import {useRouter} from 'vue-router'
 import {useUserStore} from '@/stores/userStore'
 
 export default {
 	setup() {
-		const formLog = ref(false)
-		const form    = ref({
+		const formLog   = ref(false)
+		const form      = ref({
 			name:                  '',
 			login:                 '',
 			email:                 '',
 			password:              '',
-			password_confirmation: '',
+			password_confirmation: ''
+		})
+		const loginForm = ref({
+			identifier: '',
+			password:   ''
 		})
 
 		const errors         = ref({})
@@ -18,6 +23,7 @@ export default {
 		const loading        = ref(false)
 
 		const userStore = useUserStore()
+		const router    = useRouter()
 
 		const validateForm = () => {
 			errors.value = {}
@@ -57,7 +63,7 @@ export default {
 			errors.value         = {}
 
 			try {
-				const response = await fetch('http://127.0.0.1:8000/api/register', {
+				const response = await fetch('https://laravel-api-gmjs.onrender.com/api/register', {
 					method:  'POST',
 					headers: {
 						'Content-Type': 'application/json',
@@ -67,7 +73,6 @@ export default {
 				})
 
 				const data = await response.json()
-
 				if (!response.ok) {
 					errors.value = data.errors || {message: data.message || 'Ошибка регистрации'}
 					return
@@ -75,10 +80,40 @@ export default {
 
 				userStore.setToken(data.access_token)
 				userStore.setUser(data.user)
-
 				successMessage.value = 'Регистрация прошла успешно!'
-				// Перенаправление можно делать здесь:
-				// router.push('/dashboard')
+				router.push('/profile')
+			} catch (error) {
+				errors.value = {message: 'Ошибка сети. Попробуйте позже.'}
+			} finally {
+				loading.value = false
+			}
+		}
+
+		const loginPost = async () => {
+			loading.value        = true
+			successMessage.value = ''
+			errors.value         = {}
+
+			try {
+				const response = await fetch('https://laravel-api-gmjs.onrender.com/api/login', {
+					method:  'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept':       'application/json'
+					},
+					body:    JSON.stringify(loginForm.value)
+				})
+
+				const data = await response.json()
+				if (!response.ok) {
+					errors.value = data.errors || {message: data.message || 'Ошибка авторизации'}
+					return
+				}
+
+				userStore.setToken(data.access_token)
+				userStore.validateToken()
+				userStore.setUser(data.user)
+				router.push('/profile')
 			} catch (error) {
 				errors.value = {message: 'Ошибка сети. Попробуйте позже.'}
 			} finally {
@@ -89,16 +124,17 @@ export default {
 		return {
 			formLog,
 			form,
+			loginForm,
 			errors,
 			successMessage,
 			loading,
 			registerPost,
+			loginPost,
 			chooseLogIn:  () => (formLog.value = false),
-			chooseLogOut: () => (formLog.value = true),
+			chooseLogOut: () => (formLog.value = true)
 		}
 	}
 }
-
 </script>
 
 <template>
@@ -111,10 +147,19 @@ export default {
 				</div>
 
 				<div v-if="formLog === false" class="tabcontent">
-					<form @submit.prevent>
-						<input type="text" placeholder="Логин/Email"/>
-						<input type="password" placeholder="Пароль"/>
-						<button type="submit" class="enter">Войти</button>
+					<form @submit.prevent="loginPost">
+						<input v-model="loginForm.identifier" type="text" placeholder="Логин/Email"/>
+						<span v-if="errors.login" class="error">{{ errors.login }}</span>
+
+						<input v-model="loginForm.password" type="password" placeholder="Пароль"/>
+						<span v-if="errors.password" class="error">{{ errors.password }}</span>
+
+						<button type="submit" class="enter" :disabled="loading">
+							{{ loading ? 'Вход...' : 'Войти' }}
+						</button>
+
+						<p v-if="errors.message" class="error">{{ errors.message }}</p>
+						<p v-if="successMessage" class="success">{{ successMessage }}</p>
 					</form>
 				</div>
 
