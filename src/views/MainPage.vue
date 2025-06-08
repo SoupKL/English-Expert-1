@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	</button>
 	<bank-card
-	:isOpen="isOpen">
+	:visible="isOpen">
 
 	</bank-card>
 
