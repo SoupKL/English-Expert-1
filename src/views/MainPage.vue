@@ -5,6 +5,9 @@ import skils from "@/components/skils/skils.vue";
 import router from "@/router/index.js";
 import Rabbit from "@/components/rabbit/rabbit.vue";
 import BankCard from "@/components/bank-card/bank-card.vue";
+import {ref} from "vue";
+
+const isOpen = ref(false)
 
 document.addEventListener('DOMContentLoaded', () => {
 	const slider = document.querySelector('.slider');
@@ -130,6 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="wrapper">
 		<skils/>
 	</div>
+	<button @click="isOpen=!isOpen">
+
+	</button>
+	<bank-card
+	:isOpen="isOpen">
+
+	</bank-card>
 
 	<!-- БЛОК ФОРМЫ -->
 

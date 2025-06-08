@@ -112,39 +112,7 @@
   </div>
 
   <!-- БЛОК ФОРМЫ -->
-
-  <div class="wrapper">
-
-	<div class="rabbit_helper">
-
-	  <div class="rh_l">
-		<img src="../../src/assets/main/rabbit2.svg" alt="кролик помощник нижний">
-	  </div>
-
-	  <div class="rh_r">
-		<form action="#" method="POST">
-		  <div class="form-group full-width">
-			<input type="text" id="name" name="name" placeholder="Ваше имя">
-		  </div>
-		  <div class="form-group horizontal">
-			<div>
-			  <input type="phone" id="phone" name="phone" placeholder="Ваш телефон">
-			</div>
-			<div>
-			  <input type="email" id="email" name="email" placeholder="Ваш e-mail">
-			</div>
-		  </div>
-		  <div class="form-group vertical">
-			<p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>
-			<button type="submit">Отправить</button>
-		  </div>
-		</form>
-	  </div>
-
-	</div>
-
-  </div>
-
+	<rabbit-helper/>
 </template>
 
 <style lang="scss" scoped>
@@ -440,3 +408,6 @@ h1 {
   }
 }
 </style>
+<script setup lang="ts">
+import RabbitHelper from '@/components/rabbit/rabbit.vue';
+</script>
