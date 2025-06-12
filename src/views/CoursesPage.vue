@@ -329,7 +329,7 @@ export default {
 
 		<!-- Модальное окно с банковской картой -->
 
-		<bank-card :isOpen="isModalOpen.value"/>
+		<bank-card :visible="isModalOpen" @close="closeModal"/>
 
 		<!-- Блок содержание курса -->
 

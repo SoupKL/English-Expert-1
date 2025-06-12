@@ -1,6 +1,7 @@
 <template>
 	<div class="modal-overlay" v-if="visible" @click.self="close">
 		<div class="card-form">
+            <button class="modal-close" @click="close" aria-label="Close">&times;</button>
 			<div class="card-list">
 				<div class="card-item" :class="{ '-active' : isCardFlipped }">
 					<div class="card-item__side -front">
@@ -221,7 +222,7 @@ export default {
 	left:             0;
 	right:            0;
 	bottom:           0;
-	background-color: transparent;
+	background-color: rgba(0,0,0,0.5);
 	display:          flex;
 	align-items:      center;
 	justify-content:  center;
@@ -236,6 +237,15 @@ body {
 	background:  #ddeefc;
 	font-family: "Source Sans Pro", sans-serif;
 	font-size:   16px;
+}
+.modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
 }
 
 * {
@@ -260,6 +270,7 @@ body {
 	max-width: 570px;
 	margin:    auto;
 	width:     100%;
+        position: relative;
 
 	@media screen and (max-width: 576px) {
 		margin: 0 auto;
