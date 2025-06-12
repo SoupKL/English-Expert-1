@@ -1,13 +1,15 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import mainPage from "@/views/MainPage.vue";
-import AllCourses from "@/views/AllCourses.vue";
-import LogInLogOut from "@/views/LogInLogOut.vue";
-import CoursesPage from "@/views/CoursesPage.vue";
-import Events from "@/views/Events.vue";
-import new_1 from "@/components/new1/new_1.vue";
-import NotFound from "@/views/NotFound.vue";
-import TestPage from "@/views/TestPage.vue";
-import ProfilePage from "@/views/ProfilePage.vue";
+
+// Lazy load views to reduce initial bundle size
+const mainPage = () => import('@/views/MainPage.vue')
+const AllCourses = () => import('@/views/AllCourses.vue')
+const LogInLogOut = () => import('@/views/LogInLogOut.vue')
+const CoursesPage = () => import('@/views/CoursesPage.vue')
+const Events = () => import('@/views/Events.vue')
+const new_1 = () => import('@/components/new1/new_1.vue')
+const NotFound = () => import('@/views/NotFound.vue')
+const TestPage = () => import('@/views/TestPage.vue')
+const ProfilePage = () => import('@/views/ProfilePage.vue')
 
 const routes = [
 	{
