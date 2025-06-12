@@ -12,9 +12,15 @@
 							<div class="card-item__top">
 								<img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
 								<div class="card-item__type">
-									<transition name="slide-fade-up">
-										<img v-if="getCardType" :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`" :key="getCardType" alt="" class="card-item__typeImg">
-									</transition>
+																		<transition name="slide-fade-up">
+																			<img
+																				v-if="getCardType === 'mir'"
+																				src="/image/mir.png"
+																				class="card-item__typeImgMir"
+																				alt="MIR Card"
+																				/>
+																			<img v-else-if="getCardType" :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`" :key="getCardType" alt="" class="card-item__typeImg">
+																		</transition>
 								</div>
 							</div>
 							<label for="cardNumber" class="card-item__number" ref="cardNumber">
@@ -32,7 +38,7 @@
 									<transition name="slide-fade-up">
 										<div class="card-item__name" v-if="cardName.length">
 											<transition-group name="slide-fade-right">
-												<span class="card-item__nameItem" v-for="(n, $index) in cardName" :key="$index">{{n}}</span>
+												<span class="card-item__nameItem" v-for="(n, $index) in cardName" :key="$index">{{ n }}</span>
 											</transition-group>
 										</div>
 										<div class="card-item__name" v-else>Full Name</div>
@@ -42,14 +48,14 @@
 									<label for="cardMonth" class="card-item__dateTitle">Expires</label>
 									<label class="card-item__dateItem">
 										<transition name="slide-fade-up">
-											<span v-if="cardMonth" :key="cardMonth">{{cardMonth}}</span>
+											<span v-if="cardMonth" :key="cardMonth">{{ cardMonth }}</span>
 											<span v-else>MM</span>
 										</transition>
 									</label>
 									/
 									<label class="card-item__dateItem">
 										<transition name="slide-fade-up">
-											<span v-if="cardYear" :key="cardYear">{{String(cardYear).slice(2,4)}}</span>
+											<span v-if="cardYear" :key="cardYear">{{ String(cardYear).slice(2, 4) }}</span>
 											<span v-else>YY</span>
 										</transition>
 									</label>
@@ -59,7 +65,7 @@
 					</div>
 					<div class="card-item__side -back">
 						<div class="card-item__cover">
-							<img :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${currentCardBackground}.jpeg`" class="card-item__bg">
+							<!--							<img :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${currentCardBackground}.jpeg`" class="card-item__bg">-->
 						</div>
 						<div class="card-item__band"></div>
 						<div class="card-item__cvv">
@@ -69,18 +75,15 @@
 							</div>
 							<div class="card-item__type">
 								<img
-										v-if="getCardType === 'mir'"
-										src="/public/images/mir.png"
+										:src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`"
 										class="card-item__typeImg"
-										alt="MIR Card"
+										:alt="getCardType"
 								/>
-								<img v-if="getCardType" :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`" class="card-item__typeImg">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 			<div class="card-form__inner">
 				<div class="card-input">
 					<label for="cardNumber" class="card-input__label">Card Number</label>
@@ -123,38 +126,50 @@
 
 <script>
 export default {
-	name: 'CreditCardModal',
+	name:  'CreditCardModal',
 	props: {
 		visible: {
-			type: Boolean,
+			type:     Boolean,
 			required: true
 		}
 	},
 	data() {
 		return {
-			currentCardBackground: Math.floor(Math.random()* 25 + 1),
-			cardName: "",
-			cardNumber: "",
-			cardMonth: "",
-			cardYear: "",
-			cardCvv: "",
-			minCardYear: new Date().getFullYear(),
-			amexCardMask: "#### ###### #####",
-			otherCardMask: "#### #### #### ####",
-			isCardFlipped: false,
-			focusElementStyle: null,
-			isInputFocused: false
+			currentCardBackground: Math.floor(Math.random() * 25 + 1),
+			cardName:              "",
+			cardNumber:            "",
+			cardMonth:             "",
+			cardYear:              "",
+			cardCvv:               "",
+			minCardYear:           new Date().getFullYear(),
+			amexCardMask:          "#### ###### #####",
+			otherCardMask:         "#### #### #### ####",
+			isCardFlipped:         false,
+			focusElementStyle:     null,
+			isInputFocused:        false
 		};
 	},
 	computed: {
 		getCardType() {
 			const number = this.cardNumber;
-			if (/^4/.test(number)) return "visa";
-			if (/^(34|37)/.test(number)) return "amex";
-			if (/^5[1-5]/.test(number)) return "mastercard";
-			if (/^6011/.test(number)) return "discover";
-			if (/^9792/.test(number)) return "troy";
-			if (/^220[0-4]/.test(number)) return "mir";
+			if (/^4/.test(number)) {
+				return "visa";
+			}
+			if (/^(34|37)/.test(number)) {
+				return "amex";
+			}
+			if (/^5[1-5]/.test(number)) {
+				return "mastercard";
+			}
+			if (/^6011/.test(number)) {
+				return "discover";
+			}
+			if (/^9792/.test(number)) {
+				return "troy";
+			}
+			if (/^220[0-4]/.test(number)) {
+				return "mir";
+			}
 			return "visa";
 		},
 		generateCardNumberMask() {
@@ -164,29 +179,31 @@ export default {
 			return this.cardYear === this.minCardYear ? new Date().getMonth() + 1 : 1;
 		}
 	},
-	watch: {
+	watch:    {
 		cardYear() {
 			if (this.cardMonth < this.minCardMonth) {
 				this.cardMonth = "";
 			}
 		}
 	},
-	methods: {
+	methods:  {
 		flipCard(status) {
 			this.isCardFlipped = status;
 		},
 		focusInput(e) {
-			const targetRef = e.target.dataset.ref;
-			const target = this.$refs[targetRef];
+			const targetRef        = e.target.dataset.ref;
+			const target           = this.$refs[targetRef];
 			this.focusElementStyle = {
-				width: `${target.offsetWidth}px`,
-				height: `${target.offsetHeight}px`,
+				width:     `${target.offsetWidth}px`,
+				height:    `${target.offsetHeight}px`,
 				transform: `translateX(${target.offsetLeft}px) translateY(${target.offsetTop}px)`
 			};
 		},
 		blurInput() {
 			setTimeout(() => {
-				if (!this.isInputFocused) this.focusElementStyle = null;
+				if (!this.isInputFocused) {
+					this.focusElementStyle = null;
+				}
 			}, 300);
 			this.isInputFocused = false;
 		},
@@ -199,72 +216,75 @@ export default {
 
 <style lang="scss" scoped>
 .modal-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	position:         fixed;
+	top:              0;
+	left:             0;
+	right:            0;
+	bottom:           0;
 	background-color: transparent;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 1000;
-	padding: 20px;
+	display:          flex;
+	align-items:      center;
+	justify-content:  center;
+	z-index:          1000;
+	padding:          20px;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
 
 
 body {
-	background: #ddeefc;
+	background:  #ddeefc;
 	font-family: "Source Sans Pro", sans-serif;
-	font-size: 16px;
+	font-size:   16px;
 }
+
 * {
 	box-sizing: border-box;
+
 	&:focus {
 		outline: none;
 	}
 }
+
 .wrapper {
 	min-height: 100vh;
-	display: flex;
-	padding: 50px 15px;
+	display:    flex;
+	padding:    50px 15px;
 	@media screen and (max-width: 700px), (max-height: 500px) {
-		flex-wrap: wrap;
+		flex-wrap:      wrap;
 		flex-direction: column;
 	}
 }
 
 .card-form {
 	max-width: 570px;
-	margin: auto;
-	width: 100%;
+	margin:    auto;
+	width:     100%;
 
 	@media screen and (max-width: 576px) {
 		margin: 0 auto;
 	}
 
 	&__inner {
-		background: #fff;
+		background:    #fff;
 		// box-shadow: 3px 13px 30px 0px rgba(21, 34, 67, 0.2);
-		box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+		box-shadow:    0 30px 60px 0 rgba(90, 116, 148, 0.4);
 		border-radius: 10px;
-		padding: 35px;
-		padding-top: 180px;
+		padding:       35px;
+		padding-top:   180px;
 
 		@media screen and (max-width: 480px) {
-			padding: 25px;
+			padding:     25px;
 			padding-top: 165px;
 		}
 		@media screen and (max-width: 360px) {
-			padding: 15px;
+			padding:     15px;
 			padding-top: 165px;
 		}
 	}
 
 	&__row {
-		display: flex;
+		display:     flex;
 		align-items: flex-start;
 		@media screen and (max-width: 480px) {
 			flex-wrap: wrap;
@@ -272,7 +292,7 @@ body {
 	}
 
 	&__col {
-		flex: auto;
+		flex:         auto;
 		margin-right: 35px;
 
 		&:last-child {
@@ -280,9 +300,9 @@ body {
 		}
 
 		@media screen and (max-width: 480px) {
-			margin-right: 0;
-			flex: unset;
-			width: 100%;
+			margin-right:  0;
+			flex:          unset;
+			width:         100%;
 			margin-bottom: 20px;
 
 			&:last-child {
@@ -299,12 +319,12 @@ body {
 	}
 
 	&__group {
-		display: flex;
+		display:     flex;
 		align-items: flex-start;
-		flex-wrap: wrap;
+		flex-wrap:   wrap;
 
 		.card-input__input {
-			flex: 1;
+			flex:         1;
 			margin-right: 15px;
 
 			&:last-child {
@@ -314,18 +334,18 @@ body {
 	}
 
 	&__button {
-		width: 100%;
-		height: 55px;
-		background: #2364d2;
-		border: none;
+		width:         100%;
+		height:        55px;
+		background:    #2364d2;
+		border:        none;
 		border-radius: 5px;
-		font-size: 22px;
-		font-weight: 500;
-		font-family: "Source Sans Pro", sans-serif;
-		box-shadow: 3px 10px 20px 0px rgba(35, 100, 210, 0.3);
-		color: #fff;
-		margin-top: 20px;
-		cursor: pointer;
+		font-size:     22px;
+		font-weight:   500;
+		font-family:   "Source Sans Pro", sans-serif;
+		box-shadow:    3px 10px 20px 0px rgba(35, 100, 210, 0.3);
+		color:         #fff;
+		margin-top:    20px;
+		cursor:        pointer;
 
 		@media screen and (max-width: 480px) {
 			margin-top: 10px;
@@ -334,18 +354,18 @@ body {
 }
 
 .card-item {
-	max-width: 430px;
-	height: 270px;
-	margin-left: auto;
+	max-width:    430px;
+	height:       270px;
+	margin-left:  auto;
 	margin-right: auto;
-	position: relative;
-	z-index: 2;
-	width: 100%;
+	position:     relative;
+	z-index:      2;
+	width:        100%;
 
 	@media screen and (max-width: 480px) {
 		max-width: 310px;
-		height: 220px;
-		width: 90%;
+		height:    220px;
+		width:     90%;
 	}
 
 	@media screen and (max-width: 360px) {
@@ -355,9 +375,9 @@ body {
 	&.-active {
 		.card-item__side {
 			&.-front {
-				transform: perspective(1000px) rotateY(180deg) rotateX(0deg)
-									 rotateZ(0deg);
+				transform: perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
 			}
+
 			&.-back {
 				transform: perspective(1000px) rotateY(0) rotateX(0deg) rotateZ(0deg);
 				// box-shadow: 0 20px 50px 0 rgba(81, 88, 206, 0.65);
@@ -366,30 +386,30 @@ body {
 	}
 
 	&__focus {
-		position: absolute;
-		z-index: 3;
-		border-radius: 5px;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		transition: all 0.35s cubic-bezier(0.71, 0.03, 0.56, 0.85);
-		opacity: 0;
+		position:       absolute;
+		z-index:        3;
+		border-radius:  5px;
+		left:           0;
+		top:            0;
+		width:          100%;
+		height:         100%;
+		transition:     all 0.35s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+		opacity:        0;
 		pointer-events: none;
-		overflow: hidden;
-		border: 2px solid rgba(255, 255, 255, 0.65);
+		overflow:       hidden;
+		border:         2px solid rgba(255, 255, 255, 0.65);
 
 		&:after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			background: rgb(8, 20, 47);
-			height: 100%;
+			content:       "";
+			position:      absolute;
+			top:           0;
+			left:          0;
+			width:         100%;
+			background:    rgb(8, 20, 47);
+			height:        100%;
 			border-radius: 5px;
-			filter: blur(25px);
-			opacity: 0.5;
+			filter:        blur(25px);
+			opacity:       0.5;
 		}
 
 		&.-active {
@@ -398,24 +418,24 @@ body {
 	}
 
 	&__side {
-		border-radius: 15px;
-		overflow: hidden;
+		border-radius:       15px;
+		overflow:            hidden;
 		// box-shadow: 3px 13px 30px 0px rgba(11, 19, 41, 0.5);
-		box-shadow: 0 20px 60px 0 rgba(14, 42, 90, 0.55);
-		transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg);
-		transform-style: preserve-3d;
-		transition: all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+		box-shadow:          0 20px 60px 0 rgba(14, 42, 90, 0.55);
+		transform:           perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg);
+		transform-style:     preserve-3d;
+		transition:          all 0.8s cubic-bezier(0.71, 0.03, 0.56, 0.85);
 		backface-visibility: hidden;
-		height: 100%;
+		height:              100%;
 
 		&.-back {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
+			position:  absolute;
+			top:       0;
+			left:      0;
+			width:     100%;
 			transform: perspective(2000px) rotateY(-180deg) rotateX(0deg) rotate(0deg);
-			z-index: 2;
-			padding: 0;
+			z-index:   2;
+			padding:   0;
 			// background-color: #2364d2;
 			// background-image: linear-gradient(
 			//   43deg,
@@ -423,49 +443,52 @@ body {
 			//   #8555c7 46%,
 			//   #2364d2 100%
 			// );
-			height: 100%;
+			height:    100%;
 
 			.card-item__cover {
 				transform: rotateY(-180deg)
 			}
 		}
 	}
+
 	&__bg {
-		max-width: 100%;
-		display: block;
+		max-width:  100%;
+		display:    block;
 		max-height: 100%;
-		height: 100%;
-		width: 100%;
+		height:     100%;
+		width:      100%;
 		object-fit: cover;
 	}
+
 	&__cover {
-		height: 100%;
+		height:           100%;
 		background-color: #1c1d27;
-		position: absolute;
-		height: 100%;
+		position:         absolute;
+		height:           100%;
 		background-color: #1c1d27;
-		left: 0;
-		top: 0;
-		width: 100%;
-		border-radius: 15px;
-		overflow: hidden;
+		left:             0;
+		top:              0;
+		width:            100%;
+		border-radius:    15px;
+		overflow:         hidden;
+
 		&:after {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
+			content:    "";
+			position:   absolute;
+			left:       0;
+			top:        0;
+			width:      100%;
+			height:     100%;
 			background: rgba(6, 2, 29, 0.45);
 		}
 	}
 
 	&__top {
-		display: flex;
-		align-items: flex-start;
+		display:         flex;
+		align-items:     flex-start;
 		justify-content: space-between;
-		margin-bottom: 40px;
-		padding: 0 10px;
+		margin-bottom:   40px;
+		padding:         0 10px;
 
 		@media screen and (max-width: 480px) {
 			margin-bottom: 25px;
@@ -486,16 +509,16 @@ body {
 	}
 
 	&__type {
-		height: 45px;
-		position: relative;
-		display: flex;
+		height:          45px;
+		position:        relative;
+		display:         flex;
 		justify-content: flex-end;
-		max-width: 100px;
-		margin-left: auto;
-		width: 100%;
+		max-width:       100px;
+		margin-left:     auto;
+		width:           100%;
 
 		@media screen and (max-width: 480px) {
-			height: 40px;
+			height:    40px;
 			max-width: 90px;
 		}
 		@media screen and (max-width: 360px) {
@@ -504,21 +527,27 @@ body {
 	}
 
 	&__typeImg {
-		max-width: 100%;
-		object-fit: contain;
-		max-height: 100%;
+		max-width:       100%;
+		object-fit:      contain;
+		max-height:      100%;
 		object-position: top right;
+
+		&Mir{
+			width: 100px;
+			height:     100px;
+			margin-top:     -30px;
+		}
 	}
 
 	&__info {
-		color: #fff;
-		width: 100%;
-		max-width: calc(100% - 85px);
-		padding: 10px 15px;
+		color:       #fff;
+		width:       100%;
+		max-width:   calc(100% - 85px);
+		padding:     10px 15px;
 		font-weight: 500;
-		display: block;
+		display:     block;
 
-		cursor: pointer;
+		cursor:      pointer;
 
 		@media screen and (max-width: 480px) {
 			padding: 10px;
@@ -526,21 +555,21 @@ body {
 	}
 
 	&__holder {
-		opacity: 0.7;
-		font-size: 13px;
+		opacity:       0.7;
+		font-size:     13px;
 		margin-bottom: 6px;
 		@media screen and (max-width: 480px) {
-			font-size: 12px;
+			font-size:     12px;
 			margin-bottom: 5px;
 		}
 	}
 
 	&__wrapper {
 		font-family: "Source Code Pro", monospace;
-		padding: 25px 15px;
-		position: relative;
-		z-index: 4;
-		height: 100%;
+		padding:     25px 15px;
+		position:    relative;
+		z-index:     4;
+		height:      100%;
 		text-shadow: 7px 6px 10px rgba(14, 42, 90, 0.8);
 		user-select: none;
 		@media screen and (max-width: 480px) {
@@ -549,49 +578,51 @@ body {
 	}
 
 	&__name {
-		font-size: 18px;
-		line-height: 1;
-		white-space: nowrap;
-		max-width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		font-size:      18px;
+		line-height:    1;
+		white-space:    nowrap;
+		max-width:      100%;
+		overflow:       hidden;
+		text-overflow:  ellipsis;
 		text-transform: uppercase;
 		@media screen and (max-width: 480px) {
 			font-size: 16px;
 		}
 	}
+
 	&__nameItem {
-		display: inline-block;
+		display:   inline-block;
 		min-width: 8px;
-		position: relative;
+		position:  relative;
 	}
 
 	&__number {
-		font-weight: 500;
-		line-height: 1;
-		color: #fff;
-		font-size: 27px;
+		font-weight:   500;
+		line-height:   1;
+		color:         #fff;
+		font-size:     27px;
 		margin-bottom: 35px;
-		display: inline-block;
-		padding: 10px 15px;
-		cursor: pointer;
+		display:       inline-block;
+		padding:       10px 15px;
+		cursor:        pointer;
 
 		@media screen and (max-width: 480px) {
-			font-size: 21px;
+			font-size:     21px;
 			margin-bottom: 15px;
-			padding: 10px 10px;
+			padding:       10px 10px;
 		}
 
 		@media screen and (max-width: 360px) {
-			font-size: 19px;
+			font-size:     19px;
 			margin-bottom: 10px;
-			padding: 10px 10px;
+			padding:       10px 10px;
 		}
 	}
 
 	&__numberItem {
-		width: 16px;
+		width:   16px;
 		display: inline-block;
+
 		&.-active {
 			width: 30px;
 		}
@@ -614,21 +645,21 @@ body {
 	}
 
 	&__content {
-		color: #fff;
-		display: flex;
+		color:       #fff;
+		display:     flex;
 		align-items: flex-start;
 	}
 
 	&__date {
-		flex-wrap: wrap;
-		font-size: 18px;
+		flex-wrap:   wrap;
+		font-size:   18px;
 		margin-left: auto;
-		padding: 10px;
-		display: inline-flex;
-		width: 80px;
+		padding:     10px;
+		display:     inline-flex;
+		width:       80px;
 		white-space: nowrap;
 		flex-shrink: 0;
-		cursor: pointer;
+		cursor:      pointer;
 
 		@media screen and (max-width: 480px) {
 			font-size: 16px;
@@ -637,44 +668,47 @@ body {
 
 	&__dateItem {
 		position: relative;
+
 		span {
-			width: 22px;
+			width:   22px;
 			display: inline-block;
 		}
 	}
 
 	&__dateTitle {
-		opacity: 0.7;
-		font-size: 13px;
+		opacity:        0.7;
+		font-size:      13px;
 		padding-bottom: 6px;
-		width: 100%;
+		width:          100%;
 
 		@media screen and (max-width: 480px) {
-			font-size: 12px;
+			font-size:      12px;
 			padding-bottom: 5px;
 		}
 	}
+
 	&__band {
 		background: rgba(0, 0, 19, 0.8);
-		width: 100%;
-		height: 50px;
+		width:      100%;
+		height:     50px;
 		margin-top: 30px;
-		position: relative;
-		z-index: 2;
+		position:   relative;
+		z-index:    2;
 		@media screen and (max-width: 480px) {
 			margin-top: 20px;
 		}
 		@media screen and (max-width: 360px) {
-			height: 40px;
+			height:     40px;
 			margin-top: 10px;
 		}
 	}
 
 	&__cvv {
 		text-align: right;
-		position: relative;
-		z-index: 2;
-		padding: 15px;
+		position:   relative;
+		z-index:    2;
+		padding:    15px;
+
 		.card-item__type {
 			opacity: 0.7;
 		}
@@ -683,29 +717,31 @@ body {
 			padding: 10px 15px;
 		}
 	}
+
 	&__cvvTitle {
 		padding-right: 10px;
-		font-size: 15px;
-		font-weight: 500;
-		color: #fff;
+		font-size:     15px;
+		font-weight:   500;
+		color:         #fff;
 		margin-bottom: 5px;
 	}
+
 	&__cvvBand {
-		height: 45px;
-		background: #fff;
-		margin-bottom: 30px;
-		text-align: right;
-		display: flex;
-		align-items: center;
+		height:          45px;
+		background:      #fff;
+		margin-bottom:   30px;
+		text-align:      right;
+		display:         flex;
+		align-items:     center;
 		justify-content: flex-end;
-		padding-right: 10px;
-		color: #1a3b5d;
-		font-size: 18px;
-		border-radius: 4px;
-		box-shadow: 0px 10px 20px -7px rgba(32, 56, 117, 0.35);
+		padding-right:   10px;
+		color:           #1a3b5d;
+		font-size:       18px;
+		border-radius:   4px;
+		box-shadow:      0px 10px 20px -7px rgba(32, 56, 117, 0.35);
 
 		@media screen and (max-width: 480px) {
-			height: 40px;
+			height:        40px;
 			margin-bottom: 20px;
 		}
 
@@ -725,27 +761,29 @@ body {
 
 .card-input {
 	margin-bottom: 20px;
+
 	&__label {
-		font-size: 14px;
+		font-size:     14px;
 		margin-bottom: 5px;
-		font-weight: 500;
-		color: #1a3b5d;
-		width: 100%;
-		display: block;
-		user-select: none;
+		font-weight:   500;
+		color:         #1a3b5d;
+		width:         100%;
+		display:       block;
+		user-select:   none;
 	}
+
 	&__input {
-		width: 100%;
-		height: 50px;
+		width:         100%;
+		height:        50px;
 		border-radius: 5px;
-		box-shadow: none;
-		border: 1px solid #ced6e0;
-		transition: all 0.3s ease-in-out;
-		font-size: 18px;
-		padding: 5px 15px;
-		background: none;
-		color: #1a3b5d;
-		font-family: "Source Sans Pro", sans-serif;
+		box-shadow:    none;
+		border:        1px solid #ced6e0;
+		transition:    all 0.3s ease-in-out;
+		font-size:     18px;
+		padding:       5px 15px;
+		background:    none;
+		color:         #1a3b5d;
+		font-family:   "Source Sans Pro", sans-serif;
 
 		&:hover,
 		&:focus {
@@ -755,90 +793,96 @@ body {
 		&:focus {
 			box-shadow: 0px 10px 20px -13px rgba(32, 56, 117, 0.35);
 		}
+
 		&.-select {
-			-webkit-appearance: none;
-			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUxJREFUeNrM1sEJwkAQBdCsngXPHsQO9O5FS7AAMVYgdqAd2IGCDWgFnryLFQiCZ8EGnJUNimiyM/tnk4HNEAg/8y6ZmMRVqz9eUJvRaSbvutCZ347bXVJy/ZnvTmdJ862Me+hAbZCTs6GHpyUi1tTSvPnqTpoWZPUa7W7ncT3vK4h4zVejy8QzM3WhVUO8ykI6jOxoGA4ig3BLHcNFSCGqGAkig2yqgpEiMsjSfY9LxYQg7L6r0X6wS29YJiYQYecemY+wHrXD1+bklGhpAhBDeu/JfIVGxaAQ9sb8CI+CQSJ+QmJg0Ii/EE2MBiIXooHRQhRCkBhNhBcEhLkwf05ZCG8ICCOpk0MULmvDSY2M8UawIRExLIQIEgHDRoghihgRIgiigBEjgiFATBACAgFgghEwSAAGgoBCBBgYAg5hYKAIFYgHBo6w9RRgAFfy160QuV8NAAAAAElFTkSuQmCC');
-			background-size: 12px;
+			-webkit-appearance:  none;
+			background-image:    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUxJREFUeNrM1sEJwkAQBdCsngXPHsQO9O5FS7AAMVYgdqAd2IGCDWgFnryLFQiCZ8EGnJUNimiyM/tnk4HNEAg/8y6ZmMRVqz9eUJvRaSbvutCZ347bXVJy/ZnvTmdJ862Me+hAbZCTs6GHpyUi1tTSvPnqTpoWZPUa7W7ncT3vK4h4zVejy8QzM3WhVUO8ykI6jOxoGA4ig3BLHcNFSCGqGAkig2yqgpEiMsjSfY9LxYQg7L6r0X6wS29YJiYQYecemY+wHrXD1+bklGhpAhBDeu/JfIVGxaAQ9sb8CI+CQSJ+QmJg0Ii/EE2MBiIXooHRQhRCkBhNhBcEhLkwf05ZCG8ICCOpk0MULmvDSY2M8UawIRExLIQIEgHDRoghihgRIgiigBEjgiFATBACAgFgghEwSAAGgoBCBBgYAg5hYKAIFYgHBo6w9RRgAFfy160QuV8NAAAAAElFTkSuQmCC');
+			background-size:     12px;
 			background-position: 90% center;
-			background-repeat: no-repeat;
-			padding-right: 30px;
+			background-repeat:   no-repeat;
+			padding-right:       30px;
 		}
 	}
 }
 
 .slide-fade-up-enter-active {
-	transition: all 0.25s ease-in-out;
+	transition:       all 0.25s ease-in-out;
 	transition-delay: 0.1s;
-	position: relative;
+	position:         relative;
 }
+
 .slide-fade-up-leave-active {
 	transition: all 0.25s ease-in-out;
-	position: absolute;
+	position:   absolute;
 }
+
 .slide-fade-up-enter {
-	opacity: 0;
-	transform: translateY(15px);
+	opacity:        0;
+	transform:      translateY(15px);
 	pointer-events: none;
 }
+
 .slide-fade-up-leave-to {
-	opacity: 0;
-	transform: translateY(-15px);
+	opacity:        0;
+	transform:      translateY(-15px);
 	pointer-events: none;
 }
 
 .slide-fade-right-enter-active {
-	transition: all 0.25s ease-in-out;
+	transition:       all 0.25s ease-in-out;
 	transition-delay: 0.1s;
-	position: relative;
+	position:         relative;
 }
+
 .slide-fade-right-leave-active {
 	transition: all 0.25s ease-in-out;
-	position: absolute;
+	position:   absolute;
 }
+
 .slide-fade-right-enter {
-	opacity: 0;
-	transform: translateX(10px) rotate(45deg);
-	pointer-events: none;
-}
-.slide-fade-right-leave-to {
-	opacity: 0;
-	transform: translateX(-10px) rotate(45deg);
+	opacity:        0;
+	transform:      translateX(10px) rotate(45deg);
 	pointer-events: none;
 }
 
+.slide-fade-right-leave-to {
+	opacity:        0;
+	transform:      translateX(-10px) rotate(45deg);
+	pointer-events: none;
+}
 
 
 .github-btn {
-	position: absolute;
-	right: 40px;
-	bottom: 50px;
+	position:        absolute;
+	right:           40px;
+	bottom:          50px;
 	text-decoration: none;
-	padding: 15px 25px;
-	border-radius: 4px;
-	box-shadow: 0px 4px 30px -6px rgba(36, 52, 70, 0.65);
-	background: #24292e;
-	color: #fff;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: 16px;
-	text-align: center;
-	transition: all .3s ease-in-out;
+	padding:         15px 25px;
+	border-radius:   4px;
+	box-shadow:      0px 4px 30px -6px rgba(36, 52, 70, 0.65);
+	background:      #24292e;
+	color:           #fff;
+	font-weight:     bold;
+	letter-spacing:  1px;
+	font-size:       16px;
+	text-align:      center;
+	transition:      all .3s ease-in-out;
 
 	@media screen and (min-width: 500px) {
 		&:hover {
-			transform: scale(1.1);
+			transform:  scale(1.1);
 			box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
 		}
 	}
 
 	@media screen and (max-width: 700px) {
-		position: relative;
-		bottom: auto;
-		right: auto;
+		position:   relative;
+		bottom:     auto;
+		right:      auto;
 		margin-top: 20px;
 
 		&:active {
-			transform: scale(1.1);
+			transform:  scale(1.1);
 			box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
 		}
 	}
