@@ -133,13 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="wrapper">
 		<skils/>
 	</div>
-	<button @click="isOpen=!isOpen">
+        <button @click="isOpen=!isOpen">
 
-	</button>
-	<bank-card
-	:visible="isOpen">
-
-	</bank-card>
+        </button>
+        <bank-card
+        :visible="isOpen" @close="isOpen=false">
+        </bank-card>
 
 	<!-- БЛОК ФОРМЫ -->
 
