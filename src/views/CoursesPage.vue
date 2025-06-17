@@ -278,12 +278,17 @@ export default {
 						способности и поддерживает здоровье мозга.</p>
 				</div>
 			</div>
-			<button onclick="alert('Упс... Что то пошло не так')" @click="openModal" type="button">Записаться на курс</button>
+			<button  @click="openModal" type="button">Записаться на курс</button>
 		</section>
 
 		<!-- Модальное окно с банковской картой -->
 
-		<bank-card :visible="isModalOpen.value"/>
+		<bank-card
+				v-model:visible="isModalOpen.value"
+				:visible="isModalOpen.value"
+				:curses="group"
+
+		/>
 
 		<!-- Блок содержание курса -->
 
@@ -305,7 +310,7 @@ export default {
 							2 раза в неделю по 2 академических часа</p>
 					</div>
 					<h4>от 4 350 ₽ в месяц</h4>
-					<button @click="console.log(datePage)" type="submit">Записаться на пробное занятие</button>
+					<button @click="openModal" type="submit">Записаться на пробное занятие</button>
 				</div>
 				<div class="content_right">
 					<img src="/public/cours/rabbit2.svg" alt="">
