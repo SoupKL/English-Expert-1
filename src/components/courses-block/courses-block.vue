@@ -2,12 +2,13 @@
 export default {
 	props: {
 		courses: {
-			type: Array,
+			type:     Array,
 			required: true
 		}
 	},
 
 	setup(props) {
+
 		return {}
 	}
 }
@@ -43,19 +44,20 @@ export default {
 	min-height:     380px;
 	border-radius:  20px;
 	padding:        20px;
-	box-sizing:      border-box;
+	box-sizing:     border-box;
+	font-family:    regular;
 }
 
 .courses_block {
-	width: calc(100% - 40px);
-	max-width: 402px;
-	height:          auto;
-	min-height:      250px;
-	margin-top:      38px;
-	border-radius:   20px;
-	background:      rgb(184, 239, 207);
-	padding:         28px;
-	box-sizing:      border-box;
+	width:         calc(100% - 40px);
+	max-width:     402px;
+	height:        auto;
+	min-height:    250px;
+	margin-top:    38px;
+	border-radius: 20px;
+	background:    rgb(184, 239, 207);
+	padding:       28px;
+	box-sizing:    border-box;
 }
 
 .courses_programs {
@@ -73,26 +75,26 @@ export default {
 @media screen and (max-width: 768px) {
 	.courses {
 		min-height: 320px;
-		padding: 15px;
+		padding:    15px;
 	}
 
 	.courses_block {
-		width: calc(100% - 30px);
+		width:      calc(100% - 30px);
 		margin-top: 20px;
-		padding: 20px;
+		padding:    20px;
 	}
 }
 
 @media screen and (max-width: 480px) {
 	.courses {
 		min-height: 280px;
-		padding: 10px;
+		padding:    10px;
 	}
 
 	.courses_block {
-		width: calc(100% - 20px);
+		width:      calc(100% - 20px);
 		margin-top: 15px;
-		padding: 15px;
+		padding:    15px;
 	}
 
 	.courses_programs a {

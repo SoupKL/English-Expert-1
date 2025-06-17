@@ -9,6 +9,14 @@ const acquiredCourses = ref([])
 const trialCourses    = ref([])
 const hasError        = ref(false)
 const loading         = ref(true)
+const cursesInfo = {
+	'a1':{},
+	'a2':{},
+	'b1':{},
+	'b2':{},
+	'c1':{},
+	'c2':{},
+}
 
 const loadCourses = async () => {
 	try {
@@ -26,6 +34,9 @@ const loadCourses = async () => {
 		const data            = await res.json()
 		acquiredCourses.value = data.acquired || []
 		trialCourses.value    = data.trial || []
+
+		console.log(acquiredCourses.value, 'acquiredCourses')
+		console.log(trialCourses.value, 'trialCourses')
 	} catch (e) {
 		console.error('Ошибка:', e)
 		hasError.value = true
@@ -49,7 +60,7 @@ onMounted(() => {
 	<div class="wrapper">
 		<div class="profile">
 			<div class="profile_info">
-				<img class="profile_avatar" src="../assets/logo.svg"/>
+				<img alt="Аватакрка" class="profile_avatar" src="../assets/logo.svg"/>
 				<div class="profile_text-block">
 					<div class="profile_name">
 						{{ userStore.user?.name }}
@@ -67,7 +78,7 @@ onMounted(() => {
 
 				<div class="profile_container">
 					<div class="profile_box">
-						<courses-block :courses="acquiredCourses"/>
+						<courses-block v-for="curs in acquiredCourses" :courses="curs"/>
 					</div>
 				</div>
 
