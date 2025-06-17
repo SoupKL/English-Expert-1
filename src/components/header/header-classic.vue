@@ -88,10 +88,10 @@ watch(isMenuOpen, (newVal) => {
 						<span>8 800 555-35-35</span>
 					</a>
 				</div>
-				<div class="nav-item" style="--i: 5" @click="userStore.validateToken ? navigateTo('/profile') : navigateTo('/auth')">
+				<div class="nav-item" style="--i: 5" @click=" null !== userStore.user ? navigateTo('/profile') : navigateTo('/auth')">
 					<img src="../../assets/main/person.svg" alt="Профиль">
 					<span>
-						{{ userStore.validateToken ? userStore.user?.name : 'Войти' }}
+						{{ null !== userStore.user ? userStore.user?.name : 'Войти' }}
 					</span>
 				</div>
 			</nav>

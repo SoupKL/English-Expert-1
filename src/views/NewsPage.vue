@@ -47,7 +47,7 @@ export default {
         <p class="news-description">{{ newsFirst.description }}</p>
       </div>
 
-      <img src="../../src/assets/all_news/new1.svg" alt="">
+      <img src="/assets/all_news/new1.svg" alt="">
 
       <div class="txt">
         <p>{{ newsFirst.textHead }}</p>

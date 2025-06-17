@@ -117,39 +117,6 @@ export default {
 										"                    вдохновляющий на достижение лучших результатов"
 			}
 		];
-		const getCardType = computed(() => {
-			let number = cardNumber.value;
-			if (/^4/.test(number)) {
-				return "visa";
-			}
-			if (/^(34|37)/.test(number)) {
-				return "amex";
-			}
-			if (/^5[1-5]/.test(number)) {
-				return "mastercard";
-			}
-			if (/^6011/.test(number)) {
-				return "discover";
-			}
-			if (/^9792/.test(number)) {
-				return "troy";
-			}
-			return "visa";
-		});
-
-		const generateCardNumberMask = computed(() => {
-			return getCardType.value === "amex" ? amexCardMask : otherCardMask;
-		});
-
-		const minCardMonth = computed(() => {
-			return cardYear.value === minCardYear ? new Date().getMonth() + 1 : 1;
-		});
-
-		watch(cardYear, () => {
-			if (cardMonth.value < minCardMonth.value) {
-				cardMonth.value = "";
-			}
-		});
 
 		onMounted(() => {
 			document.getElementById("cardNumber");
@@ -201,9 +168,6 @@ export default {
 			focusElementStyle,
 			isInputFocused,
 			isModalOpen,
-			getCardType,
-			generateCardNumberMask,
-			minCardMonth,
 			purposesInfo,
 			teachers,
 			openModal,
@@ -278,7 +242,7 @@ export default {
 						способности и поддерживает здоровье мозга.</p>
 				</div>
 			</div>
-			<button  @click="openModal" type="button">Записаться на курс</button>
+			<button  @click="openModal(); console.log(isModalOpen.value)" type="button">Записаться на курс</button>
 		</section>
 
 		<!-- Модальное окно с банковской картой -->
@@ -310,7 +274,7 @@ export default {
 							2 раза в неделю по 2 академических часа</p>
 					</div>
 					<h4>от 4 350 ₽ в месяц</h4>
-					<button @click="openModal" type="submit">Записаться на пробное занятие</button>
+					<button @click="openModal()" type="submit">Записаться на пробное занятие</button>
 				</div>
 				<div class="content_right">
 					<img src="/public/cours/rabbit2.svg" alt="">

@@ -1,14 +1,14 @@
-# Temporarily disallow all crawlers
+# Разрешаем всем роботам индексировать сайт
 User-agent: *
-Disallow: /
+Allow: /
 
-# Sitemap location (will be enabled later)
-# Sitemap: https://english-expert-1.netlify.app/sitemap.xml
-
-# Disallow admin and private areas
+# Запрещаем индексацию административных и приватных разделов
 Disallow: /admin/
 Disallow: /private/
 Disallow: /auth/
 
-# Crawl-delay
-Crawl-delay: 10 
+# Указываем задержку между запросами к сайту (не все роботы уважают)
+Crawl-delay: 10
+
+# Указываем расположение карты сайта
+Sitemap: https://english-expert-1.netlify.app/sitemap.xml

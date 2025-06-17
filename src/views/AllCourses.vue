@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					<div v-if="firstBlock" class="cards1">
 						<router-link to="./course/a1" class="card" id="A1">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/A1.svg">
+								<img alt="Человек с книгой" src="../../src/assets/all_courses/A1.svg">
 								<h3>Уровень А1</h3>
 							</div>
 							<p>Идеальный выбор для абсолютных новичков.
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 						<router-link to="./course/a2" class="card" id="A2">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/A2.svg">
+								<img alt="Мозг" src="../../src/assets/all_courses/A2.svg">
 								<h3>Уровень А2</h3>
 							</div>
 							<p>Переходите от приветствий к простым разговорам.
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					<div v-if="secondBlock" class="cards2">
 						<router-link to="./course/b1" class="card" id="B1">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/B1.svg">
+								<img alt="Книга"  src="../../src/assets/all_courses/B1.svg">
 								<h3>Уровень B1</h3>
 							</div>
 							<p>Преодолейте порог и углубитесь в более
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 						<router-link to="./course/b2" class="card" id="B2">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/B2.svg">
+								<img alt="человек с книгой"  src="../../src/assets/all_courses/B2.svg">
 								<h3>Уровень B2</h3>
 							</div>
 							<p>Готовьтесь к приключениям! Этот курс сфокусирован
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					<div v-if="thirdBlock" class="cards3">
 						<router-link to="./course/c1" class="card" id="C1">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/C1.svg">
+								<img alt="телефон"  src="../../src/assets/all_courses/C1.svg">
 								<h3>Уровень C1</h3>
 							</div>
 							<p>Совершенствуйте свой язык и обретайте уверенность
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 						<router-link to="./course/c2" class="card" id="C2">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/C2.svg">
+								<img alt="телефон" src="../../src/assets/all_courses/C2.svg">
 								<h3>Уровень C2</h3>
 							</div>
 							<p>Здесь вы достигнете вершины своего языкового
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					<div v-if="false" class="cards4">
 						<div class="card" id="work">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/work.svg">
+								<img alt="Работа" src="../../src/assets/all_courses/work.svg">
 								<h3>Для работы</h3>
 							</div>
 							<p>Углубленный курс английского языка, специально
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 						<div class="card" id="purpose">
 							<div class="cardtxt">
-								<img src="../../src/assets/all_courses/purpose.svg">
+								<img alt="зЗная цель" src="../../src/assets/all_courses/purpose.svg">
 								<h3>Знаю цель</h3>
 							</div>
 							<p>Поможем решить любую задачу и осуществить мечту.

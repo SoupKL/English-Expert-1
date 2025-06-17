@@ -9,7 +9,7 @@
         </div>
         <p class="review-text">{{ user.review }}</p>
         <div class="rating">
-            <span class="stars"><img src="/src/assets/main/star.svg"></span>
+            <span class="stars"><img alt="Звезда" src="/src/assets/main/star.svg"></span>
             <span class="score">
                 <p>{{ user.rating }}/5</p>
             </span>
