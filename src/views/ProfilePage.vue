@@ -4,18 +4,17 @@ import {useUserStore} from '@/stores/userStore'
 import CoursesBlock from '@/components/courses-block/courses-block.vue'
 import ErrorPage from '@/views/ErrorPage.vue'
 
-const userStore       = useUserStore()
-const acquiredCourses = ref([])
-const trialCourses    = ref([])
-const hasError        = ref(false)
-const loading         = ref(true)
-const cursesInfo = {
-	'a1':{},
-	'a2':{},
-	'b1':{},
-	'b2':{},
-	'c1':{},
-	'c2':{},
+const userStore     = useUserStore()
+const activeCourses = ref([])
+const hasError      = ref(false)
+const loading       = ref(true)
+const cursesInfo    = {
+	'a1': {level: 'Уровень А1', text: 'Идеальный выбор для абсолютных новичков. Здесь вы освоите английский язык с нуля, начиная с базовых фраз и повседневного общения. Разработанный курс включает в себя интерактивные упражнения, игры и диалоги, чтобы улучшить вашу языковую подготовку в увлекательной форме.'},
+	'a2': {level: 'Уровень А2', text: 'Переходите от приветствий к простым разговорам. Этот курс поможет вам уверенно выражать свои мысли на английском. Освоите навыки неформального общения, делая вашу коммуникацию более свободной и естественной.'},
+	'b1': {level: 'Уровень B1', text: 'Преодолейте порог и углубитесь в более сложные темы. Здесь вы начнете строить фундамент для более сложных языковых концепций.'},
+	'b2': {level: 'Уровень B2', text: 'Готовьтесь к приключениям! Этот курс сфокусирован на развитии вашего языкового навыка в различных сценариях. Научитесь применять знания в реальных ситуациях, что сделает ваш языковой опыт более полноценным и уверенным.'},
+	'c1': {level: 'Уровень C1', text: 'Совершенствуйте свой язык и обретайте уверенность в общении на высоком уровне. Курс для тех, кто стремится к языковому мастерству.'},
+	'c2': {level: 'Уровень C2', text: 'Здесь вы достигнете вершины своего языкового мастерства. Курс для тех, кто стремится к безупречной владению английским.'},
 }
 
 const loadCourses = async () => {
@@ -31,12 +30,12 @@ const loadCourses = async () => {
 			throw new Error('Ошибка загрузки курсов')
 		}
 
-		const data            = await res.json()
-		acquiredCourses.value = data.acquired || []
-		trialCourses.value    = data.trial || []
+		const data          = await res.json()
+		activeCourses.value = Object.entries(data)
+				.filter(([_, value]) => value === true)
+				.map(([key]) => cursesInfo[key])
+				.filter(info => !!info?.level) // чтобы не выводить пустые
 
-		console.log(acquiredCourses.value, 'acquiredCourses')
-		console.log(trialCourses.value, 'trialCourses')
 	} catch (e) {
 		console.error('Ошибка:', e)
 		hasError.value = true
@@ -78,7 +77,11 @@ onMounted(() => {
 
 				<div class="profile_container">
 					<div class="profile_box">
-						<courses-block v-for="curs in acquiredCourses" :courses="curs"/>
+						<CoursesBlock
+								v-for="(course, index) in activeCourses"
+								:key="index"
+								:courses="course"
+						/>
 					</div>
 				</div>
 

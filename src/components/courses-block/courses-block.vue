@@ -23,10 +23,12 @@ export default {
 				<a>Программа</a>
 			</div>
 			<div class="courses_level">
-				<p>Уровень С1</p>
+				<p>{{ courses.level }}</p>
 			</div>
 			<div class="courses_text">
-				<p>Совершенствуйте свой язык и обретайте уверенность в общении на высоком уровне. Курс для тех, кто стремится к языковому мастерству.</p>
+				<p>
+					{{ courses.text }}
+				</p>
 			</div>
 		</div>
 
