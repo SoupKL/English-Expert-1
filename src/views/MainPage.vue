@@ -133,14 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div class="wrapper">
 		<skils/>
 	</div>
-	<button @click="isOpen=!isOpen">
-
-	</button>
-	<bank-card
-			v-model:visible="isOpen"
-			:visible="isOpen">
-
-	</bank-card>
 
 	<!-- БЛОК ФОРМЫ -->
 
