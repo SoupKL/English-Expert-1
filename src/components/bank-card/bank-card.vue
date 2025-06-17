@@ -1,6 +1,7 @@
 <template>
 	<div class="modal-overlay" v-if="visible" @click.self="close">
 		<div class="card-form">
+			<button class="modal-close" @click="close">×</button>
 			<div class="card-list">
 				<div class="card-item" :class="{ '-active' : isCardFlipped }">
 					<div class="card-item__side -front">
@@ -12,15 +13,15 @@
 							<div class="card-item__top">
 								<img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
 								<div class="card-item__type">
-																		<transition name="slide-fade-up">
-																			<img
-																				v-if="getCardType === 'mir'"
-																				src="/image/mir.png"
-																				class="card-item__typeImgMir"
-																				alt="MIR Card"
-																				/>
-																			<img v-else-if="getCardType" :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`" :key="getCardType" alt="" class="card-item__typeImg">
-																		</transition>
+									<transition name="slide-fade-up">
+										<img
+												v-if="getCardType === 'mir'"
+												src="/image/mir.png"
+												class="card-item__typeImgMir"
+												alt="MIR Card"
+										/>
+										<img v-else-if="getCardType" :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`" :key="getCardType" alt="" class="card-item__typeImg">
+									</transition>
 								</div>
 							</div>
 							<label for="cardNumber" class="card-item__number" ref="cardNumber">
@@ -65,7 +66,7 @@
 					</div>
 					<div class="card-item__side -back">
 						<div class="card-item__cover">
-							<!--							<img :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${currentCardBackground}.jpeg`" class="card-item__bg">-->
+							<img :src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${currentCardBackground}.jpeg`" class="card-item__bg">
 						</div>
 						<div class="card-item__band"></div>
 						<div class="card-item__cvv">
@@ -75,6 +76,13 @@
 							</div>
 							<div class="card-item__type">
 								<img
+										v-if="getCardType === 'mir'"
+										src="/image/mir.png"
+										class="card-item__typeImgMir"
+										alt="MIR Card"
+								/>
+								<img
+										v-else-if="getCardType !=='mir'"
 										:src="`https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/${getCardType}.png`"
 										class="card-item__typeImg"
 										:alt="getCardType"
@@ -118,19 +126,25 @@
 						</div>
 					</div>
 				</div>
-				<button class="card-form__button">Submit</button>
+				<button @click="buyCurses()" class="card-form__button">Submit</button>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import {useUserStore} from "@/stores/userStore.js";
+
 export default {
 	name:  'CreditCardModal',
 	props: {
 		visible: {
 			type:     Boolean,
 			required: true
+		},
+		curses:  {
+			type:     String,
+			required: false,
 		}
 	},
 	data() {
@@ -208,7 +222,25 @@ export default {
 			this.isInputFocused = false;
 		},
 		close() {
-			this.$emit('close');
+			this.$emit('update:visible', false);
+		},
+
+		buyCurses() {
+			fetch(`https://laravel-api-gmjs.onrender.com/api/update-course/${useUserStore().user.id}`, {
+				method:      'PATCH',
+				headers:     {
+					'Content-Type': 'application/json',
+					'Accept':       'application/json',
+				},
+				body:        JSON.stringify({
+					course: this.curses,
+					value:  true,
+				}),
+				credentials: 'include' // если нужна сессия
+			})
+					.then(res => res.json())
+					.then(data => console.log(data))
+					.catch(err => console.error(err));
 		}
 	}
 };
@@ -227,6 +259,31 @@ export default {
 	justify-content:  center;
 	z-index:          1000;
 	padding:          20px;
+}
+
+.modal-close {
+	position:        absolute;
+	top:             10px;
+	right:           10px;
+	width:           30px;
+	height:          30px;
+	border-radius:   50%;
+	background:      #fff;
+	border:          none;
+	font-size:       24px;
+	line-height:     1;
+	cursor:          pointer;
+	display:         flex;
+	align-items:     center;
+	justify-content: center;
+	box-shadow:      0 2px 5px rgba(0, 0, 0, 0.2);
+	transition:      all 0.3s ease;
+	z-index:         1001;
+
+	&:hover {
+		background: #f0f0f0;
+		transform:  scale(1.1);
+	}
 }
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap");
@@ -532,10 +589,10 @@ body {
 		max-height:      100%;
 		object-position: top right;
 
-		&Mir{
-			width: 100px;
+		&Mir {
+			width:      100px;
 			height:     100px;
-			margin-top:     -30px;
+			margin-top: -30px;
 		}
 	}
 

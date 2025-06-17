@@ -4,12 +4,12 @@
 	<div class="purposes">
 
 		<div class="purposes_left">
-			<img src="../../../src/assets/cours/rabbit1.svg" alt="">
+			<img src="/cours/rabbit1.svg" alt="">
 		</div>
 
 		<div class="purposes_right">
 			<div v-for="(text, index) in textPruposes1" class="purposes_card">
-				<img :src="'../../../src/assets/cours/purpose_'+(index+1)+'.svg'" alt="">
+				<img :src="'/cours/purpose_'+(index+1)+'.svg'" alt="">
 				<h3>Цель {{ index + 1 }}</h3>
 				<p>{{ text }}</p>
 			</div>

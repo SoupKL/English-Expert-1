@@ -137,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	</button>
 	<bank-card
-	:visible="isOpen">
+			v-model:visible="isOpen"
+			:visible="isOpen">
 
 	</bank-card>
 
