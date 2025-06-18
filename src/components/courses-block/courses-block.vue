@@ -1,7 +1,7 @@
 <script>
 export default {
 	props: {
-		courses: {
+		course: {
 			type:     Array,
 			required: true
 		}
@@ -23,11 +23,11 @@ export default {
 				<a>Программа</a>
 			</div>
 			<div class="courses_level">
-				<p>{{ courses.level }}</p>
+				<p>{{ course.level }}</p>
 			</div>
 			<div class="courses_text">
 				<p>
-					{{ courses.text }}
+					{{ course.text }}
 				</p>
 			</div>
 		</div>
