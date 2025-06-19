@@ -59,7 +59,7 @@ onMounted(() => {
 	<div class="wrapper">
 		<div class="profile">
 			<div class="profile_info">
-				<img alt="Аватакрка" class="profile_avatar" src="/main/rabbit2.svg"/>
+				<img alt="Аватакрка" class="profile_avatar" src="/main/rabbit.png"/>
 				<div class="profile_text-block">
 					<div class="profile_name">
 						{{ userStore.user?.name }}
