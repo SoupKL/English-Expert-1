@@ -1,5 +1,5 @@
 <script setup>
-import {ref, onMounted} from 'vue'
+import {ref, onMounted, watch} from 'vue'
 import {useUserStore} from '@/stores/userStore'
 import CoursesBlock from '@/components/courses-block/courses-block.vue'
 import ErrorPage from '@/views/ErrorPage.vue'
@@ -34,7 +34,7 @@ const loadCourses = async () => {
 		activeCourses.value = Object.entries(data)
 				.filter(([_, value]) => value === true)
 				.map(([key]) => cursesInfo[key])
-				.filter(info => !!info?.level) // чтобы не выводить пустые
+				.filter(info => !!info?.level)
 
 	} catch (e) {
 		console.error('Ошибка:', e)
@@ -44,15 +44,22 @@ const loadCourses = async () => {
 	}
 }
 
-onMounted(() => {
-	if (!userStore.user) {
-		hasError.value = true
-		loading.value  = false
-	}
-	else {
-		loadCourses()
-	}
-})
+// 👉 Инициализация пользователя и слежение за ним
+userStore.initFromStorage()
+
+watch(
+		() => userStore.user,
+		(user) => {
+			if (user) {
+				loadCourses()
+			}
+			else {
+				hasError.value = true
+				loading.value  = false
+			}
+		},
+		{immediate: true}
+)
 </script>
 
 <template>
