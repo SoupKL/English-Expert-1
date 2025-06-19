@@ -226,7 +226,7 @@ export default {
 		},
 
 		buyCurses() {
-			fetch(`https://laravel-api-gmjs.onrender.com/api/update-course/${useUserStore().user.id}`, {
+			fetch(`https://laravel-api-gmjs.onrender.com/api/course-status/${useUserStore().user.id}`, {
 				method:      'PATCH',
 				headers:     {
 					'Content-Type': 'application/json',
