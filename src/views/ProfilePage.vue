@@ -77,11 +77,16 @@ onMounted(() => {
 
 				<div class="profile_container">
 					<div class="profile_box">
-						<CoursesBlock
-								v-for="(course, index) in activeCourses"
-								:key="index"
-								:courses="course"
-						/>
+						<div v-if="0!==activeCourses.length" class="courses">
+							<CoursesBlock
+									v-for="(course, index) in activeCourses"
+									:key="index"
+									:course="course"
+							/>
+						</div>
+						<h1 v-else>
+							купленых курсов нет
+						</h1>
 					</div>
 				</div>
 
@@ -108,6 +113,20 @@ $profile-courses-text-line: 100px;
 	max-width: 1200px;
 	margin:    0 auto;
 	padding:   20px;
+}
+
+.courses {
+	background:     rgb(221, 223, 230);
+	display:        flex;
+	flex-direction: column;
+	align-items:    center;
+	width:          100%;
+	max-width:      500px;
+	min-height:     380px;
+	border-radius:  20px;
+	padding:        10px;
+	box-sizing:     border-box;
+	font-family:    regular;
 }
 
 .profile_info {

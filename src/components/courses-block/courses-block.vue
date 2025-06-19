@@ -16,8 +16,6 @@ export default {
 </script>
 
 <template>
-
-	<div class="courses">
 		<div class="courses_block">
 			<div class="courses_programs">
 				<a>Программа</a>
@@ -31,24 +29,9 @@ export default {
 				</p>
 			</div>
 		</div>
-
-	</div>
 </template>
 
 <style scoped>
-.courses {
-	background:     rgb(221, 223, 230);
-	display:        flex;
-	flex-direction: column;
-	align-items:    center;
-	width:          100%;
-	max-width:      500px;
-	min-height:     380px;
-	border-radius:  20px;
-	padding:        20px;
-	box-sizing:     border-box;
-	font-family:    regular;
-}
 
 .courses_block {
 	width:         calc(100% - 40px);
