@@ -231,6 +231,7 @@ export default {
 				headers:     {
 					'Content-Type': 'application/json',
 					'Accept':       'application/json',
+					Authorization: `Bearer ${useUserStore().token}`
 				},
 				body:        JSON.stringify({
 					course: this.curses,
