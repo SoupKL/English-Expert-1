@@ -1,15 +1,16 @@
 import {createRouter, createWebHistory} from 'vue-router'
 
 // Lazy load views to reduce initial bundle size
-const mainPage = () => import('@/views/MainPage.vue')
-const AllCourses = () => import('@/views/AllCourses.vue')
+const mainPage    = () => import('@/views/MainPage.vue')
+const AllCourses  = () => import('@/views/AllCourses.vue')
 const LogInLogOut = () => import('@/views/LogInLogOut.vue')
 const CoursesPage = () => import('@/views/CoursesPage.vue')
-const Events = () => import('@/views/Events.vue')
-const new_1 = () => import('@/components/new1/new_1.vue')
-const NotFound = () => import('@/views/NotFound.vue')
-const TestPage = () => import('@/views/TestPage.vue')
+const Events      = () => import('@/views/Events.vue')
+const new_1       = () => import('@/components/new1/new_1.vue')
+const NotFound    = () => import('@/views/NotFound.vue')
+const TestPage    = () => import('@/views/TestPage.vue')
 const ProfilePage = () => import('@/views/ProfilePage.vue')
+const NewsDatail  = () => import('@/views/NewsDatail.vue')
 
 const routes = [
 	{
@@ -56,7 +57,13 @@ const routes = [
 		path:      '/:catchAll(.*)',
 		name:      'NotFound',
 		component: NotFound
+	},
+	{
+		path:      '/news/:id',
+		name:      'news-detail',
+		component: NewsDatail
 	}
+
 ]
 
 const router = createRouter({
