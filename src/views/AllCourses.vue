@@ -371,7 +371,7 @@ a {
 		}
 
 		> p {
-			margin:      0;
+			margin:      -17px;
 			margin-left: 5%;
 			font-size:   0.88rem;
 			font-family: $main-form-font;

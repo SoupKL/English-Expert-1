@@ -10,6 +10,8 @@ import Teacher from "@/components/ teacher/teacher.vue";
 import BankCard from "@/components/bank-card/bank-card.vue";
 import Loading from "@/components/loading/loading.vue";
 import ErrorPage from "@/views/ErrorPage.vue";
+import {useUserStore} from "@/stores/userStore.js";
+import router from "@/router/index.js";
 
 
 onMounted(async (Vue) => {
@@ -123,7 +125,12 @@ export default {
 		});
 
 		const openModal = () => {
-			isModalOpen.value = true;
+			if (null !== useUserStore().user){
+				isModalOpen.value = true;
+			}
+			else {
+				router.push("/auth");
+			}
 		};
 
 		const closeModal = () => {
@@ -242,14 +249,14 @@ export default {
 						способности и поддерживает здоровье мозга.</p>
 				</div>
 			</div>
-			<button  @click="openModal(); console.log(isModalOpen.value)" type="button">Записаться на курс</button>
+			<button @click="openModal()" type="button">Записаться на курс</button>
 		</section>
 
 		<!-- Модальное окно с банковской картой -->
 
 		<bank-card
-				v-model:visible="isModalOpen.value"
-				:visible="isModalOpen.value"
+				v-model:visible="isModalOpen"
+				:visible="isModalOpen"
 				:curses="group"
 
 		/>
@@ -391,6 +398,26 @@ export default {
 	}
 }
 
+
+button{
+	margin-top:       1rem;
+	padding:          10px 20px;
+	font-size:        0.88rem;
+	width:            11.94rem;
+	height:           3.13rem;
+	cursor:           pointer;
+	background-color: rgba(247, 148, 29, 1.00);
+	color:            white;
+	border:           none;
+	border-radius:    10px;
+	transition:       background-color 0.3s ease;
+	align-self:       center;
+
+	&:hover {
+		background-color: rgb(218, 120, 0);
+	}
+}
+
 /* Блок преимуществ */
 .benefits {
 	width:               100%;
@@ -414,26 +441,6 @@ export default {
 			font-size:   1.13rem;
 			color:       white;
 			width:       28.63rem;
-		}
-	}
-
-	button[type="button"],
-	button[type="submit"] {
-		margin-top:       1rem;
-		padding:          10px 20px;
-		font-size:        0.88rem;
-		width:            11.94rem;
-		height:           3.13rem;
-		cursor:           pointer;
-		background-color: rgba(247, 148, 29, 1.00);
-		color:            white;
-		border:           none;
-		border-radius:    10px;
-		transition:       background-color 0.3s ease;
-		align-self:       center;
-
-		&:hover {
-			background-color: rgb(218, 120, 0);
 		}
 	}
 }
