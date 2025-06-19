@@ -3,15 +3,15 @@
 	<div class="wrapper">
 		<h3 id="txt">Новости English Expert</h3>
 		<div class="news-container">
-			<div v-for="newsItem in newsCard" class="news-card">
+			<div v-for="(newsItem, index) in newsCard" class="news-card">
 				<img :src="newsItem.image" alt="News Image">
 				<div class="news-info">
 					<span class="news-date">{{ newsItem.date }}</span>
 					<h3 class="news-title">{{ newsItem.title }}</h3>
 					<p class="news-description">{{ newsItem.description }}</p>
-					<a href="new1.html" class="read-more">
+					<router-link :to="`/news/${index+1}`" class="read-more">
 						Подробнее <img :src="newsItem.arrow" alt="Arrow Icon">
-					</a>
+					</router-link>
 				</div>
 			</div>
 
