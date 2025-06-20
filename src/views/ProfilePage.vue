@@ -2,7 +2,7 @@
 import {ref, onMounted, watch} from 'vue'
 import {useUserStore} from '@/stores/userStore'
 import CoursesBlock from '@/components/courses-block/courses-block.vue'
-import {useRouter} from "vue-router";
+import {useRouter} from 'vue-router'
 
 const userStore     = useUserStore()
 const router        = useRouter()
@@ -58,7 +58,7 @@ const logout = async () => {
 
 		userStore.logout() // обнуляем Pinia/Store/LocalStorage
 
-		this.$router.push('/auth')// переход на экран входа
+		router.push('/auth')// переход на экран входа
 	} catch (e) {
 		console.error('Ошибка при выходе', e)
 	}
