@@ -120,7 +120,7 @@ watch(
 				<p v-if="error" class="error">{{ error }}</p>
 			</div>
 		</div>
-		<button @click="logout; " class="logout-button">
+		<button @click="logout" class="logout-button">
 			Выйти из аккаунта
 		</button>
 	</div>
