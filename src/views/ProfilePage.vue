@@ -58,7 +58,7 @@ const logout = async () => {
 		})
 
 		userStore.logout() // обнуляем Pinia/Store/LocalStorage
-		useRouter().push('/auth') // переход на экран входа
+		router.push('/auth') // переход на экран входа
 	} catch (e) {
 		console.error('Ошибка при выходе', e)
 	}
@@ -120,7 +120,7 @@ watch(
 				<p v-if="error" class="error">{{ error }}</p>
 			</div>
 		</div>
-		<button @click="logout" class="logout-button">
+		<button @click="logout; " class="logout-button">
 			Выйти из аккаунта
 		</button>
 	</div>
