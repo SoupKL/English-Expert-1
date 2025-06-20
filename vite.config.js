@@ -14,5 +14,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    assetsInlineLimit: 4096 // Inline assets smaller than 4kb as base64
   }
 })

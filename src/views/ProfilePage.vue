@@ -3,6 +3,8 @@ import {ref, onMounted, watch} from 'vue'
 import {useUserStore} from '@/stores/userStore'
 import CoursesBlock from '@/components/courses-block/courses-block.vue'
 import ErrorPage from '@/views/ErrorPage.vue'
+import router from "@/router/index.js";
+import {useRouter} from "vue-router";
 
 const userStore     = useUserStore()
 const activeCourses = ref([])
@@ -44,6 +46,24 @@ const loadCourses = async () => {
 	}
 }
 
+const logout = async () => {
+	try {
+		await fetch('https://laravel-api-gmjs.onrender.com/api/logout', {
+			method:      'POST',
+			credentials: 'include', // если используешь Sanctum cookie
+			headers:     {
+				Accept:        'application/json',
+				Authorization: `Bearer ${userStore.token}`, // если токен хранишь явно
+			}
+		})
+
+		userStore.logout() // обнуляем Pinia/Store/LocalStorage
+		useRouter().push('/auth') // переход на экран входа
+	} catch (e) {
+		console.error('Ошибка при выходе', e)
+	}
+}
+
 // 👉 Инициализация пользователя и слежение за ним
 userStore.initFromStorage()
 
@@ -66,7 +86,7 @@ watch(
 	<div class="wrapper">
 		<div class="profile">
 			<div class="profile_info">
-				<img @click="console.log(activeCourses)" alt="Аватакрка" class="profile_avatar" src="/main/rabbit.png"/>
+				<img alt="Аватакрка" class="profile_avatar" src="/main/rabbit.png"/>
 				<div class="profile_text-block">
 					<div class="profile_name">
 						{{ userStore.user?.name }}
@@ -100,7 +120,11 @@ watch(
 				<p v-if="error" class="error">{{ error }}</p>
 			</div>
 		</div>
+		<button @click="logout" class="logout-button">
+			Выйти из аккаунта
+		</button>
 	</div>
+
 </template>
 
 
@@ -120,6 +144,25 @@ $profile-courses-text-line: 100px;
 	max-width: 1200px;
 	margin:    0 auto;
 	padding:   20px;
+}
+
+button{
+	margin-top:       1rem;
+	padding:          10px 20px;
+	font-size:        0.88rem;
+	width:            11.94rem;
+	height:           3.13rem;
+	cursor:           pointer;
+	background-color: rgba(247, 148, 29, 1.00);
+	color:            white;
+	border:           none;
+	border-radius:    10px;
+	transition:       background-color 0.3s ease;
+	align-self:       center;
+
+	&:hover {
+		background-color: rgb(218, 120, 0);
+	}
 }
 
 .courses {
