@@ -2,11 +2,10 @@
 import {ref, onMounted, watch} from 'vue'
 import {useUserStore} from '@/stores/userStore'
 import CoursesBlock from '@/components/courses-block/courses-block.vue'
-import ErrorPage from '@/views/ErrorPage.vue'
-import router from "@/router/index.js";
 import {useRouter} from "vue-router";
 
 const userStore     = useUserStore()
+const router        = useRouter()
 const activeCourses = ref([])
 const hasError      = ref(false)
 const loading       = ref(true)
