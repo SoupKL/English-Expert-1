@@ -57,7 +57,8 @@ const logout = async () => {
 		})
 
 		userStore.logout() // обнуляем Pinia/Store/LocalStorage
-		router.push('/auth') // переход на экран входа
+
+		this.$router.push('/auth')// переход на экран входа
 	} catch (e) {
 		console.error('Ошибка при выходе', e)
 	}
@@ -145,7 +146,7 @@ $profile-courses-text-line: 100px;
 	padding:   20px;
 }
 
-button{
+button {
 	margin-top:       1rem;
 	padding:          10px 20px;
 	font-size:        0.88rem;
